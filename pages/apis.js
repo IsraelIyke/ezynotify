@@ -7,12 +7,16 @@ export default function Home() {
       method: "GET",
       headers: {
         "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API,
-        "X-RapidAPI-Host": "facts-by-api-ninjas.p.rapidapi.com",
+        "X-RapidAPI-Host": "bible-memory-verse-flashcard.p.rapidapi.com",
       },
     };
-    fetch("https://facts-by-api-ninjas.p.rapidapi.com/v1/facts", options)
+
+    fetch(
+      "https://bible-memory-verse-flashcard.p.rapidapi.com/get_verses?book_name=john&text_mode=ends&chapter=1&verse_num1=1&verse_num2=5",
+      options
+    )
       .then((response) => response.json())
-      .then((response) => setResp(response[0].fact))
+      .then((response) => console.log(response.verses))
       .catch((err) => console.error(err));
   }, []);
 
