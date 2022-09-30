@@ -1,0 +1,17 @@
+.footer-sup-container {
+  width: 100vw;
+  height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: hsl(9, 85%, 87%);
+  z-index: 1;
+}
+.footer-container {
+  /* width: 60%; */
+  /* border-radius: 3rem; */
+
+  width: 100%;
+}

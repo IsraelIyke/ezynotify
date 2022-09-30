@@ -16,9 +16,9 @@ export default function Home() {
       options
     )
       .then((response) => response.json())
-      .then((response) => console.log(response.verses))
+      .then((response) => console.log(response.verses[0].verse_text))
       .catch((err) => console.error(err));
   }, []);
 
-  return <>{resp}</>;
+  return <></>;
 }
