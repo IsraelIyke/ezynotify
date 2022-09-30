@@ -45,18 +45,17 @@ export default function Home() {
               }}
             >
               {/* title */}
-              <p
+              <h3
                 style={{
-                  width: "10rem",
-
                   width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "1rem",
+                  marginTop: "2rem",
+                  marginRight: "auto",
+                  marginLeft: "3rem",
+                  fontSize: "1.3rem",
                 }}
               >
                 Bible Verse
-              </p>
+              </h3>
               {/* text container */}
               <div
                 style={{
@@ -66,7 +65,7 @@ export default function Home() {
                   width: "100%",
                   display: "flex",
                   justifyContent: "center",
-                  marginTop: "1rem",
+                  marginTop: "0rem",
                 }}
               >
                 {/* text-sub container */}
@@ -101,7 +100,48 @@ export default function Home() {
                 {/* text-sub container ends*/}
               </div>
               {/* text container ends*/}
+              {/* botton starts */}
+              <div
+                style={{
+                  display: "flex",
+                  marginTop: "8rem",
+                  position: "relative",
+                  gap: "1rem",
+                }}
+              >
+                <div
+                  style={{
+                    height: "2rem",
+                    width: "3rem",
+                    padding: "0.3rem",
+                    backgroundColor: "#fffbff",
+                    borderRadius: "0.7rem",
+                    boxShadow: " 5px 5px 10px #dbd8db, -5px -5px 10px #ffffff",
+                  }}
+                >
+                  {/* 
+background: #fffbff;
+box-shadow:  5px 5px 10px #dbd8db,
+             -5px -5px 10px #ffffff; */}
+                  Next
+                </div>
+                <div
+                  style={{
+                    height: "2rem",
+                    width: "10rem",
+                    padding: "0.3rem",
+                    backgroundColor: "#fffbff",
+                    borderRadius: "0.7rem",
+                    boxShadow: " 5px 5px 10px #dbd8db, -5px -5px 10px #ffffff",
+                    textAlign: "center",
+                  }}
+                >
+                  Personal Log
+                </div>
+              </div>
+              {/* botton ends */}
             </div>
+
             {/* main container ends*/}
           </Grid>
           <Grid item xs={12}>
