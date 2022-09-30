@@ -40,20 +40,33 @@ export default function Home() {
                 borderRadius: "3rem 3rem 0 0",
                 marginTop: "-2rem",
                 display: "flex",
-                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
               }}
             >
+              {/* title */}
+              <p
+                style={{
+                  width: "10rem",
+
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "1rem",
+                }}
+              >
+                Bible Verse
+              </p>
               {/* text container */}
               <div
                 style={{
                   height: "10rem",
-                  width: "10rem",
                   borderRadius: "2rem",
                   position: "relative",
                   width: "100%",
                   display: "flex",
                   justifyContent: "center",
-                  marginTop: "4rem",
+                  marginTop: "1rem",
                 }}
               >
                 {/* text-sub container */}
@@ -103,8 +116,8 @@ export default function Home() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                gap: "3rem",
-                fontSize: "2rem",
+                gap: "4rem",
+                fontSize: "1.5rem",
               }}
             >
               <div
@@ -116,7 +129,7 @@ export default function Home() {
                 }}
               >
                 <BiBook />
-                <div style={{ fontSize: "1rem" }}>Log</div>
+                <div style={{ fontSize: "0.8rem" }}>Log</div>
               </div>
               <div
                 style={{
