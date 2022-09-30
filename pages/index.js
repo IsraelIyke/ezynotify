@@ -11,14 +11,15 @@ import { BiBook } from "react-icons/bi";
 
 export default function Home() {
   return (
-    <Box flexGrow={1}>
-      <Grid container>
-        <div style={{ position: "relative", width: "100vw" }}>
+    <div style={{ position: "relative", width: "100vw" }}>
+      <Box flexGrow={1}>
+        <Grid container>
           <Grid item xs={12}>
             <div
               style={{
                 height: "12rem",
-                width: "100%",
+                width: "100vw",
+                position: "relative",
               }}
             >
               <Image
@@ -42,12 +43,12 @@ export default function Home() {
                 display: "flex",
                 alignItems: "center",
                 flexDirection: "column",
+                position: "relative",
               }}
             >
               {/* title */}
               <h3
                 style={{
-                  width: "100%",
                   marginTop: "2rem",
                   marginRight: "auto",
                   marginLeft: "3rem",
@@ -59,10 +60,9 @@ export default function Home() {
               {/* text container */}
               <div
                 style={{
-                  height: "10rem",
-                  borderRadius: "2rem",
+                  height: 230,
                   position: "relative",
-                  width: "100%",
+                  width: "100vw",
                   display: "flex",
                   justifyContent: "center",
                   marginTop: "0rem",
@@ -104,9 +104,8 @@ export default function Home() {
               <div
                 style={{
                   display: "flex",
-                  paddingTop: "8rem",
                   position: "relative",
-                  gap: "1rem",
+                  marginTop: "2rem",
                 }}
               >
                 <div
@@ -130,6 +129,7 @@ export default function Home() {
                     borderRadius: "0.7rem",
                     boxShadow: " 5px 5px 10px #dbd8db, -5px -5px 10px #ffffff",
                     textAlign: "center",
+                    marginLeft: "1rem",
                   }}
                 >
                   Personal Log
@@ -152,7 +152,6 @@ export default function Home() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                gap: "4rem",
                 fontSize: "1.5rem",
               }}
             >
@@ -173,6 +172,7 @@ export default function Home() {
                   justifyContent: "center",
                   alignItems: "center",
                   flexDirection: "column",
+                  marginLeft: "4rem",
                 }}
               >
                 <CgMenuGridO />
@@ -184,6 +184,7 @@ export default function Home() {
                   justifyContent: "center",
                   alignItems: "center",
                   flexDirection: "column",
+                  marginLeft: "4rem",
                 }}
               >
                 <MdAccountCircle />
@@ -191,8 +192,8 @@ export default function Home() {
               </div>
             </div>
           </Grid>
-        </div>
-      </Grid>
-    </Box>
+        </Grid>
+      </Box>
+    </div>
   );
 }
