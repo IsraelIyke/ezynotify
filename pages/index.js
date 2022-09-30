@@ -22,6 +22,44 @@ export default function Home() {
                 position: "relative",
               }}
             >
+              <div
+                style={{
+                  position: "absolute",
+                  display: "flex",
+                  flexDirection: "column",
+                  top: 0,
+                  left: 0,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: "1rem",
+                    marginTop: "0.5rem",
+                    textAlign: "center",
+                    width: "100vw",
+                  }}
+                >
+                  Good morning
+                </div>
+                <div
+                  style={{
+                    fontSize: "4rem",
+                    marginTop: "1.2rem",
+                    marginLeft: "1rem",
+                  }}
+                >
+                  29
+                </div>
+                <div
+                  style={{
+                    // marginTop: "0rem",
+                    marginLeft: "1rem",
+                    fontSize: "1rem",
+                  }}
+                >
+                  September, Thursday
+                </div>
+              </div>
               <Image
                 src={bg}
                 alt="good morning"
@@ -77,13 +115,26 @@ export default function Home() {
                     height={250}
                     objectFit="cover"
                     style={{
-                      zIndex: 0,
                       position: "absolute",
                       top: 0,
                       left: 0,
                       borderRadius: "0.7rem",
                     }}
                   />
+
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      WebkitBackdropFilter: "blur( 4px )",
+                      width: "100%",
+                      height: "100%",
+                      backdropFilter: "blur( 4px )",
+                      borderRadius: "0.7rem",
+                      border: "1px solid gray",
+                    }}
+                  ></div>
                   <p
                     style={{
                       position: "absolute",
@@ -95,7 +146,6 @@ export default function Home() {
                     He that dwelleth in the secret place of the most high shall
                     abide under the shadow the Almighty
                   </p>
-                  <div style={{ position: "absolute", top: 0, left: 0 }}></div>
                 </div>
                 {/* text-sub container ends*/}
               </div>
@@ -143,7 +193,7 @@ export default function Home() {
           <Grid item xs={12}>
             <div
               style={{
-                height: "4.5rem",
+                height: "3.5rem",
                 width: "100vw",
                 backgroundColor: "hsl(9, 85%, 90%)",
                 color: "hsl(9, 85%, 50%)",
@@ -152,7 +202,7 @@ export default function Home() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "1.5rem",
+                fontSize: "1rem",
               }}
             >
               <div
@@ -176,7 +226,7 @@ export default function Home() {
                 }}
               >
                 <CgMenuGridO />
-                <div style={{ fontSize: "1rem" }}>category</div>
+                <div style={{ fontSize: "0.8rem" }}>category</div>
               </div>
               <div
                 style={{
@@ -188,7 +238,7 @@ export default function Home() {
                 }}
               >
                 <MdAccountCircle />
-                <div style={{ fontSize: "1rem" }}>profile</div>
+                <div style={{ fontSize: "0.8rem" }}>profile</div>
               </div>
             </div>
           </Grid>
