@@ -104,7 +104,7 @@ export default function Home() {
               <div
                 style={{
                   display: "flex",
-                  marginTop: "8rem",
+                  paddingTop: "8rem",
                   position: "relative",
                   gap: "1rem",
                 }}
@@ -119,10 +119,6 @@ export default function Home() {
                     boxShadow: " 5px 5px 10px #dbd8db, -5px -5px 10px #ffffff",
                   }}
                 >
-                  {/* 
-background: #fffbff;
-box-shadow:  5px 5px 10px #dbd8db,
-             -5px -5px 10px #ffffff; */}
                   Next
                 </div>
                 <div
