@@ -1,21 +1,13 @@
-import { Box, Grid, Paper } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box, Grid } from "@mui/material";
 import Image from "next/image";
 import bg from "../public/images/bg1.jpg";
 import _app from "./_app";
 import { CgMenuGridO } from "react-icons/cg";
+import { MdAccountCircle } from "react-icons/md";
+import { BiBook } from "react-icons/bi";
 import Link from "next/link";
 
-export default function Home() {
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor:
-      theme.palette.mode === "dark" ? "#1A2027" : "hsl(9, 85%, 99%)",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-    height: "10rem",
-  }));
+export default function Quotes() {
   return (
     <div style={{ position: "relative", width: "100vw" }}>
       <Box flexGrow={1}>
@@ -88,48 +80,98 @@ export default function Home() {
                 alignItems: "center",
                 flexDirection: "column",
                 position: "relative",
-                padding: "1.8rem 1rem 1rem 1rem",
               }}
             >
               {/* title */}
               <h3
                 style={{
-                  marginTop: "0rem",
+                  marginTop: "2rem",
                   marginRight: "auto",
                   marginLeft: "3rem",
                   fontSize: "1.3rem",
                 }}
               >
-                Category
+                Quotes
               </h3>
-              <Grid container spacing={2}>
-                <Grid item xs={6} md={4}>
-                  <Link href="/bible">
-                    <Item>
-                      <h3>Bible Verses</h3>
-                      <p>A daily dose of the scriptures</p>
-                    </Item>
-                  </Link>
-                </Grid>
-                <Grid item xs={6} md={4}>
-                  <Link href="/quotes">
-                    <Item>
-                      <h3>Quotes</h3>
-                      <p>
-                        Quotes and even motivational quotes to cheer your day
-                      </p>
-                    </Item>
-                  </Link>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Link href="/facts">
-                    <Item>
-                      <h3>Facts</h3>
-                      <p>Learn new fun facts everyday</p>
-                    </Item>
-                  </Link>
-                </Grid>
-              </Grid>
+              {/* text container */}
+              <div
+                style={{
+                  height: 230,
+                  position: "relative",
+                  width: "100vw",
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "0rem",
+                }}
+              >
+                {/* text-sub container */}
+                <div style={{ position: "relative", width: "80%" }}>
+                  <Image
+                    src={bg}
+                    alt="good morning"
+                    width={315}
+                    height={250}
+                    objectFit="cover"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      borderRadius: "0.7rem",
+                    }}
+                  />
+
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      WebkitBackdropFilter: "blur( 4px )",
+                      width: "100%",
+                      height: "100%",
+                      backdropFilter: "blur( 4px )",
+                      borderRadius: "0.7rem",
+                      // border: "1px solid gray",
+                    }}
+                  ></div>
+                  <p
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      padding: "1rem",
+                    }}
+                  >
+                    He that dwelleth in the secret place of the most high shall
+                    abide under the shadow the Almighty
+                  </p>
+                </div>
+                {/* text-sub container ends*/}
+              </div>
+              {/* text container ends*/}
+              {/* botton starts */}
+              <div
+                style={{
+                  display: "flex",
+                  position: "relative",
+                  marginTop: "2rem",
+                }}
+              >
+                <div
+                  style={{
+                    height: "2rem",
+                    width: "6rem",
+                    padding: "0.3rem",
+                    backgroundColor: "#fffbff",
+                    borderRadius: "0.7rem",
+                    boxShadow: " 5px 5px 10px #dbd8db, -5px -5px 10px #ffffff",
+                    textAlign: "center",
+                    fontSize: "0.9rem",
+                  }}
+                >
+                  Next
+                </div>
+              </div>
+              {/* botton ends */}
             </div>
 
             {/* main container ends*/}
@@ -146,7 +188,6 @@ export default function Home() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "1rem",
               }}
             >
               <div

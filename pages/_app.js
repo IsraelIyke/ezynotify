@@ -1,7 +1,4 @@
 import "../styles/globals.css";
-import "../styles/footer.css";
-import "../styles/main.css";
-import "../styles/text.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

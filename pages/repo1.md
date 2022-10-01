@@ -1,76 +1,74 @@
 import { Box, Grid } from "@mui/material";
 import Image from "next/image";
 import bg from "../public/images/bg1.jpg";
-import _app from "./_app";
+import Footer from "./footer";
+import Img from "./img";
+import Main from "./Main";
+import \_app from "./\_app";
 import { CgMenuGridO } from "react-icons/cg";
 import { MdAccountCircle } from "react-icons/md";
 import { BiBook } from "react-icons/bi";
 import Link from "next/link";
 
-export default function Facts() {
-  return (
-    <div style={{ position: "relative", width: "100vw" }}>
-      <Box flexGrow={1}>
-        <Grid container>
-          <Grid item xs={12}>
-            <div
-              style={{
+export default function Home() {
+return (
+<div style={{ position: "relative", width: "100vw" }}>
+<Box flexGrow={1}>
+<Grid container>
+<Grid item xs={12}>
+<div
+style={{
                 height: "12rem",
                 width: "100vw",
                 position: "relative",
-              }}
-            >
-              <div
-                style={{
+              }} >
+<div
+style={{
                   position: "absolute",
                   display: "flex",
                   flexDirection: "column",
                   top: 0,
                   left: 0,
-                }}
-              >
-                <div
-                  style={{
+                }} >
+<div
+style={{
                     fontSize: "1rem",
                     marginTop: "0.5rem",
                     textAlign: "center",
                     width: "100vw",
-                  }}
-                >
-                  Good morning
-                </div>
-                <div
-                  style={{
+                  }} >
+Good morning
+</div>
+<div
+style={{
                     fontSize: "4rem",
                     marginTop: "1.2rem",
                     marginLeft: "1rem",
-                  }}
-                >
-                  29
-                </div>
-                <div
-                  style={{
+                  }} >
+29
+</div>
+<div
+style={{
                     // marginTop: "0rem",
                     marginLeft: "1rem",
                     fontSize: "1rem",
-                  }}
-                >
-                  September, Thursday
-                </div>
-              </div>
-              <Image
-                src={bg}
-                alt="good morning"
-                width={600}
-                height={330}
-                style={{ zIndex: -1 }}
-              />
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            {/* main container */}
-            <div
-              style={{
+                  }} >
+September, Thursday
+</div>
+</div>
+<Image
+src={bg}
+alt="good morning"
+width={600}
+height={330}
+style={{ zIndex: -1 }}
+/>
+</div>
+</Grid>
+<Grid item xs={12}>
+{/_ main container _/}
+<div
+style={{
                 height: "30rem",
                 width: "100%",
                 backgroundColor: "hsl(9, 85%, 99%)",
@@ -80,45 +78,42 @@ export default function Facts() {
                 alignItems: "center",
                 flexDirection: "column",
                 position: "relative",
-              }}
-            >
-              {/* title */}
-              <h3
-                style={{
+              }} >
+{/_ title _/}
+<h3
+style={{
                   marginTop: "2rem",
                   marginRight: "auto",
                   marginLeft: "3rem",
                   fontSize: "1.3rem",
-                }}
-              >
-                Fun Facts
-              </h3>
-              {/* text container */}
-              <div
-                style={{
+                }} >
+Bible Verse
+</h3>
+{/_ text container _/}
+<div
+style={{
                   height: 230,
                   position: "relative",
                   width: "100vw",
                   display: "flex",
                   justifyContent: "center",
                   marginTop: "0rem",
-                }}
-              >
-                {/* text-sub container */}
-                <div style={{ position: "relative", width: "80%" }}>
-                  <Image
-                    src={bg}
-                    alt="good morning"
-                    width={315}
-                    height={250}
-                    objectFit="cover"
-                    style={{
+                }} >
+{/_ text-sub container _/}
+<div style={{ position: "relative", width: "80%" }}>
+<Image
+src={bg}
+alt="good morning"
+width={315}
+height={250}
+objectFit="cover"
+style={{
                       position: "absolute",
                       top: 0,
                       left: 0,
                       borderRadius: "0.7rem",
                     }}
-                  />
+/>
 
                   <div
                     style={{
@@ -156,19 +151,42 @@ export default function Facts() {
                   marginTop: "2rem",
                 }}
               >
-                <div
-                  style={{
-                    height: "2rem",
-                    width: "6rem",
-                    padding: "0.3rem",
-                    backgroundColor: "#fffbff",
-                    borderRadius: "0.7rem",
-                    boxShadow: " 5px 5px 10px #dbd8db, -5px -5px 10px #ffffff",
-                    textAlign: "center",
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Next
+                <div>
+                  <p
+                    style={{
+                      height: "2rem",
+                      width: "3rem",
+                      padding: "0.3rem",
+                      backgroundColor: "#fffbff",
+                      borderRadius: "0.7rem",
+                      boxShadow:
+                        " 5px 5px 10px #dbd8db, -5px -5px 10px #ffffff",
+                      textAlign: "center",
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    Next
+                  </p>
+                </div>
+                <div>
+                  <Link href="/logs">
+                    <p
+                      style={{
+                        height: "2rem",
+                        width: "10rem",
+                        padding: "0.3rem",
+                        backgroundColor: "#fffbff",
+                        borderRadius: "0.7rem",
+                        boxShadow:
+                          " 5px 5px 10px #dbd8db, -5px -5px 10px #ffffff",
+                        textAlign: "center",
+                        fontSize: "0.9rem",
+                        marginLeft: "1rem",
+                      }}
+                    >
+                      Personal Log
+                    </p>
+                  </Link>
                 </div>
               </div>
               {/* botton ends */}
@@ -188,6 +206,7 @@ export default function Facts() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                fontSize: "1rem",
               }}
             >
               <div
@@ -196,29 +215,40 @@ export default function Facts() {
                   justifyContent: "center",
                   alignItems: "center",
                   flexDirection: "column",
-                  fontSize: "1.5rem",
-                  marginTop: "0rem",
                 }}
               >
-                <Link href="/">
-                  <CgMenuGridO />
-                </Link>
-                <Link href="/">
-                  <p
-                    style={{
-                      fontSize: "0.8rem",
-                      padding: "0rem",
-                      marginTop: "-0.2rem",
-                    }}
-                  >
-                    category
-                  </p>
-                </Link>
+                <BiBook />
+                <div style={{ fontSize: "0.8rem" }}>Log</div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginLeft: "4rem",
+                }}
+              >
+                <CgMenuGridO />
+                <div style={{ fontSize: "0.8rem" }}>category</div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginLeft: "4rem",
+                }}
+              >
+                <MdAccountCircle />
+                <div style={{ fontSize: "0.8rem" }}>profile</div>
               </div>
             </div>
           </Grid>
         </Grid>
       </Box>
     </div>
-  );
+
+);
 }
