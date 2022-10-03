@@ -9,9 +9,9 @@ import Link from "next/link";
 export default function Home() {
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor:
-      cTime !== "morning" || cTime !== "afternoon"
-        ? "hsl(196, 100%, 99%)"
-        : "hsl(9, 85%, 99%)",
+      cTime === "morning" || cTime === "afternoon"
+        ? "hsl(9, 85%, 99%)"
+        : "hsl(196, 100%, 99%)",
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: "center",
