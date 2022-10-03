@@ -10,7 +10,9 @@ import Link from "next/link";
 export default function Home() {
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor:
-      cTime !== "morning" ? "hsl(196, 100%, 99%)" : "hsl(9, 85%, 99%)",
+      cTime !== "morning" || cTime !== "afternoon"
+        ? "hsl(196, 100%, 99%)"
+        : "hsl(9, 85%, 99%)",
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: "center",
@@ -91,8 +93,10 @@ export default function Home() {
     cTime = "morning";
   } else if (currentTime >= 12 && currentTime < 18) {
     cTime = "afternoon";
-  } else {
+  } else if (currentTime >= 18 && currentTime < 22) {
     cTime = "evening";
+  } else {
+    cTime = "night";
   }
   return (
     <div style={{ position: "relative", width: "100vw" }}>
@@ -101,7 +105,9 @@ export default function Home() {
           <Grid item xs={12} lg={4}>
             <div
               className={
-                cTime === "morning" ? "time-container" : "time-container-dark"
+                cTime === "morning" || cTime === "afternoon"
+                  ? "time-container"
+                  : "time-container-dark"
               }
             >
               <div className="time-sub-container">
@@ -113,7 +119,7 @@ export default function Home() {
               </div>
               <div className="time-image-container">
                 <Image
-                  src={cTime === "morning" ? bg : bg2}
+                  src={cTime === "morning" || cTime === "afternoon" ? bg : bg2}
                   alt="good morning"
                   width={600}
                   layout="fill"
@@ -127,7 +133,9 @@ export default function Home() {
             {/* main container */}
             <div
               className={
-                cTime === "morning" ? "main-container" : "main-container-dark"
+                cTime === "morning" || cTime === "afternoon"
+                  ? "main-container"
+                  : "main-container-dark"
               }
             >
               {/* title */}
