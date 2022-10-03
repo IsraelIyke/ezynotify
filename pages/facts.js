@@ -1,145 +1,150 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 import Image from "next/image";
 import bg from "../public/images/bg1.jpg";
+import bg2 from "../public/images/bg2.jpg";
 import _app from "./_app";
 import { CgMenuGridO } from "react-icons/cg";
-import { MdAccountCircle } from "react-icons/md";
-import { BiBook } from "react-icons/bi";
 import Link from "next/link";
 
 export default function Facts() {
+  const newDate = new Date();
+  const currentDate = newDate.getDate();
+  const currentMonth = newDate.getMonth();
+  let cMonth = "";
+  switch (currentMonth) {
+    case 0:
+      cMonth = "January";
+      break;
+    case 1:
+      cMonth = "February";
+      break;
+    case 2:
+      cMonth = "March";
+      break;
+    case 3:
+      cMonth = "April";
+      break;
+    case 4:
+      cMonth = "May";
+      break;
+    case 5:
+      cMonth = "June";
+      break;
+    case 6:
+      cMonth = "July";
+      break;
+    case 7:
+      cMonth = "August";
+      break;
+    case 8:
+      cMonth = "September";
+      break;
+    case 9:
+      cMonth = "October";
+      break;
+    case 10:
+      cMonth = "November";
+      break;
+    case 11:
+      cMonth = "December";
+      break;
+  }
+  let currentDay = newDate.getDay();
+  let cDay = "";
+  switch (currentDay) {
+    case 0:
+      cDay = "Sunday";
+      break;
+    case 1:
+      cDay = "Monday";
+      break;
+    case 2:
+      cDay = "Tuesday";
+      break;
+    case 3:
+      cDay = "Wednesday";
+      break;
+    case 4:
+      cDay = "Thursday";
+      break;
+    case 5:
+      cDay = "Friday";
+      break;
+    case 6:
+      cDay = "Saturday";
+      break;
+  }
+  const currentTime = newDate.getHours();
+  let cTime = "";
+  if (currentTime < 12) {
+    cTime = "morning";
+  } else if (currentTime >= 12 && currentTime < 18) {
+    cTime = "afternoon";
+  } else {
+    cTime = "evening";
+  }
   return (
     <div style={{ position: "relative", width: "100vw" }}>
       <Box flexGrow={1}>
         <Grid container>
-          <Grid item xs={12}>
+          <Grid item xs={12} lg={4}>
             <div
-              style={{
-                height: "12rem",
-                width: "100vw",
-                position: "relative",
-              }}
+              className={
+                cTime === "morning" ? "time-container" : "time-container-dark"
+              }
             >
-              <div
-                style={{
-                  position: "absolute",
-                  display: "flex",
-                  flexDirection: "column",
-                  top: 0,
-                  left: 0,
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "1rem",
-                    marginTop: "0.5rem",
-                    textAlign: "center",
-                    width: "100vw",
-                  }}
-                >
-                  Good morning
-                </div>
-                <div
-                  style={{
-                    fontSize: "4rem",
-                    marginTop: "1.2rem",
-                    marginLeft: "1rem",
-                  }}
-                >
-                  29
-                </div>
-                <div
-                  style={{
-                    // marginTop: "0rem",
-                    marginLeft: "1rem",
-                    fontSize: "1rem",
-                  }}
-                >
-                  September, Thursday
+              <div className="time-sub-container">
+                <div className="time-greeting">Good {cTime}</div>
+                <div className="time-date">{currentDate}</div>
+                <div className="time-month">
+                  {cMonth}, {cDay}
                 </div>
               </div>
-              <Image
-                src={bg}
-                alt="good morning"
-                width={600}
-                height={330}
-                style={{ zIndex: -1 }}
-              />
+              <div className="time-image-container">
+                <Image
+                  src={cTime === "morning" ? bg : bg2}
+                  alt="good morning"
+                  width={600}
+                  layout="fill"
+                  objectFit="cover"
+                  className="time-image"
+                />
+              </div>
             </div>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} lg={8}>
             {/* main container */}
             <div
-              style={{
-                height: "30rem",
-                width: "100%",
-                backgroundColor: "hsl(9, 85%, 99%)",
-                borderRadius: "3rem 3rem 0 0",
-                marginTop: "-2rem",
-                display: "flex",
-                alignItems: "center",
-                flexDirection: "column",
-                position: "relative",
-              }}
+              className={
+                cTime === "morning"
+                  ? "main-category-container"
+                  : "main-category-container-dark"
+              }
             >
               {/* title */}
-              <h3
-                style={{
-                  marginTop: "2rem",
-                  marginRight: "auto",
-                  marginLeft: "3rem",
-                  fontSize: "1.3rem",
-                }}
-              >
-                Fun Facts
-              </h3>
+              <h3 className="main-category-title">Bible Verse</h3>
               {/* text container */}
-              <div
-                style={{
-                  height: 230,
-                  position: "relative",
-                  width: "100vw",
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "0rem",
-                }}
-              >
+              <div className="main-category-text">
                 {/* text-sub container */}
-                <div style={{ position: "relative", width: "80%" }}>
-                  <Image
-                    src={bg}
-                    alt="good morning"
-                    width={315}
-                    height={250}
-                    objectFit="cover"
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      borderRadius: "0.7rem",
-                    }}
-                  />
+                <div className="main-text-sub-container">
+                  <div className="time-image-contain">
+                    <Image
+                      src={cTime === "morning" ? bg : bg2}
+                      alt="good morning"
+                      width={315}
+                      height={250}
+                      objectFit="cover"
+                      className="main-category-image"
+                    />
+                  </div>
 
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      WebkitBackdropFilter: "blur( 4px )",
-                      width: "100%",
-                      height: "100%",
-                      backdropFilter: "blur( 4px )",
-                      borderRadius: "0.7rem",
-                      // border: "1px solid gray",
-                    }}
-                  ></div>
+                  <div className="main-category-blur"></div>
                   <p
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      padding: "1rem",
-                    }}
+                    className={
+                      cTime === "morning"
+                        ? "main-category-texts"
+                        : "main-category-texts-dark"
+                    }
                   >
                     He that dwelleth in the secret place of the most high shall
                     abide under the shadow the Almighty
@@ -148,25 +153,10 @@ export default function Facts() {
                 {/* text-sub container ends*/}
               </div>
               {/* text container ends*/}
-              {/* botton starts */}
-              <div
-                style={{
-                  display: "flex",
-                  position: "relative",
-                  marginTop: "2rem",
-                }}
-              >
+              {/* button starts */}
+              <div className="main-button">
                 <div
-                  style={{
-                    height: "2rem",
-                    width: "6rem",
-                    padding: "0.3rem",
-                    backgroundColor: "#fffbff",
-                    borderRadius: "0.7rem",
-                    boxShadow: " 5px 5px 10px #dbd8db, -5px -5px 10px #ffffff",
-                    textAlign: "center",
-                    fontSize: "0.9rem",
-                  }}
+                  className={cTime === "morning" ? "main-btn" : "main-btn-dark"}
                 >
                   Next
                 </div>
@@ -178,41 +168,18 @@ export default function Facts() {
           </Grid>
           <Grid item xs={12}>
             <div
-              style={{
-                height: "3.5rem",
-                width: "100vw",
-                backgroundColor: "hsl(9, 85%, 90%)",
-                color: "hsl(9, 85%, 50%)",
-                position: "fixed",
-                bottom: 0,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+              className={
+                cTime === "morning"
+                  ? "main-footer-container"
+                  : "main-footer-container-dark"
+              }
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  flexDirection: "column",
-                  fontSize: "1.5rem",
-                  marginTop: "0rem",
-                }}
-              >
+              <div className="main-footer">
                 <Link href="/">
                   <CgMenuGridO />
                 </Link>
                 <Link href="/">
-                  <p
-                    style={{
-                      fontSize: "0.8rem",
-                      padding: "0rem",
-                      marginTop: "-0.2rem",
-                    }}
-                  >
-                    category
-                  </p>
+                  <p className="main-footer-button">category</p>
                 </Link>
               </div>
             </div>
