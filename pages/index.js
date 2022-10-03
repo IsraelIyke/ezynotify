@@ -4,7 +4,6 @@ import Image from "next/image";
 import bg from "../public/images/bg1.jpg";
 import bg2 from "../public/images/bg2.jpg";
 import _app from "./_app";
-import { CgMenuGridO } from "react-icons/cg";
 import Link from "next/link";
 
 export default function Home() {
