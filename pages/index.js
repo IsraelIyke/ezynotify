@@ -161,7 +161,7 @@ export default function Home() {
                 <Grid item xs={12} md={4}>
                   <Link href="/facts">
                     <Item>
-                      <h3>Facts</h3>
+                      <h3>Fun Facts</h3>
                       <p>Learn new fun facts everyday</p>
                     </Item>
                   </Link>

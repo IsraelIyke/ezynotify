@@ -5,8 +5,27 @@ import bg2 from "../public/images/bg2.jpg";
 import _app from "./_app";
 import { CgMenuGridO } from "react-icons/cg";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Facts() {
+  const [facts, setFacts] = useState();
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API,
+        "X-RapidAPI-Host": "facts-by-api-ninjas.p.rapidapi.com",
+      },
+    };
+
+    fetch("https://facts-by-api-ninjas.p.rapidapi.com/v1/facts", options)
+      .then((response) => response.json())
+      .then((response) => setFacts(response[0].fact))
+      .catch((err) => console.error(err));
+  }, [count]);
+
   const newDate = new Date();
   const currentDate = newDate.getDate();
   const currentMonth = newDate.getMonth();
@@ -83,6 +102,9 @@ export default function Facts() {
   } else {
     cTime = "evening";
   }
+  function handleNext() {
+    setCount((prev) => prev + 1);
+  }
   return (
     <div style={{ position: "relative", width: "100vw" }}>
       <Box flexGrow={1}>
@@ -122,7 +144,7 @@ export default function Facts() {
               }
             >
               {/* title */}
-              <h3 className="main-category-title">Bible Verse</h3>
+              <h3 className="main-category-title">Fun Facts</h3>
               {/* text container */}
               <div className="main-category-text">
                 {/* text-sub container */}
@@ -131,8 +153,9 @@ export default function Facts() {
                     <Image
                       src={cTime === "morning" ? bg : bg2}
                       alt="good morning"
-                      width={315}
-                      height={250}
+                      width={215}
+                      height={550}
+                      layout="fill"
                       objectFit="cover"
                       className="main-category-image"
                     />
@@ -146,8 +169,13 @@ export default function Facts() {
                         : "main-category-texts-dark"
                     }
                   >
-                    He that dwelleth in the secret place of the most high shall
-                    abide under the shadow the Almighty
+                    {/* {facts} */}
+                    “Nothing is original. Steal from anywhere that resonates
+                    with inspiration or fuels your imagination. Devour old is
+                    non-existent. And don’t bother concealing your thievery -
+                    celebrate it if you feel like it. In any case, always
+                    remember what Jean-Luc Godard said: “It’s not where you take
+                    things from - it’s where you take them to."
                   </p>
                 </div>
                 {/* text-sub container ends*/}
@@ -156,6 +184,7 @@ export default function Facts() {
               {/* button starts */}
               <div className="main-button">
                 <div
+                  onClick={handleNext}
                   className={cTime === "morning" ? "main-btn" : "main-btn-dark"}
                 >
                   Next

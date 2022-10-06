@@ -5,8 +5,32 @@ import bg2 from "../public/images/bg2.jpg";
 import _app from "./_app";
 import { CgMenuGridO } from "react-icons/cg";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Bible() {
+  const [verses, setVerses] = useState({
+    book_id: "",
+    chapter: "",
+    text: "David therefore departed thence, and escaped to the cave Adullam: and when his brethren and all his father's house heard it, they went down thither to him.",
+    translation_id: "KJV",
+    verse: "",
+  });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API,
+        "X-RapidAPI-Host": "bible-search.p.rapidapi.com",
+      },
+    };
+
+    fetch("https://bible-search.p.rapidapi.com/random-verse", options)
+      .then((response) => response.json())
+      .then((response) => setVerses(response[0]))
+      .catch((err) => console.error(err));
+  }, [count]);
   const newDate = new Date();
   const currentDate = newDate.getDate();
   const currentMonth = newDate.getMonth();
@@ -83,6 +107,10 @@ export default function Bible() {
   } else {
     cTime = "evening";
   }
+
+  function handleNext() {
+    setCount((prev) => prev + 1);
+  }
   return (
     <div style={{ position: "relative", width: "100vw" }}>
       <Box flexGrow={1}>
@@ -147,8 +175,11 @@ export default function Bible() {
                         : "main-category-texts-dark"
                     }
                   >
-                    He that dwelleth in the secret place of the most high shall
-                    abide under the shadow the Almighty
+                    <i>{verses.text}</i> <br />
+                    <strong>
+                      {verses.book_id}
+                      {verses.chapter}:{verses.verse} ({verses.translation_id})
+                    </strong>
                   </p>
                 </div>
                 {/* text-sub container ends*/}
@@ -157,6 +188,7 @@ export default function Bible() {
               {/* button starts */}
               <div className="main-button">
                 <div
+                  onClick={handleNext}
                   className={cTime === "morning" ? "main-btn" : "main-btn-dark"}
                 >
                   Next
