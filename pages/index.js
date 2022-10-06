@@ -17,6 +17,7 @@ export default function Home() {
     textAlign: "center",
     color: theme.palette.text.secondary,
     height: "10rem",
+    cursor: "pointer",
   }));
 
   const newDate = new Date();

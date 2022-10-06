@@ -5,7 +5,13 @@ import bg2 from "../public/images/bg2.jpg";
 import _app from "./_app";
 import { CgMenuGridO } from "react-icons/cg";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, forwardRef } from "react";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+
+const Alert = forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 export default function Quotes() {
   const [quotes, setQuotes] = useState({
@@ -13,6 +19,18 @@ export default function Quotes() {
     author: "",
   });
   const [count, setCount] = useState(0);
+  const [error, setError] = useState(false);
+
+  const handle = () => {
+    setError(true);
+  };
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setError(false);
+  };
+
   useEffect(() => {
     const options = {
       method: "GET",
@@ -25,7 +43,7 @@ export default function Quotes() {
     fetch("https://random-quote-api1.p.rapidapi.com/randomQuote", options)
       .then((response) => response.json())
       .then((response) => setQuotes(response))
-      .catch((err) => console.error(err));
+      .catch((err) => handle());
   }, [count]);
   const newDate = new Date();
   const currentDate = newDate.getDate();
@@ -109,12 +127,19 @@ export default function Quotes() {
 
   return (
     <div style={{ position: "relative", width: "100vw" }}>
+      <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
+          Please check internet connection
+        </Alert>
+      </Snackbar>
       <Box flexGrow={1}>
         <Grid container>
           <Grid item xs={12} lg={4}>
             <div
               className={
-                cTime === "morning" ? "time-container" : "time-container-dark"
+                cTime === "morning" || cTime === "afternoon"
+                  ? "time-container"
+                  : "time-container-dark"
               }
             >
               <div className="time-sub-container">
@@ -126,7 +151,7 @@ export default function Quotes() {
               </div>
               <div className="time-image-container">
                 <Image
-                  src={cTime === "morning" ? bg : bg2}
+                  src={cTime === "morning" || cTime === "afternoon" ? bg : bg2}
                   alt="good morning"
                   width={600}
                   layout="fill"
@@ -140,9 +165,9 @@ export default function Quotes() {
             {/* main container */}
             <div
               className={
-                cTime === "morning"
-                  ? "main-category-container"
-                  : "main-category-container-dark"
+                cTime === "morning" || cTime === "afternoon"
+                  ? "main-container"
+                  : "main-container-dark"
               }
             >
               {/* title */}
@@ -153,7 +178,9 @@ export default function Quotes() {
                 <div className="main-text-sub-container">
                   <div className="time-image-contain">
                     <Image
-                      src={cTime === "morning" ? bg : bg2}
+                      src={
+                        cTime === "morning" || cTime === "afternoon" ? bg : bg2
+                      }
                       alt="good morning"
                       width={215}
                       height={550}
@@ -166,7 +193,7 @@ export default function Quotes() {
                   <div className="main-category-blur"></div>
                   <p
                     className={
-                      cTime === "morning"
+                      cTime === "morning" || cTime === "afternoon"
                         ? "main-category-texts"
                         : "main-category-texts-dark"
                     }
@@ -183,7 +210,11 @@ export default function Quotes() {
               <div className="main-button">
                 <div
                   onClick={handleNext}
-                  className={cTime === "morning" ? "main-btn" : "main-btn-dark"}
+                  className={
+                    cTime === "morning" || cTime === "afternoon"
+                      ? "main-btn"
+                      : "main-btn-dark"
+                  }
                 >
                   Next
                 </div>
@@ -196,7 +227,7 @@ export default function Quotes() {
           <Grid item xs={12}>
             <div
               className={
-                cTime === "morning"
+                cTime === "morning" || cTime === "afternoon"
                   ? "main-footer-container"
                   : "main-footer-container-dark"
               }
