@@ -169,13 +169,7 @@ export default function Facts() {
                         : "main-category-texts-dark"
                     }
                   >
-                    {/* {facts} */}
-                    “Nothing is original. Steal from anywhere that resonates
-                    with inspiration or fuels your imagination. Devour old is
-                    non-existent. And don’t bother concealing your thievery -
-                    celebrate it if you feel like it. In any case, always
-                    remember what Jean-Luc Godard said: “It’s not where you take
-                    things from - it’s where you take them to."
+                    {facts}
                   </p>
                 </div>
                 {/* text-sub container ends*/}
