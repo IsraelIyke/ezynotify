@@ -1,5 +1,5 @@
 import { Box, Grid, Paper } from "@mui/material";
-// import Image from "next/image";
+import Image from "next/image";
 import bg from "../public/images/bg1.jpg";
 import bg2 from "../public/images/bg2.jpg";
 import _app from "./_app";
@@ -147,7 +147,7 @@ export default function Facts() {
                 </div>
               </div>
               <div className="time-image-container">
-                <img
+                <Image
                   src={cTime === "morning" || cTime === "afternoon" ? bg : bg2}
                   alt="good morning"
                   width={600}
@@ -174,7 +174,7 @@ export default function Facts() {
                 {/* text-sub container */}
                 <div className="main-text-sub-container">
                   <div className="time-image-contain">
-                    <img
+                    <Image
                       src={
                         cTime === "morning" || cTime === "afternoon" ? bg : bg2
                       }

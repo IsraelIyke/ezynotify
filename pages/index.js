@@ -1,6 +1,6 @@
 import { Box, Grid, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
-// import Image from "next/image";
+import Image from "next/image";
 import bg from "../public/images/bg1.jpg";
 import bg2 from "../public/images/bg2.jpg";
 import _app from "./_app";
@@ -118,26 +118,14 @@ export default function Home() {
                 </div>
               </div>
               <div className="time-image-container">
-                <img
-                  src={
-                    cTime === "morning" || cTime === "afternoon"
-                      ? "../images/bg1.jpg"
-                      : "../images/bg2.jpg"
-                  }
+                <Image
+                  src={cTime === "morning" || cTime === "afternoon" ? bg : bg2}
                   alt="good morning"
-                  // width={500}
-                  layout="fill"
-                  objectFit="cover"
-                  className="time-image"
-                />
-                {/* <img
-                  src="../images/bg1.jpg"
                   width={600}
                   layout="fill"
                   objectFit="cover"
                   className="time-image"
-                /> */}
-                {/* <img src={bg} /> */}
+                />
               </div>
             </div>
           </Grid>

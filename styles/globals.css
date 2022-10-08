@@ -288,9 +288,8 @@ a {
   }
   .time-image-container {
     width: 100vw;
-    height: 99vh;
+    height: 100vh;
     position: relative;
-    z-index: -1;
   }
   .time-image-contain {
     width: 100%;
