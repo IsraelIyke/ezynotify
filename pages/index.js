@@ -119,13 +119,25 @@ export default function Home() {
               </div>
               <div className="time-image-container">
                 <img
-                  src={cTime === "morning" || cTime === "afternoon" ? bg : bg2}
+                  src={
+                    cTime === "morning" || cTime === "afternoon"
+                      ? "../images/bg1.jpg"
+                      : "../images/bg2.jpg"
+                  }
                   alt="good morning"
-                  width={600}
+                  // width={500}
                   layout="fill"
                   objectFit="cover"
                   className="time-image"
                 />
+                {/* <img
+                  src="../images/bg1.jpg"
+                  width={600}
+                  layout="fill"
+                  objectFit="cover"
+                  className="time-image"
+                /> */}
+                {/* <img src={bg} /> */}
               </div>
             </div>
           </Grid>
