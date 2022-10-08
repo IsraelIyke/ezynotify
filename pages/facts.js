@@ -146,6 +146,7 @@ export default function Facts() {
                   {cMonth}, {cDay}
                 </div>
               </div>
+
               <div className="time-image-container">
                 <Image
                   src={cTime === "morning" || cTime === "afternoon" ? bg : bg2}
