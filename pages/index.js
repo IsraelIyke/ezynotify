@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 // import Nav from "./nav";
 // import Footer from "./footer";
+import { createContext } from "react";
+
 import { FaTelegramPlane } from "react-icons/fa";
 import { RiHandCoinFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
