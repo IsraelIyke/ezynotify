@@ -1,8 +1,8 @@
 import { Box, Grid, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 // import Image from "next/image";
-import bg from "../public/images/bg1.jpg";
-import bg2 from "../public/images/bg2.jpg";
+// import bg from "../public/images/bg1.jpg";
+// import bg2 from "../public/images/bg2.jpg";
 import _app from "./_app";
 import Link from "next/link";
 
@@ -119,7 +119,11 @@ export default function Home() {
               </div>
               <div className="time-image-container">
                 <img
-                  src={cTime === "morning" || cTime === "afternoon" ? bg : bg2}
+                  src={
+                    cTime === "morning" || cTime === "afternoon"
+                      ? "../public/images/bg1.jpg"
+                      : "../public/images/bg1.jpg"
+                  }
                   alt="good morning"
                   width={600}
                   // layout="fill"
