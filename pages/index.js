@@ -89,7 +89,7 @@ export default function Home() {
               transition={{ type: "spring", duration: 0.1 }}
             ></motion.div>
           </div>
-          <Link href="/">
+          <Link href="/sign-up">
             <a className="back-btn">Sign Me Up</a>
           </Link>
         </motion.div>
