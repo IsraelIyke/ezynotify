@@ -49,6 +49,7 @@ export default function Home() {
           <div className="card" style={{ color: "white" }}>
             <div className="card__content">
               <div className="card__front">
+                <FaTelegramPlane className="card__title" />
                 <h3 className="card__title">Notification Message</h3>
 
                 <p className="card__subtitle">
@@ -66,8 +67,6 @@ export default function Home() {
               </div>
 
               <div className="card__back">
-                <FaTelegramPlane className="card__title" />
-
                 <RiHandCoinFill className="card__title" />
 
                 <h3 className="card__title">
