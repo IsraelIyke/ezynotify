@@ -356,7 +356,7 @@ a {
   .card__content {
     height: 25rem;
     width: 20rem;
-    margin-top: 1rem;
+    margin-top: 0rem;
   }
   .card__title {
     font-size: 2rem;
