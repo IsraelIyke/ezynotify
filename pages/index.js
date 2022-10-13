@@ -121,8 +121,8 @@ export default function Home() {
                 <img
                   src={
                     cTime === "morning" || cTime === "afternoon"
-                      ? "../public/images/bg1.jpg"
-                      : "../public/images/bg1.jpg"
+                      ? "../images/bg1.jpg"
+                      : "./images/bg2.jpg"
                   }
                   alt="good morning"
                   width={600}
