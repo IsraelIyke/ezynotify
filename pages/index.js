@@ -1,181 +1,101 @@
-import { Box, Grid, Paper } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import _app from "./_app";
+import { motion } from "framer-motion";
 import Link from "next/link";
+// import Nav from "./nav";
+// import Footer from "./footer";
+import { FaTelegramPlane } from "react-icons/fa";
+import { RiHandCoinFill } from "react-icons/ri";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor:
-      cTime === "morning" || cTime === "afternoon"
-        ? "hsl(9, 85%, 99%)"
-        : "hsl(196, 100%, 99%)",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-    height: "10rem",
-    cursor: "pointer",
-  }));
+  const [move, setMove] = useState(false);
+  function handleOne() {
+    setMove(!move);
+  }
+  useEffect(() => {
+    setTimeout(handleOne(), 1000);
+  }, []);
 
-  const newDate = new Date();
-  const currentDate = newDate.getDate();
-  const currentMonth = newDate.getMonth();
-  let cMonth = "";
-  switch (currentMonth) {
-    case 0:
-      cMonth = "January";
-      break;
-    case 1:
-      cMonth = "February";
-      break;
-    case 2:
-      cMonth = "March";
-      break;
-    case 3:
-      cMonth = "April";
-      break;
-    case 4:
-      cMonth = "May";
-      break;
-    case 5:
-      cMonth = "June";
-      break;
-    case 6:
-      cMonth = "July";
-      break;
-    case 7:
-      cMonth = "August";
-      break;
-    case 8:
-      cMonth = "September";
-      break;
-    case 9:
-      cMonth = "October";
-      break;
-    case 10:
-      cMonth = "November";
-      break;
-    case 11:
-      cMonth = "December";
-      break;
+  useEffect(() => {
+    setTimeout(handleTwo(), 1000);
+  }, [move]);
+
+  function handleTwo() {
+    const card = document.querySelector(".card__content");
+    card.classList.toggle("is-flipped");
   }
-  let currentDay = newDate.getDay();
-  let cDay = "";
-  switch (currentDay) {
-    case 0:
-      cDay = "Sunday";
-      break;
-    case 1:
-      cDay = "Monday";
-      break;
-    case 2:
-      cDay = "Tuesday";
-      break;
-    case 3:
-      cDay = "Wednesday";
-      break;
-    case 4:
-      cDay = "Thursday";
-      break;
-    case 5:
-      cDay = "Friday";
-      break;
-    case 6:
-      cDay = "Saturday";
-      break;
-  }
-  const currentTime = newDate.getHours();
-  let cTime = "";
-  if (currentTime < 12) {
-    cTime = "morning";
-  } else if (currentTime >= 12 && currentTime < 18) {
-    cTime = "afternoon";
-  } else if (currentTime >= 18 && currentTime < 22) {
-    cTime = "evening";
-  } else {
-    cTime = "night";
+  function handleClick() {
+    handleOne();
+    // handleTwo();
   }
   return (
-    <div style={{ position: "relative", width: "100vw" }}>
-      <Box flexGrow={1}>
-        <Grid container>
-          <Grid item xs={12} lg={4}>
-            <div
-              className={
-                cTime === "morning" || cTime === "afternoon"
-                  ? "time-container"
-                  : "time-container-dark"
-              }
-            >
-              <div className="time-sub-container">
-                <div className="time-greeting">Good {cTime}</div>
-                <div className="time-date">{currentDate}</div>
-                <div className="time-month">
-                  {cMonth}, {cDay}
-                </div>
-              </div>
-              <div className="time-image-container">
-                <img
-                  src={
-                    cTime === "morning" || cTime === "afternoon"
-                      ? "./images/bg2.jpg"
-                      : "./images/bg2.jpg"
-                  }
-                  alt="good morning"
-                  width={600}
-                  height={400}
-                  // layout="fill"
-                  // objectFit="cover"
-                  className="time-image"
-                />
-              </div>
-            </div>
-          </Grid>
-          <Grid item xs={12} lg={8}>
-            {/* main container */}
-            <div
-              className={
-                cTime === "morning" || cTime === "afternoon"
-                  ? "main-container"
-                  : "main-container-dark"
-              }
-            >
-              {/* title */}
-              <h3 className="main-title">Category</h3>
-              <Grid container spacing={2}>
-                <Grid item xs={6} md={4}>
-                  <Link href="/bible">
-                    <Item>
-                      <h3>Bible Verses</h3>
-                      <p>A daily dose of the scriptures</p>
-                    </Item>
-                  </Link>
-                </Grid>
-                <Grid item xs={6} md={4}>
-                  <Link href="/quotes">
-                    <Item>
-                      <h3>Quotes</h3>
-                      <p>
-                        Quotes and even motivational quotes to cheer your day
-                      </p>
-                    </Item>
-                  </Link>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Link href="/facts">
-                    <Item>
-                      <h3>Fun Facts</h3>
-                      <p>Learn new fun facts everyday</p>
-                    </Item>
-                  </Link>
-                </Grid>
-              </Grid>
-            </div>
+    <>
+      <div className="explore-page-hero">
+        {/* <img
+          src="./images/bg1c2.jpg"
+          alt="bg"
+          className="bg"
+          // style={{ height: "20rem", width: "20rem" }}
+        /> */}
+        {/* <Nav /> */}
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            duration: 0.75,
+          }}
+          className="content"
+          style={{ textAlign: "center" }}
+        >
+          <div className="card" style={{ color: "white" }}>
+            <div className="card__content">
+              <div className="card__front">
+                <RiHandCoinFill className="card__title" />
 
-            {/* main container ends*/}
-          </Grid>
-        </Grid>
-      </Box>
-    </div>
+                <h3 className="card__title">
+                  Reduce Data Consumption Cost by 60% and Save Time
+                </h3>
+                <p className="card__subtitle">
+                  spend less time and data refreshing a website for an
+                  anticipated post
+                </p>
+              </div>
+
+              <div className="card__back">
+                <FaTelegramPlane className="card__title" />
+                <h3 className="card__title">Notification Message</h3>
+
+                <p className="card__subtitle">
+                  Receive alert/notification of posts including blog posts,
+                  movies upload etc from your favorite website for{" "}
+                  <span
+                    style={{
+                      fontWeight: "bolder",
+                    }}
+                    className="underline"
+                  >
+                    Free
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero_btn">
+            <div className="hero-back-toggle"></div>
+            <motion.div
+              onClick={handleClick}
+              className="hero-back-btn"
+              animate={{ x: move ? 10 : 38 }}
+              transition={{ type: "spring", duration: 0.1 }}
+            ></motion.div>
+          </div>
+          <Link href="/explore">
+            <a className="back-btn">Sign Me Up</a>
+          </Link>
+        </motion.div>
+        {/* <Footer /> */}
+      </div>
+    </>
   );
 }
