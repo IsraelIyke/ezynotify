@@ -1,8 +1,5 @@
 import { Box, Grid, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
-// import Image from "next/image";
-// import bg from "../public/images/bg1.jpg";
-// import bg2 from "../public/images/bg2.jpg";
 import _app from "./_app";
 import Link from "next/link";
 
@@ -121,11 +118,12 @@ export default function Home() {
                 <img
                   src={
                     cTime === "morning" || cTime === "afternoon"
-                      ? "../images/bg1.jpg"
+                      ? "./images/bg2.jpg"
                       : "./images/bg2.jpg"
                   }
                   alt="good morning"
                   width={600}
+                  height={400}
                   // layout="fill"
                   // objectFit="cover"
                   className="time-image"
