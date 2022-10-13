@@ -1,9 +1,7 @@
-// import { motion } from "framer-motion";
 const { motion } = require("framer-motion");
 import Link from "next/link";
-// import Nav from "./nav";
-// import Footer from "./footer";
-
+import Nav from "./nav";
+import Footer from "./footer";
 import { FaTelegramPlane } from "react-icons/fa";
 import { RiHandCoinFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
@@ -38,7 +36,7 @@ export default function Home() {
           className="bg"
           // style={{ height: "20rem", width: "20rem" }}
         /> */}
-        {/* <Nav /> */}
+        <Nav />
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -96,7 +94,7 @@ export default function Home() {
             <a className="back-btn">Sign Me Up</a>
           </Link>
         </motion.div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );

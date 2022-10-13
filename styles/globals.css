@@ -175,6 +175,7 @@ a {
   height: 1rem;
   width: 100%;
   color: white;
+  box-shadow: 0 -0.3px 0 gray;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 }
