@@ -29,22 +29,22 @@ export default function Nav() {
 
         <ul className="nav-content">
           <li>
-            <Link href="/explore">
+            <Link href="/">
               <a className="faq-btn">Faq</a>
             </Link>
           </li>
           <li>
-            <Link href="/explore">
+            <Link href="/">
               <a className="pricing-btn">Pricing</a>
             </Link>
           </li>
           <li>
-            <Link href="/explore">
+            <Link href="/">
               <a className="login-btn">Login</a>
             </Link>
           </li>
           <li>
-            <Link href="/explore">
+            <Link href="/">
               <a className="register-btn">Sign up</a>
             </Link>
           </li>
@@ -64,25 +64,25 @@ export default function Nav() {
               className="mobile-nav"
             >
               <li>
-                <Link href="/explore">
+                <Link href="/">
                   <a className="faq-btn">Faq</a>
                 </Link>
               </li>
               <hr />
               <li>
-                <Link href="/explore">
+                <Link href="/">
                   <a className="pricing-btn">Pricing</a>
                 </Link>
               </li>
               <hr />
               <li>
-                <Link href="/explore">
+                <Link href="/">
                   <a className="login-btn">Login</a>
                 </Link>
               </li>
 
               <li>
-                <Link href="/explore">
+                <Link href="/">
                   <a className="register-btn">Sign up</a>
                 </Link>
               </li>
