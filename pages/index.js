@@ -25,7 +25,6 @@ export default function Home() {
   }
   function handleClick() {
     handleOne();
-    // handleTwo();
   }
   return (
     <>
@@ -50,19 +49,6 @@ export default function Home() {
           <div className="card" style={{ color: "white" }}>
             <div className="card__content">
               <div className="card__front">
-                <RiHandCoinFill className="card__title" />
-
-                <h3 className="card__title">
-                  Reduce Data Consumption Cost by 60% and Save Time
-                </h3>
-                <p className="card__subtitle">
-                  spend less time and data refreshing a website for an
-                  anticipated post
-                </p>
-              </div>
-
-              <div className="card__back">
-                <FaTelegramPlane className="card__title" />
                 <h3 className="card__title">Notification Message</h3>
 
                 <p className="card__subtitle">
@@ -76,6 +62,20 @@ export default function Home() {
                   >
                     Free
                   </span>
+                </p>
+              </div>
+
+              <div className="card__back">
+                <FaTelegramPlane className="card__title" />
+
+                <RiHandCoinFill className="card__title" />
+
+                <h3 className="card__title">
+                  Reduce Data Consumption Cost by 60% and Save Time
+                </h3>
+                <p className="card__subtitle">
+                  spend less time and data refreshing a website for an
+                  anticipated post
                 </p>
               </div>
             </div>
