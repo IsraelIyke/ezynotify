@@ -1,5 +1,5 @@
 import { Box, Grid, Paper } from "@mui/material";
-import Image from "next/image";
+// import Image from "next/image";
 import bg from "../public/images/bg1.jpg";
 import bg2 from "../public/images/bg2.jpg";
 import _app from "./_app";
@@ -150,14 +150,14 @@ export default function Quotes() {
                 </div>
               </div>
               <div className="time-image-container">
-                <Image
+                {/* <Image
                   src={cTime === "morning" || cTime === "afternoon" ? bg : bg2}
                   alt="good morning"
                   width={600}
                   layout="fill"
                   objectFit="cover"
                   className="time-image"
-                />
+                /> */}
               </div>
             </div>
           </Grid>
@@ -177,7 +177,7 @@ export default function Quotes() {
                 {/* text-sub container */}
                 <div className="main-text-sub-container">
                   <div className="time-image-contain">
-                    <Image
+                    {/* <Image
                       src={
                         cTime === "morning" || cTime === "afternoon" ? bg : bg2
                       }
@@ -187,7 +187,7 @@ export default function Quotes() {
                       layout="fill"
                       objectFit="cover"
                       className="main-category-image"
-                    />
+                    /> */}
                   </div>
 
                   <div className="main-category-blur"></div>
