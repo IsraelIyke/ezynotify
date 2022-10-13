@@ -12,11 +12,11 @@ export default function Home() {
     setMove(!move);
   }
   useEffect(() => {
-    setTimeout(handleOne(), 10000);
+    handleOne();
   }, []);
 
   useEffect(() => {
-    setTimeout(handleTwo(), 10000);
+    handleTwo();
   }, [move]);
 
   function handleTwo() {
