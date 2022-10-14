@@ -5,7 +5,7 @@ import Nav from "./nav";
 // import { FaUserAlt } from "react-icons/fa";
 import { HiLockClosed, HiUser } from "react-icons/hi";
 import { useState } from "react";
-import { supabase } from "./client";
+import { supabase } from "./api/client";
 import { Grid, Box } from "@mui/material";
 import Textfield from "./Textfield/textfield";
 import * as React from "react";
