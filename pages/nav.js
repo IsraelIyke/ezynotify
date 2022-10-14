@@ -30,6 +30,11 @@ export default function Nav() {
         <ul className="nav-content">
           <li>
             <Link href="/">
+              <a className="home-btn">Home</a>
+            </Link>
+          </li>{" "}
+          <li>
+            <Link href="/">
               <a className="faq-btn">Faq</a>
             </Link>
           </li>
@@ -63,6 +68,12 @@ export default function Nav() {
               }}
               className="mobile-nav"
             >
+              <li>
+                <Link href="/">
+                  <a className="home-btn">Home</a>
+                </Link>
+              </li>
+              <hr />
               <li>
                 <Link href="/">
                   <a className="faq-btn">Faq</a>

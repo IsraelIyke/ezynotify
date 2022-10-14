@@ -99,8 +99,9 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+  /* z-index: ; */
   width: 100vw;
-  height: 50vh;
+  height: 75vh;
   background-color: hsl(216, 100%, 4%);
   margin-top: 4rem;
   color: white;
@@ -177,7 +178,7 @@ a {
   margin-top: -0.1rem;
   padding: 18px;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   display: flex;
   bottom: 0;
   background-color: #000b1c;
@@ -213,6 +214,7 @@ a {
   font-size: 18px;
   font-family: var(--title-font);
   cursor: pointer;
+  /* z-index: 1; */
 }
 .hero_btn {
   position: relative;
@@ -239,6 +241,7 @@ a {
   padding: 4px 30px;
   border-radius: 3rem;
   position: absolute;
+  /* z-index: 1; */
   background-color: white;
   box-shadow: inset 8.06px 6.25px 14.31px -1.79px rgba(0, 0, 0, 0.15),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
@@ -390,6 +393,7 @@ a {
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+  z-index: -1;
 }
 
 .custom-shape-divider-bottom svg {
@@ -411,6 +415,7 @@ a {
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+  /* z-index: -1; */
 }
 
 .custom-shape-divider-bottom-1665740462 svg {
