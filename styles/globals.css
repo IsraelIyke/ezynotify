@@ -139,8 +139,8 @@ a {
 }
 .nav-content .register-btn {
   position: relative;
-  background-color: rgb(41, 41, 41);
-  box-shadow: inset 8.06px 6.25px 14.31px -1.79px rgba(255, 255, 255, 0.534),
+  background-color: hsl(217, 97%, 15%);
+  box-shadow: inset 8.06px 6.25px 14.31px -1.79px hsla(216, 17%, 50%, 0.473),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
     14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
   padding: 0.5rem 0.9rem;
@@ -167,8 +167,8 @@ a {
   text-align: center;
 }
 .nav-content-mobile .register-btn {
-  background-color: rgb(41, 41, 41);
-  box-shadow: inset 8.06px 6.25px 14.31px -1.79px rgba(255, 255, 255, 0.534),
+  background-color: hsl(217, 97%, 15%);
+  box-shadow: inset 8.06px 6.25px 14.31px -1.79px hsla(216, 17%, 50%, 0.473),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
     14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
   padding: 0.7rem 28vw;
@@ -208,8 +208,8 @@ a {
   padding: 0.8rem 18px;
   border-radius: 2rem;
   position: relative;
-  background-color: rgb(41, 41, 41);
-  box-shadow: inset 8.06px 6.25px 14.31px -1.79px rgba(255, 255, 255, 0.534),
+  background-color: hsl(217, 97%, 15%);
+  box-shadow: inset 8.06px 6.25px 14.31px -1.79px hsla(216, 17%, 50%, 0.473),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
     14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
   color: white;
@@ -505,7 +505,7 @@ a {
   margin: 4rem;
   width: 40vw;
   margin-top: -2rem;
-  color: #000b1c;
+  color: hsl(216, 100%, 8%);
   height: 30rem;
   border-radius: 3rem;
   padding: 3rem;
@@ -523,7 +523,7 @@ a {
 }
 .nav-bg {
   height: 4rem;
-  background-color: #000b1c;
+  background-color: hsl(216, 100%, 8%);
 }
 .form-container {
   display: flex;
@@ -558,10 +558,10 @@ a {
   align-items: center;
   border-radius: 2rem;
   position: relative;
-  background-color: rgb(41, 41, 41);
-  box-shadow: inset 8.06px 6.25px 14.31px -1.79px rgba(255, 255, 255, 0.534),
+  background-color: hsl(217, 97%, 15%);
+  box-shadow: inset 8.06px 6.25px 14.31px -1.79px hsla(216, 17%, 70%, 0.473),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
-    14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
+    14.17px 8.76px 10.73px -5.37px rgba(117, 117, 117, 0.6);
   color: white;
   font-size: 18px;
   font-family: var(--title-font);
@@ -579,7 +579,7 @@ a {
     6.53px 5.28px 2.95px -1.48px rgba(0, 0, 0, 0.6);
   border-radius: 3.5rem;
   height: 2.5rem;
-  color: #000b1c;
+  color: hsl(217, 97%, 15%);
   /* padding: 0 2rem; */
   width: 2.5rem;
   margin-right: 1rem;
@@ -587,6 +587,9 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+}
+.link-span {
+  color: hsl(217, 97%, 15%);
 }
 .label {
   margin-bottom: -1rem;
