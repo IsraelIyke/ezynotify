@@ -15,9 +15,8 @@ export default function Register() {
             delay: 0.2,
             duration: 0.75,
           }}
-          className="header-content"
+          className="sign-up-container"
         >
-          <h1 className="title-text">Explore National Parks</h1>
           <p className="sub-text">
             Explore Nation Parks is the countries leader for nation park tours.
             Make your vacation great with one of our amazing tour guides!

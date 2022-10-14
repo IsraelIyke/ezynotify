@@ -443,6 +443,35 @@ a {
   }
 }
 
+.custom-shape-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  /* z-index: -1; */
+}
+
+.custom-shape-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider .shape-fill {
+  fill: #000b1c;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider svg {
+    width: calc(100% + 1.3px);
+    height: 164px;
+  }
+}
 @media screen and (max-width: 767px) {
   .card__content {
     height: 25rem;
@@ -465,4 +494,18 @@ a {
   .nav {
     box-shadow: 0px 0px 5px gray;
   }
+}
+/* Sign UP CSS */
+.sign-up-container {
+  background-color: white;
+  margin: 4rem;
+  width: 40rem;
+  color: black;
+  height: 20rem;
+  border-radius: 3rem;
+  padding: 3rem;
+  /* background-color: gray; */
+  box-shadow: inset 8.06px 6.25px 14.31px -1.79px rgba(255, 255, 255, 0.534),
+    inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
+    14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
 }

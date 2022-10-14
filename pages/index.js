@@ -90,7 +90,7 @@ export default function Home() {
             ></motion.div>
           </div>
           <Link href="/sign-up">
-            <a className="back-btn">Get started, it's free</a>
+            <a className="back-btn">Get started, it&lsquo;s free</a>
           </Link>
           <div class="custom-shape-divider-bottom custom-shape">
             <svg
