@@ -12,6 +12,12 @@ export default function Footer() {
         }}
         className="footer"
       >
+        {/* <img
+            src="./images/bg1c2.jpg"
+            alt="bg"
+            className="bg"
+            // style={{ height: "20rem", width: "20rem" }}
+          /> */}
         <ul className="footer-content">
           <li className="footer-text">
             Copyright © 2022 ezy, all right reserved

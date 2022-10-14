@@ -139,7 +139,7 @@ a {
 }
 .nav-content .register-btn {
   position: relative;
-  background-color: gray;
+  background-color: rgb(41, 41, 41);
   box-shadow: inset 8.06px 6.25px 14.31px -1.79px rgba(255, 255, 255, 0.534),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
     14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
@@ -149,6 +149,9 @@ a {
 .nav-content li {
   margin-right: 2rem;
   font-size: 0.8rem;
+}
+.nav-content .login-btn {
+  margin-left: 26vw;
 }
 .nav-content-mobile {
   display: none;
@@ -164,7 +167,7 @@ a {
   text-align: center;
 }
 .nav-content-mobile .register-btn {
-  background-color: gray;
+  background-color: rgb(41, 41, 41);
   box-shadow: inset 8.06px 6.25px 14.31px -1.79px rgba(255, 255, 255, 0.534),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
     14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
@@ -202,10 +205,10 @@ a {
 .back-btn {
   display: inline-block;
   margin-top: 2rem;
-  padding: 0.4rem 18px;
+  padding: 0.8rem 18px;
   border-radius: 2rem;
   position: relative;
-  background-color: gray;
+  background-color: rgb(41, 41, 41);
   box-shadow: inset 8.06px 6.25px 14.31px -1.79px rgba(255, 255, 255, 0.534),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
     14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
@@ -215,6 +218,7 @@ a {
   cursor: pointer;
   /* z-index: 1; */
 }
+
 .hero_btn {
   position: relative;
   margin-top: 1rem;
@@ -499,13 +503,116 @@ a {
 .sign-up-container {
   background-color: white;
   margin: 4rem;
-  width: 40rem;
-  color: black;
-  height: 20rem;
+  width: 40vw;
+  margin-top: -2rem;
+  color: #000b1c;
+  height: 30rem;
   border-radius: 3rem;
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   /* background-color: gray; */
+  box-shadow: inset 3.11px 2.52px 5.63px -0.7px rgba(0, 0, 0, 0.15),
+    inset -4.67px -3.77px 5.63px -0.7px rgba(0, 0, 0, 0.3),
+    9.33px 7.55px 4.22px -2.11px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+.sign-up-main-container {
+  background-color: white;
+}
+.nav-bg {
+  height: 4rem;
+  background-color: #000b1c;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-container h2 {
+  margin-bottom: 1rem;
+}
+.sign-up-input {
+  box-shadow: inset 2.18px 1.76px 3.94px -0.49px rgba(0, 0, 0, 0.15),
+    inset -3.27px -2.64px 3.94px -0.49px rgba(0, 0, 0, 0.3),
+    6.53px 5.28px 2.95px -1.48px rgba(0, 0, 0, 0.6);
+  border-radius: 2rem;
+  height: 2.5rem;
+  padding: 0 2rem;
+  width: 20rem;
+
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.register-button {
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  /* padding: 0.5rem 9rem; */
+  margin-left: 0.7rem;
+  height: 2.5rem;
+  width: 23.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  position: relative;
+  background-color: rgb(41, 41, 41);
   box-shadow: inset 8.06px 6.25px 14.31px -1.79px rgba(255, 255, 255, 0.534),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
     14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 18px;
+  font-family: var(--title-font);
+  cursor: pointer;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.input-icon-container {
+  box-shadow: inset 2.18px 1.76px 3.94px -0.49px rgba(0, 0, 0, 0.15),
+    inset -3.27px -2.64px 3.94px -0.49px rgba(0, 0, 0, 0.3),
+    6.53px 5.28px 2.95px -1.48px rgba(0, 0, 0, 0.6);
+  border-radius: 3.5rem;
+  height: 2.5rem;
+  color: #000b1c;
+  /* padding: 0 2rem; */
+  width: 2.5rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.label {
+  margin-bottom: -1rem;
+  text-align: left;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .sign-up-container {
+    width: 90vw;
+    height: 33rem;
+    margin-top: -1rem;
+  }
+
+  .sign-up-input {
+    border-radius: 2rem;
+    height: 2.8rem;
+    padding: 0 1rem;
+    width: 65vw;
+  }
+  .register-button {
+    margin-bottom: 2rem;
+    margin-left: 0rem;
+    height: 2.9rem;
+    width: 78vw;
+  }
+  .form-container h2 {
+    margin-bottom: 0rem;
+  }
 }

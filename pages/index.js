@@ -40,12 +40,6 @@ export default function Home() {
           className="content"
           style={{ textAlign: "center" }}
         >
-          {/* <img
-            src="./images/bg1c2.jpg"
-            alt="bg"
-            className="bg"
-            // style={{ height: "20rem", width: "20rem" }}
-          /> */}
           <div className="card" style={{ color: "white" }}>
             <div className="card__content">
               <div className="card__front">
@@ -125,7 +119,7 @@ export default function Home() {
           occaecat cupidatat non proident, sunt in culpa qui officia deserunt
           mollit anim id est laborum.
         </p>
-        <div class="custom-shape-divider-bottom-1665740462">
+        {/* <div class="custom-shape-divider-bottom-1665740462">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +131,7 @@ export default function Home() {
               class="shape-fill"
             ></path>
           </svg>
-        </div>
+        </div> */}
       </div>
       <Footer />
     </>

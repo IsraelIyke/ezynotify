@@ -35,7 +35,7 @@ export default function Nav() {
           </li>{" "}
           <li>
             <Link href="/">
-              <a className="faq-btn">Faq</a>
+              <a className="faq-btn">FAQ</a>
             </Link>
           </li>
           <li>
@@ -76,7 +76,7 @@ export default function Nav() {
               <hr />
               <li>
                 <Link href="/">
-                  <a className="faq-btn">Faq</a>
+                  <a className="faq-btn">FAQ</a>
                 </Link>
               </li>
               <hr />
