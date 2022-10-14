@@ -174,7 +174,7 @@ a {
   font-size: 2rem;
 }
 .footer {
-  margin-top: -0.3rem;
+  margin-top: -0.1rem;
   padding: 18px;
   position: relative;
   z-index: 1;
@@ -374,7 +374,6 @@ a {
   background-color: white;
   margin-top: -0.1rem;
   padding: 2rem;
-  z-index: 1;
   color: #000b1c;
   /* margin-bottom: 7rem; */
 }
