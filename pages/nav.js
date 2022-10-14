@@ -49,7 +49,7 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/sign-up">
               <a className="register-btn">Sign up</a>
             </Link>
           </li>
@@ -93,7 +93,7 @@ export default function Nav() {
               </li>
 
               <li>
-                <Link href="/">
+                <Link href="/sign-up">
                   <a className="register-btn">Sign up</a>
                 </Link>
               </li>
