@@ -277,6 +277,7 @@ a {
 }
 
 .card__content {
+  margin-top: 3rem;
   text-align: center;
   position: relative;
   padding: 5em 5em;
@@ -442,7 +443,7 @@ a {
   .card__content {
     height: 25rem;
     width: 20rem;
-    margin-top: 0rem;
+    margin-top: 1.5rem;
   }
   .card__title {
     font-size: 2rem;
