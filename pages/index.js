@@ -40,12 +40,12 @@ export default function Home() {
           className="content"
           style={{ textAlign: "center" }}
         >
-          <img
+          {/* <img
             src="./images/bg1c2.jpg"
             alt="bg"
             className="bg"
             // style={{ height: "20rem", width: "20rem" }}
-          />
+          /> */}
           <div className="card" style={{ color: "white" }}>
             <div className="card__content">
               <div className="card__front">
