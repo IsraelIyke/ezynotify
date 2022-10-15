@@ -151,7 +151,7 @@ export default function Login() {
             </div>
 
             <h5>
-              Don't have an account?
+              Don&lsquo;t have an account?
               <Link href="/register">
                 <span className="link-span"> sign up</span>
               </Link>
