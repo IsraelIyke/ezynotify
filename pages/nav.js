@@ -44,7 +44,7 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/account">
+            <Link href="/sign-in">
               <a className="login-btn">Login</a>
             </Link>
           </li>
@@ -87,7 +87,7 @@ export default function Nav() {
               </li>
               <hr />
               <li>
-                <Link href="/account">
+                <Link href="/sign-in">
                   <a className="login-btn">Login</a>
                 </Link>
               </li>
