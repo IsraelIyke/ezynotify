@@ -1,13 +1,14 @@
 import { useState } from "react";
-import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import { supabase } from "../client";
 import Nav from "./nav";
 import Textfield from "./Textfield/textfield";
+const { motion } = require("framer-motion");
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const [submitted, setSubmitted] = useState(false);
   const router = useRouter();
@@ -29,44 +30,53 @@ export default function SignIn() {
     );
   }
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        paddingTop: "10rem",
-        backgroundColor: "white",
-        height: "100vh",
-      }}
-    >
-      <Nav />
-      <div className="nav-bg"></div>
-      <main
-        style={{
-          padding: "2rem",
-          backgroundColor: "white",
-          width: "20rem",
-          height: "20rem",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          boxShadow: "2px 2px 5px gray",
-          borderRadius: "2rem",
-        }}
-      >
-        <h1 style={{ color: "black" }}>Sign Up</h1>
-        {/* <input
-          onChange={(e) => setEmail(e.target.value)}
-          style={{ margin: 10 }}
-        />
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          style={{ margin: 10 }}
-        /> */}
-        <Textfield />
-        <Textfield />
-        <button onClick={() => signIn()}>Sign In</button>
-      </main>
-    </div>
+    <>
+      <div className="explore-page-hero">
+        <Nav />
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            duration: 0.75,
+          }}
+          className="content"
+          style={{ textAlign: "center" }}
+        >
+          <div>
+            <main>
+              <h1>Sign Up</h1>
+              <Textfield
+                type="email"
+                placeholder="Email"
+                id="email"
+                label="Email"
+                setState={setEmail}
+                value={email}
+              />
+              <Textfield
+                type="password"
+                placeholder="Password"
+                id="password"
+                label="Password"
+                setState={setPassword}
+                value={password}
+              />
+              <Textfield
+                type="password"
+                placeholder="Confirm Password"
+                id="confirmPassword"
+                label="Confirm Password"
+                setState={setConfirmPassword}
+                value={confirmPassword}
+              />
+              <div onClick={() => signIn()} className="reg-btn">
+                Sign Up
+              </div>
+            </main>
+          </div>
+        </motion.div>
+      </div>
+    </>
   );
 }

@@ -139,10 +139,8 @@ a {
 }
 .nav-content .register-btn {
   position: relative;
-  background-color: hsl(217, 97%, 15%);
-  box-shadow: inset 8.06px 6.25px 14.31px -1.79px hsla(216, 17%, 50%, 0.473),
-    inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
-    14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
+  background-color: white;
+  color: #000b1c;
   padding: 0.5rem 0.9rem;
   border-radius: 2rem;
 }
@@ -167,12 +165,19 @@ a {
   text-align: center;
 }
 .nav-content-mobile .register-btn {
+  background-color: white;
+  color: #000b1c;
+  padding: 0.7rem 28vw;
+  border-radius: 2rem;
+}
+.reg-btn {
   background-color: hsl(217, 97%, 15%);
+  padding: 0.7rem 8rem;
+  margin-top: 2rem;
+  border-radius: 2rem;
   box-shadow: inset 8.06px 6.25px 14.31px -1.79px hsla(216, 17%, 50%, 0.473),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
     14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
-  padding: 0.7rem 28vw;
-  border-radius: 2rem;
 }
 .nav-content-mobile .open {
   font-size: 2rem;
