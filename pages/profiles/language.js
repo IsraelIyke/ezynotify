@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "../client";
+import { supabase } from "../../client";
 
 export default function Language() {
   const [language, setLanguage] = useState(null);

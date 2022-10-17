@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { supabase } from "../client";
+import { supabase } from "../../client";
 import { useRouter } from "next/router";
 
 export default function Profile() {
@@ -14,7 +14,6 @@ export default function Profile() {
         city: "New York",
       },
     });
-    console.log("user:", user);
   }
   async function fetchProfile() {
     const profileData = await supabase.auth.user();

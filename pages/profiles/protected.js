@@ -1,4 +1,4 @@
-import { supabase } from "../client";
+import { supabase } from "../../client";
 
 export default function Protected({ user }) {
   console.log({ user });
