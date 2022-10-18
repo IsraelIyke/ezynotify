@@ -178,6 +178,7 @@ a {
   box-shadow: inset 8.06px 6.25px 14.31px -1.79px hsla(216, 17%, 50%, 0.473),
     inset -12.09px -9.38px 14.31px -1.79px rgba(0, 0, 0, 0.3),
     14.17px 8.76px 10.73px -5.37px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
 }
 .nav-content-mobile .open {
   font-size: 2rem;
@@ -656,7 +657,9 @@ a {
   margin-right: 0rem;
   font-size: 0.8rem;
 }
-
+.dash-options-container h1 {
+  margin-bottom: 1rem;
+}
 .dash-tile {
   height: 10rem;
   width: 100%;
@@ -681,4 +684,16 @@ a {
 }
 .dash-tile.profile {
   background-color: hsl(216, 100%, 80%);
+}
+.dash-option-title {
+  font-size: 1.1rem;
+  text-align: center;
+}
+.dash-option-content {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.dash-options-container {
+  padding: 2rem 1.2rem 2rem 1.6rem;
 }
