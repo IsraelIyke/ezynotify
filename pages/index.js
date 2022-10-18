@@ -1,7 +1,7 @@
 const { motion } = require("framer-motion");
 import Link from "next/link";
-import Nav from "./nav";
-import Footer from "./footer";
+import Nav from "../components/nav";
+import Footer from "../components/footer";
 import { FaTelegramPlane } from "react-icons/fa";
 import { RiHandCoinFill } from "react-icons/ri";
 import { useEffect, useState } from "react";

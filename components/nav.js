@@ -24,7 +24,9 @@ export default function Nav() {
         className="nav"
       >
         <h3>
-          <img src="./images/logo1.png" alt=" " width={90} height={50} />
+          <Link href="/">
+            <img src="./images/logo1.png" alt=" " width={90} height={50} />
+          </Link>
         </h3>
 
         <ul className="nav-content">
@@ -32,7 +34,7 @@ export default function Nav() {
             <Link href="/">
               <a className="home-btn">Home</a>
             </Link>
-          </li>{" "}
+          </li>
           <li>
             <Link href="/">
               <a className="faq-btn">FAQ</a>

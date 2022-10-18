@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../client";
-import Nav from "./nav";
+import Nav from "../components/nav";
 const { motion } = require("framer-motion");
 import Textfield from "./Textfield/textfield";
 
@@ -31,7 +31,7 @@ export default function SignIn() {
     if (!profileData) {
       router.push("/sign-in");
     } else {
-      router.push("/profiles");
+      router.push("/dashboard");
     }
   }
 

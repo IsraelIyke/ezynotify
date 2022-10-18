@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../client";
-import Nav from "./nav";
+import Nav from "../components/nav";
 import Textfield from "./Textfield/textfield";
 const { motion } = require("framer-motion");
 

@@ -14,7 +14,6 @@ export default function Profile() {
         city: "New York",
       },
     });
-    console.log("user:", user);
   }
   async function fetchProfile() {
     const profileData = await supabase.auth.user();
