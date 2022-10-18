@@ -59,7 +59,7 @@ export default function Profile() {
                     <h1>Dashboard</h1>
                   </Grid>
 
-                  <Grid item xs={7} md={6}>
+                  <Grid item xs={6.5} md={6}>
                     <Link href="/">
                       <div className="dash-tile search">
                         <p style={{ fontSize: "0.7rem" }}>
@@ -69,19 +69,23 @@ export default function Profile() {
                     </Link>
                   </Grid>
 
-                  <Grid item xs={5} md={4}>
+                  <Grid item xs={5.5} md={4}>
                     <Link href="/">
                       <div className="dash-tile shift referral">
-                        dashboard dashboard dashboard dashboard dashboard
+                        <p style={{ fontSize: "0.8rem" }}>
+                          dashboard dashboard dashboard dashboard dashboard
+                        </p>{" "}
                       </div>
                     </Link>
                   </Grid>
-                  <Grid item xs={5} md={4}>
+                  <Grid item xs={5.5} md={4}>
                     <div className="dash-tile update">
-                      dashboard dashboard dashboard dashboard dashboard
+                      <p style={{ fontSize: "0.9rem" }}>
+                        dashboard dashboard dashboard dashboard dashboard
+                      </p>{" "}
                     </div>
                   </Grid>
-                  <Grid item xs={7} md={6}>
+                  <Grid item xs={6.5} md={6}>
                     <div className="dash-tile profile shift">
                       dashboard dashboard dashboard dashboard dashboard
                     </div>
@@ -90,7 +94,12 @@ export default function Profile() {
               </Grid>
 
               <Grid item xs={12} md={3}>
-                plan and upgrade
+                <Grid container>
+                  <Grid item xs={12}>
+                    <h1>Subscription</h1>
+                    <p>Free</p>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </div>
