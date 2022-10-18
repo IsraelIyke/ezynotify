@@ -4,6 +4,7 @@ import { supabase } from "../../client";
 import { useRouter } from "next/router";
 import SideBar from "../../components/sidebar";
 import DashNav from "../../components/dash-nav";
+import { Box, Grid } from "@mui/material";
 
 export default function Profile() {
   const [profile, setProfile] = useState(null);
@@ -27,28 +28,28 @@ export default function Profile() {
   }
   if (!profile) return null;
   return (
-    <>
-      <DashNav signOut={signOut} />
-      <div className="explore-page-hero">
-        <div
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            duration: 0.75,
-          }}
-          className="sidebar-content"
-          style={{ textAlign: "center" }}
-        >
-          <div>
-            <SideBar profile={profile} />
+    <Box flexGrow={1}>
+      <Grid container spacing={1}>
+        <DashNav signOut={signOut} />
+        <Grid item xs={1.5} md={2.5}>
+          <div style={{ marginTop: "4rem" }}>
+            {/* <SideBar profile={profile} /> */}
           </div>
-          <div className="dash-category">
-            <h2>Hello, {profile.email}</h2>
-            <p>User ID: {profile.id}</p>
+        </Grid>
+        <Grid item xs={10.5} md={9.5}>
+          <div
+            style={{
+              marginTop: "4rem",
+              backgroundColor: "white",
+              height: "100vh",
+            }}
+          >
+            {/* <h2>Hello, {profile.email}</h2>
+            <p>User ID: {profile.id}</p> */}
+            <p style={{ color: "black" }}>hello</p>
           </div>
-        </div>
-      </div>
-    </>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }

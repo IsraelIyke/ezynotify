@@ -21,21 +21,15 @@ export default function DashNav(props) {
           delay: 0.2,
           duration: 0.75,
         }}
-        className="nav-dash"
+        className="dash-nav"
       >
         <h3>
           <Link href="/">
-            <img
-              src="./images/logo1.png"
-              alt=" "
-              width={90}
-              height={50}
-              style={{ marginTop: "-0.8rem" }}
-            />
+            <img src="./images/logo1.png" alt=" " width={90} height={50} />
           </Link>
         </h3>
 
-        <ul className="nav-dash-content">
+        <ul className="dash-nav-content">
           <li>
             <Link href="/">
               <a className="home-btn" onClick={props.signOut}>
