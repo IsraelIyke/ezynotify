@@ -1,10 +1,11 @@
 const { motion } = require("framer-motion");
 import Link from "next/link";
 import { useState } from "react";
-import { FaTimes } from "react-icons/fa";
-import { HiMenuAlt4 } from "react-icons/hi";
+import { AiFillHome } from "react-icons/ai";
+import { HiUserGroup, HiUserCircle } from "react-icons/hi";
+import { MdNotificationAdd, MdOutlineUpdate } from "react-icons/md";
 
-export default function Nav() {
+export default function SideBar(props) {
   const [move, setMove] = useState(false);
   function handleOpen() {
     setMove(true);
@@ -12,110 +13,118 @@ export default function Nav() {
   function handleClose() {
     setMove(false);
   }
+  const [toggle, setToggle] = useState(false);
+  function handleToggle() {
+    setToggle(!toggle);
+  }
   return (
     <>
-      <motion.div
-        initial={{ x: -10, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{
-          delay: 0.2,
-          duration: 0.75,
-        }}
-        className="nav"
-      >
-        <h3>
-          <Link href="/">
-            <img src="./images/logo1.png" alt=" " width={90} height={50} />
-          </Link>
-        </h3>
-
-        <ul className="nav-content">
+      <div className="sidebar-desktop">
+        <p style={{ textAlign: "center", marginTop: "5rem" }}>
+          {props.profile.email}
+        </p>
+        <ul className="sidebar-list">
           <li>
-            <Link href="/">
-              <a className="home-btn">Home</a>
-            </Link>
+            <AiFillHome className="icon" />
+            <div className="sidebar-list-item">dashboard</div>
           </li>
           <li>
-            <Link href="/">
-              <a className="faq-btn">FAQ</a>
-            </Link>
+            <MdNotificationAdd className="icon" />
+            <div className="sidebar-list-item">notification</div>
           </li>
           <li>
-            <Link href="/">
-              <a className="pricing-btn">Pricing</a>
-            </Link>
+            <MdOutlineUpdate className="icon" />
+            <div className="sidebar-list-item">update</div>
           </li>
           <li>
-            <Link href="/sign-in">
-              <a className="login-btn">Login</a>
-            </Link>
+            <HiUserGroup className="icon" />
+            <div className="sidebar-list-item">referral</div>
           </li>
           <li>
-            <Link href="/sign-up">
-              <a className="register-btn">Sign up</a>
-            </Link>
+            <HiUserCircle className="icon" />
+            <div className="sidebar-list-item">profile</div>
           </li>
         </ul>
-
-        {/* mobile */}
-        <ul className="nav-content-mobile">
-          {move && <div onClick={handleClose} className="mobile-blur"></div>}
-          {move && (
-            <motion.div
-              initial={{ y: -10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                delay: 0.1,
-                duration: 0.55,
-              }}
-              className="mobile-nav"
+      </div>
+      {/* mobile */}
+      {toggle ? (
+        <>
+          <div className="sidebar-blur" onClick={handleToggle}></div>
+          <div className="sidebar-open">
+            <p style={{ textAlign: "center", marginTop: "1.6rem" }}>
+              {props.profile.email}
+            </p>
+            <ul className="sidebar-list">
+              <li>
+                <AiFillHome className="icon" />
+                <div className="sidebar-list-item">dashboard</div>
+              </li>
+              <li>
+                <MdNotificationAdd className="icon" />
+                <div className="sidebar-list-item">notification</div>
+              </li>
+              <li>
+                <MdOutlineUpdate className="icon" />
+                <div className="sidebar-list-item">update</div>
+              </li>
+              <li>
+                <HiUserGroup className="icon" />
+                <div className="sidebar-list-item">referral</div>
+              </li>
+              <li>
+                <HiUserCircle className="icon" />
+                <div className="sidebar-list-item">profile</div>
+              </li>
+            </ul>
+            <p
+              style={{ textAlign: "center", marginTop: "2rem" }}
+              onClick={handleToggle}
             >
-              <li>
-                <Link href="/">
-                  <a className="home-btn">Home</a>
-                </Link>
-              </li>
-              <hr />
-              <li>
-                <Link href="/">
-                  <a className="faq-btn">FAQ</a>
-                </Link>
-              </li>
-              <hr />
-              <li>
-                <Link href="/">
-                  <a className="pricing-btn">Pricing</a>
-                </Link>
-              </li>
-              <hr />
-              <li>
-                <Link href="/sign-in">
-                  <a className="login-btn">Login</a>
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/sign-up">
-                  <a className="register-btn">Sign up</a>
-                </Link>
-              </li>
-            </motion.div>
-          )}
-          {move ? (
+              &lt;&lt;&lt;
+            </p>
+          </div>
+        </>
+      ) : (
+        <>
+          <p
+            style={{
+              textAlign: "center",
+              marginTop: "5rem",
+              color: "transparent",
+            }}
+          >
+            {props.profile.email}
+          </p>
+          <ul className="sidebar-list">
             <li>
-              <FaTimes
-                className="open"
-                onClick={handleClose}
-                style={{ marginRight: "0.5rem" }}
-              />
+              <AiFillHome className="icon" />
+              <div className="sidebar-list-item"></div>
             </li>
-          ) : (
-            <li className="menu-toggle">
-              <HiMenuAlt4 className="open" onClick={handleOpen} />
+            <li>
+              <MdNotificationAdd className="icon" />
+              <div className="sidebar-list-item"></div>
             </li>
-          )}
-        </ul>
-      </motion.div>
+            <li>
+              <MdOutlineUpdate className="icon" />
+              <div className="sidebar-list-item"></div>
+            </li>
+            <li>
+              <HiUserGroup className="icon" />
+              <div className="sidebar-list-item"></div>
+            </li>
+            <li>
+              <HiUserCircle className="icon" />
+              <div className="sidebar-list-item"></div>
+            </li>
+          </ul>
+          <p
+            style={{ textAlign: "center", marginTop: "2rem" }}
+            onClick={handleToggle}
+          >
+            &gt;&gt;&gt;
+          </p>
+        </>
+      )}
     </>
   );
 }

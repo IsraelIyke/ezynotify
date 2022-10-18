@@ -37,7 +37,7 @@ export default function Profile() {
 
         <Grid item xs={1.8} md={2.5}>
           <div style={{ marginTop: "3.5rem" }}>
-            {/* <SideBar profile={profile} /> */}
+            <SideBar profile={profile} />
           </div>
         </Grid>
         <Grid item xs={10.2} md={9.5}>
@@ -45,7 +45,8 @@ export default function Profile() {
             style={{
               marginTop: "3.5rem",
               backgroundColor: "white",
-              height: "100vh",
+              minHeight: "100vh",
+              maxHeight: "100%",
               color: "black",
             }}
           >
@@ -56,7 +57,7 @@ export default function Profile() {
               <Grid
                 item
                 xs={12}
-                md={9}
+                md={8}
                 style={{ padding: "2rem 1.2rem 2rem 1rem" }}
                 className="dash-options-container"
               >
@@ -81,20 +82,20 @@ export default function Profile() {
                     </Link>
                   </Grid>
 
-                  <Grid item xs={5.5} md={4}>
+                  <Grid item xs={5.5} md={5}>
                     <Link href="/">
                       <div className="dash-tile shift referral">
                         <h3 className="dash-option-title">
-                          Web Update
+                          Update
                           <hr style={{ color: "white", height: "0.2rem" }} />
                         </h3>
                         <p className="dash-option-content">
-                          Get notification for every upload in a website
+                          Get notification for every update in a website
                         </p>
                       </div>
                     </Link>
                   </Grid>
-                  <Grid item xs={5.5} md={4}>
+                  <Grid item xs={5.5} md={5}>
                     <div className="dash-tile update">
                       <h3 className="dash-option-title">
                         Referral
@@ -121,11 +122,25 @@ export default function Profile() {
                 </Grid>
               </Grid>
 
-              <Grid item xs={12} md={3}>
-                <Grid container>
-                  <Grid item xs={12}>
-                    <h1>Subscription</h1>
-                    <p>Free</p>
+              <Grid item xs={12} md={4}>
+                <Grid container spacing={1}>
+                  <Grid item xs={12} style={{ padding: "0 0.5rem 0 1rem" }}>
+                    <div className="dash-tile-subscription">
+                      <h2>Subscription</h2>
+                      <p>Free</p>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} style={{ padding: "0 0.5rem 0 1rem" }}>
+                    <div className="dash-tile-subscription">
+                      <h2>Notification Chart</h2>
+                      <p>bar chart</p>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} style={{ padding: "0 0.5rem 0 1rem" }}>
+                    <div className="dash-tile-subscription">
+                      <h2>Recent search</h2>
+                      <p>webtoon</p>
+                    </div>
                   </Grid>
                 </Grid>
               </Grid>
