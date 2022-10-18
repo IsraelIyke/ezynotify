@@ -631,7 +631,7 @@ a {
   z-index: 1;
   display: flex;
   top: 0;
-  background-color: #000b1c85;
+  background-color: #000b1c;
   height: 4rem;
   width: 100%;
   box-shadow: 0px 0px 2px gray;
@@ -642,7 +642,7 @@ a {
 
 .dash-nav h3 {
   margin-top: -0.6rem;
-  margin-left: 0.5rem;
+  margin-left: 0rem;
 }
 .dash-nav-content {
   display: flex;
@@ -655,4 +655,30 @@ a {
 .dash-nav-content li {
   margin-right: 0rem;
   font-size: 0.8rem;
+}
+
+.dash-tile {
+  height: 10rem;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0px 2px 2px rgb(204, 203, 203);
+  border-radius: 1rem;
+}
+
+.dash-tile.shift {
+  margin: 0.5rem 0.8rem;
+}
+.dash-tile.search {
+  background-color: hsl(216, 100%, 95%);
+}
+.dash-tile.referral {
+  background-color: hsl(216, 100%, 90%);
+}
+.dash-tile.update {
+  background-color: hsl(216, 100%, 85%);
+}
+.dash-tile.profile {
+  background-color: hsl(216, 100%, 80%);
 }
