@@ -65,7 +65,9 @@ export default function Notification() {
                 <Grid container spacing={1}>
                   <Grid item xs={12}>
                     <h1>Notification</h1>
-                    <p>create new notification for a keyword/search</p>
+                    <p className="instruction">
+                      create new notification for a keyword/search
+                    </p>
 
                     <ul className="instruction-list">
                       <li>
