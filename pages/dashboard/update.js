@@ -7,7 +7,7 @@ import DashNav from "../../components/dash-nav";
 import { Box, Grid, Paper } from "@mui/material";
 import Link from "next/link";
 
-export default function Profile() {
+export default function Update() {
   const [profile, setProfile] = useState(null);
   const router = useRouter();
   useEffect(() => {

@@ -1,6 +1,6 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap"); */
 /* @import url("https://fonts.googleapis.com/css2?family=Quintessential&display=swap"); */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,700&display=swap"); */
 
 html,
 body {
@@ -668,6 +668,7 @@ a {
   margin-bottom: 0.5rem;
   box-shadow: 0px 2px 2px rgb(204, 203, 203);
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .dash-tile.shift {
@@ -711,6 +712,7 @@ a {
   color: #000b1c;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .sidebar-list li .icon {
   font-size: 1.2rem;
@@ -730,6 +732,23 @@ a {
   box-shadow: 0px 2px 2px rgb(204, 203, 203);
   border-radius: 0.4rem;
 }
+.notification-tile {
+  height: 10rem;
+  padding: 0.5rem 0.5rem;
+  margin-top: 1rem;
+  box-shadow: 0px 2px 2px rgb(204, 203, 203);
+  border-radius: 0.4rem;
+  background-color: hsl(216, 100%, 95%);
+}
+.not-found {
+  background-color: hsl(0, 0%, 100%);
+}
+.partial-found {
+  background-color: hsl(68, 100%, 93%);
+}
+.found {
+  background-color: hsl(120, 100%, 94%);
+}
 .sidebar-list-item {
   display: block;
 }
@@ -747,6 +766,10 @@ a {
   height: 100vh;
   top: 0;
   left: 0;
+}
+.instruction-list {
+  list-style: circle;
+  margin: 1rem 0 1rem 2rem;
 }
 @media screen and (max-width: 767px) {
   .sidebar-list li {

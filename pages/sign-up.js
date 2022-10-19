@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../client";
 import Nav from "../components/nav";
-import Textfield from "./Textfield/textfield";
+import Textfield from "../components/textfield";
 const { motion } = require("framer-motion");
 
 export default function SignIn() {

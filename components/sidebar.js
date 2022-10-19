@@ -24,26 +24,36 @@ export default function SideBar(props) {
           {props.profile.email}
         </p>
         <ul className="sidebar-list">
-          <li>
-            <AiFillHome className="icon" />
-            <div className="sidebar-list-item">dashboard</div>
-          </li>
-          <li>
-            <MdNotificationAdd className="icon" />
-            <div className="sidebar-list-item">notification</div>
-          </li>
-          <li>
-            <MdOutlineUpdate className="icon" />
-            <div className="sidebar-list-item">update</div>
-          </li>
-          <li>
-            <HiUserGroup className="icon" />
-            <div className="sidebar-list-item">referral</div>
-          </li>
-          <li>
-            <HiUserCircle className="icon" />
-            <div className="sidebar-list-item">profile</div>
-          </li>
+          <Link href="/dashboard">
+            <li>
+              <AiFillHome className="icon" />
+              <div className="sidebar-list-item">dashboard</div>
+            </li>
+          </Link>
+          <Link href="/dashboard/notification">
+            <li>
+              <MdNotificationAdd className="icon" />
+              <div className="sidebar-list-item">notification</div>
+            </li>
+          </Link>
+          <Link href="/dashboard/update">
+            <li>
+              <MdOutlineUpdate className="icon" />
+              <div className="sidebar-list-item">update</div>
+            </li>
+          </Link>
+          <Link href="/dashboard/referral">
+            <li>
+              <HiUserGroup className="icon" />
+              <div className="sidebar-list-item">referral</div>
+            </li>
+          </Link>
+          <Link href="/dashboard/profile">
+            <li>
+              <HiUserCircle className="icon" />
+              <div className="sidebar-list-item">profile</div>
+            </li>
+          </Link>
         </ul>
       </div>
       {/* mobile */}
@@ -55,26 +65,36 @@ export default function SideBar(props) {
               {props.profile.email}
             </p>
             <ul className="sidebar-list">
-              <li>
-                <AiFillHome className="icon" />
-                <div className="sidebar-list-item">dashboard</div>
-              </li>
-              <li>
-                <MdNotificationAdd className="icon" />
-                <div className="sidebar-list-item">notification</div>
-              </li>
-              <li>
-                <MdOutlineUpdate className="icon" />
-                <div className="sidebar-list-item">update</div>
-              </li>
-              <li>
-                <HiUserGroup className="icon" />
-                <div className="sidebar-list-item">referral</div>
-              </li>
-              <li>
-                <HiUserCircle className="icon" />
-                <div className="sidebar-list-item">profile</div>
-              </li>
+              <Link href="/dashboard">
+                <li>
+                  <AiFillHome className="icon" />
+                  <div className="sidebar-list-item">dashboard</div>
+                </li>
+              </Link>
+              <Link href="/dashboard/notification">
+                <li>
+                  <MdNotificationAdd className="icon" />
+                  <div className="sidebar-list-item">notification</div>
+                </li>
+              </Link>
+              <Link href="/dashboard/update">
+                <li>
+                  <MdOutlineUpdate className="icon" />
+                  <div className="sidebar-list-item">update</div>
+                </li>
+              </Link>
+              <Link href="/dashboard/referral">
+                <li>
+                  <HiUserGroup className="icon" />
+                  <div className="sidebar-list-item">referral</div>
+                </li>
+              </Link>
+              <Link href="/dashboard/profile">
+                <li>
+                  <HiUserCircle className="icon" />
+                  <div className="sidebar-list-item">profile</div>
+                </li>
+              </Link>
             </ul>
             <p
               style={{ textAlign: "center", marginTop: "2rem" }}
@@ -96,26 +116,36 @@ export default function SideBar(props) {
             {props.profile.email}
           </p>
           <ul className="sidebar-list">
-            <li>
-              <AiFillHome className="icon" />
-              <div className="sidebar-list-item"></div>
-            </li>
-            <li>
-              <MdNotificationAdd className="icon" />
-              <div className="sidebar-list-item"></div>
-            </li>
-            <li>
-              <MdOutlineUpdate className="icon" />
-              <div className="sidebar-list-item"></div>
-            </li>
-            <li>
-              <HiUserGroup className="icon" />
-              <div className="sidebar-list-item"></div>
-            </li>
-            <li>
-              <HiUserCircle className="icon" />
-              <div className="sidebar-list-item"></div>
-            </li>
+            <Link href="/dashboard/">
+              <li>
+                <AiFillHome className="icon" />
+                <div className="sidebar-list-item"></div>
+              </li>
+            </Link>
+            <Link href="/dashboard/notification">
+              <li>
+                <MdNotificationAdd className="icon" />
+                <div className="sidebar-list-item"></div>
+              </li>
+            </Link>
+            <Link href="/dashboard/update">
+              <li>
+                <MdOutlineUpdate className="icon" />
+                <div className="sidebar-list-item"></div>
+              </li>
+            </Link>
+            <Link href="/dashboard/referral">
+              <li>
+                <HiUserGroup className="icon" />
+                <div className="sidebar-list-item"></div>
+              </li>
+            </Link>
+            <Link href="/dashboard/profile">
+              <li>
+                <HiUserCircle className="icon" />
+                <div className="sidebar-list-item"></div>
+              </li>
+            </Link>
           </ul>
           <p
             style={{ textAlign: "center", marginTop: "2rem" }}

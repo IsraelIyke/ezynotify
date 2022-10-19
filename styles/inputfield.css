@@ -1,0 +1,49 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"); */
+
+.forms-input {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+  /* margin: 0.8rem 0 0.8rem 0; */
+}
+
+.forms-input input::placeholder {
+  opacity: 0;
+}
+
+.forms-input input {
+  width: 18rem;
+  height: 3rem;
+  font-size: 0.8rem;
+  padding: 10px;
+  outline: none;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.forms-input label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: black;
+  letter-spacing: 1px;
+  transition: 0.1s;
+  font-weight: 400;
+}
+
+.forms-input input:focus + label,
+.forms-input input:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 0.6rem;
+  color: #0041a1;
+  background: #fff;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.forms-input input:focus {
+  outline: 1.2px solid #6197e9;
+}
