@@ -9,6 +9,9 @@ import Link from "next/link";
 import Inputfield from "../../components/inputfield";
 
 export default function Notification() {
+  const [keyword, setKeyword] = useState(null);
+  const [website, setWebsite] = useState(null);
+
   const [profile, setProfile] = useState(null);
   const router = useRouter();
   useEffect(() => {
@@ -29,6 +32,31 @@ export default function Notification() {
     router.push("/sign-in");
   }
   if (!profile) return null;
+
+  async function updateProfile({ keyword, website }) {
+    try {
+      const user = supabase.auth.user();
+      const updates = {
+        id: user.id, //
+        keyword,
+        website,
+        updated_at: new Date(),
+      };
+
+      let { error } = await supabase.from("profiles").upsert(updates, {
+        returning: "minimal", //don't return the value after inserting
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      alert("updated");
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+
   return (
     <Box flexGrow={1}>
       <Grid container spacing={1}>
@@ -78,7 +106,7 @@ export default function Notification() {
                         select the messaging platform you wish to get
                         notification
                       </li>
-                      <li>click update</li>
+                      <li>click submit</li>
                       <li>you can edit your search in the status panel</li>
                     </ul>
                   </Grid>
@@ -89,8 +117,8 @@ export default function Notification() {
                       placeholder="keyword"
                       id="keyword"
                       label="keyword"
-                      // setState={setKeyword}
-                      // value={keyword}
+                      setState={setKeyword}
+                      value={keyword}
                     />
                   </Grid>
                   <Grid item xs={12} md={6}>
@@ -99,9 +127,28 @@ export default function Notification() {
                       placeholder="website"
                       id="website"
                       label="website"
-                      // setState={setWebsite}
-                      // value={website}
+                      setState={setWebsite}
+                      value={website}
                     />
+                  </Grid>
+                  <Grid item xs={12}>
+                    email
+                    <input type="checkbox" /> telegram
+                    <input type="checkbox" /> facebook
+                    <input type="checkbox" />
+                  </Grid>
+                  <Grid item>
+                    <div
+                      onClick={() =>
+                        updateProfile({
+                          keyword,
+                          website,
+                        })
+                      }
+                      className="submit-button"
+                    >
+                      submit
+                    </div>
                   </Grid>
                 </Grid>
               </Grid>

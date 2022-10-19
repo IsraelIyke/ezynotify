@@ -105,7 +105,7 @@ export default function SideBar(props) {
           </div>
         </>
       ) : (
-        <>
+        <div className="icon-sidebar">
           <p
             style={{
               textAlign: "center",
@@ -153,7 +153,7 @@ export default function SideBar(props) {
           >
             &gt;&gt;&gt;
           </p>
-        </>
+        </div>
       )}
     </>
   );
