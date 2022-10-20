@@ -30,13 +30,12 @@ export default function Language() {
     try {
       const user = supabase.auth.user();
       const updates = {
-        id: user.id, //
-        language,
+        id: user.id,
 
-        updated_at: new Date(),
+        language,
       };
 
-      let { error } = await supabase.from("profiles").upsert(updates, {
+      let { error } = await supabase.from("new").upsert(updates, {
         returning: "minimal", //don't return the value after inserting
       });
 
