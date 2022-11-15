@@ -9,5 +9,5 @@ export const Button = styled.div`
   z-index: 1;
   cursor: pointer;
   color: black;
-  margin-left: 90%;
+  margin-left: 85%;
 `;

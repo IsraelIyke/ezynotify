@@ -2,14 +2,19 @@
   height: 20rem;
   background-color: hsl(197, 71%, 23%);
 }
+.footer-arrange {
+  display: flex;
+  /* justify-content: space-evenly; */
+}
 .footer-content {
   padding: 2rem 15rem;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 .footer-content ul {
   list-style: none;
   color: white;
+  margin: 0rem 3rem 2rem 3rem;
 }
 .footer-content li {
   margin-bottom: 0.5rem;
@@ -51,7 +56,9 @@
 @media (max-width: 767px) {
   .custom-shape-divider-top-1668414877 svg {
     width: calc(116% + 1.3px);
-    height: 55px;
+    height: 60px;
+    margin-top: -1rem;
+    z-index: 1;
   }
 }
 
@@ -65,5 +72,8 @@
   }
   .footer-container {
     height: fit-content;
+  }
+  .footer-content ul {
+    margin: 0rem 1rem 2rem 1rem;
   }
 }

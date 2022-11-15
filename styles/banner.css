@@ -148,8 +148,8 @@
 
 @media screen and (max-width: 767px) {
   .card__content {
-    height: 22rem;
-    width: 25rem;
+    height: 24rem;
+    width: 100vw;
     margin-top: 1.5rem;
   }
 
@@ -171,5 +171,6 @@
   }
   .banner-signup-btn button {
     margin-top: 0rem;
+    margin-bottom: 2rem;
   }
 }

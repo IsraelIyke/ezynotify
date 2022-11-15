@@ -16,38 +16,48 @@ export default function Footer() {
       </div>
       <div className="footer-content">
         <div>
-          <img src="./logo1.png" alt=" " width={180} />
+          <img
+            src="./logo1.png"
+            alt=" "
+            width={180}
+            style={{ padding: "1rem 0 1rem 0" }}
+          />
         </div>
-        <div>
-          <ul>
-            <li className="footer-content-title">Company</li>
-            <li>About</li>
-            <li>Features</li>
-            <li>Integrations</li>
-            <li>login</li>
-          </ul>
+        <div className="footer-arrange">
+          <div>
+            <ul>
+              <li className="footer-content-title">Company</li>
+              <li>About</li>
+              <li>Features</li>
+              <li>Integrations</li>
+              <li>login</li>
+            </ul>
+          </div>
+
+          <div>
+            <ul>
+              <li className="footer-content-title">Pricing</li>
+              <li>Plans</li>
+              <li>Free vs Paid</li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <ul>
-            <li className="footer-content-title">Pricing</li>
-            <li>Plans</li>
-            <li>Free vs Paid</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li className="footer-content-title">Support</li>
-            <li>Contact Us</li>
-            <li>FAQs</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li className="footer-content-title">Social</li>
-            <li>Instagram</li>
-            <li>Youtube</li>
-            <li>Facebook</li>
-          </ul>
+        <div className="footer-arrange">
+          <div>
+            <ul>
+              <li className="footer-content-title">Support</li>
+              <li>Contact Us</li>
+              <li>FAQs</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li className="footer-content-title">Social</li>
+              <li>Instagram</li>
+              <li>Youtube</li>
+              <li>Facebook</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
