@@ -1,3 +1,14 @@
+.scroll-up {
+  position: fixed;
+  width: 100%;
+  bottom: 40px;
+  height: 20px;
+  font-size: 3rem;
+  z-index: 1;
+  cursor: pointer;
+  color: black;
+  margin-left: 90%;
+}
 .nav-container {
   position: fixed;
   height: 5rem;
@@ -48,11 +59,15 @@
 .nav-container-mobile {
   position: fixed;
   height: 5rem;
-  background-color: rgba(255, 255, 255, 0.658);
+  background-color: rgba(255, 255, 255, 0.808);
   width: 100%;
   display: none;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding-left: 1rem;
 }
 .nav-container-mobile ul {
   display: flex;

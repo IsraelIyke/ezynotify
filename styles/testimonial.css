@@ -1,9 +1,15 @@
 .testimonial {
   height: 25rem;
+  /* width: 100vw; */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to right, white, white, hsl(39, 77%, 99%));
+}
+.testimonial-container {
+  width: 50vw;
+  text-align: center;
 }
 .testimonial .slick-arrow.slick-prev,
 .testimonial .slick-arrow.slick-next {
@@ -30,4 +36,20 @@
 }
 .testimonial .slick-dots li {
   top: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .testimonial h1 {
+    font-size: 1.7rem;
+  }
+  .testimonial-container {
+    width: 80vw;
+  }
+  .testimonial .slick-arrow.slick-prev,
+  .testimonial .slick-arrow.slick-next {
+    display: none;
+  }
+  .cta-mobile {
+    flex-direction: column;
+  }
 }

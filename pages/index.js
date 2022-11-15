@@ -21,17 +21,17 @@ export default function Home() {
         <Grid item xs={12} md={12}>
           <Banner />
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={6}>
           <Image />
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={6}>
           <Content />
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={6}>
           <Content2 />
         </Grid>
 
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={6}>
           <Image2 />
         </Grid>
         <Grid item xs={12} md={12}>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Nav() {
@@ -30,25 +31,28 @@ export default function Nav() {
           <li>Pricing</li>
         </ul>
         <ul>
-          <li className="nav-login nav-button">Login</li>
+          <Link href="/sign-in">
+            <li className="nav-login nav-button">Login</li>
+          </Link>
+
           <li className="nav-signup nav-button">Sign up</li>
         </ul>
       </nav>
 
       {/* for mobile */}
       <nav className="nav-container-mobile">
-        <ul>
+        {/* <ul>
           <li>Home</li>
           <li>FAQ</li>
           <li>Pricing</li>
-        </ul>
+        </ul> */}
         <ul>
           <img src="./logo2.png" alt=" " width={110} />
         </ul>
-        <ul>
+        {/* <ul>
           <li>Login</li>
           <li>Sign up</li>
-        </ul>
+        </ul> */}
       </nav>
     </>
   );

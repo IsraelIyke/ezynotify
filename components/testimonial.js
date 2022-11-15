@@ -26,7 +26,7 @@ const Testimonial = () => {
   return (
     <>
       <div className="testimonial">
-        <div style={{ width: "50%", textAlign: "center" }}>
+        <div className="testimonial-container">
           <h4 style={{ marginBottom: 20 }}>TESTIMONIALS</h4>
           <h1 style={{ marginBottom: 20 }}>
             &quot; What Our Customers Are Saying
@@ -40,7 +40,7 @@ const Testimonial = () => {
         <br />
       </div>
       <div
-        className="banner-signup-btn"
+        className="banner-signup-btn cta-mobile"
         style={{
           display: "flex",
           justifyContent: "center",

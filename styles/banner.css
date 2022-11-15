@@ -145,3 +145,31 @@
   border: 1px solid black;
   background-color: hsl(39, 77%, 53%);
 }
+
+@media screen and (max-width: 767px) {
+  .card__content {
+    height: 22rem;
+    width: 25rem;
+    margin-top: 1.5rem;
+  }
+
+  .card__title {
+    font-size: 2rem;
+  }
+
+  .card__subtitle {
+    font-size: 1rem;
+  }
+  .nav-content {
+    display: none;
+  }
+  .nav-content-mobile {
+    display: flex;
+  }
+  .hero_btn {
+    margin-top: -4rem;
+  }
+  .banner-signup-btn button {
+    margin-top: 0rem;
+  }
+}

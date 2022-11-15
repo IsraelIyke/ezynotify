@@ -54,3 +54,16 @@
     height: 55px;
   }
 }
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .footer-content {
+    padding: 0rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-container {
+    height: fit-content;
+  }
+}

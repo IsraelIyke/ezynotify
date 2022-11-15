@@ -56,7 +56,7 @@
   color: rgb(78, 78, 78);
 }
 
-.phone-container-two {
+.image-container-two {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,4 +67,35 @@
 .image-two {
   height: 30rem;
   width: 30rem;
+}
+
+@media screen and (max-width: 767px) {
+  .image {
+    height: 12rem;
+    width: 12rem;
+  }
+  .image-container {
+    height: 15rem;
+  }
+  .content-container {
+    border-radius: 2rem 2rem 2rem 2rem;
+    margin-top: -3rem;
+    height: 30rem;
+  }
+  .image-two {
+    height: 12rem;
+    width: 12rem;
+  }
+  .content-container-two {
+    border-radius: 2rem 2rem 2rem 2rem;
+    margin-top: -3rem;
+    height: 35rem;
+    margin-top: 14rem;
+    position: relative;
+  }
+  .image-container-two {
+    margin-top: -46rem;
+    height: 15rem;
+    z-index: -1;
+  }
 }
