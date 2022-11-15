@@ -36,7 +36,7 @@ export default function Nav() {
         <ul>
           <img src="./logo2.png" alt=" " width={110} />
         </ul>
-        <ul>
+        <ul style={{ marginLeft: "9rem" }}>
           <li>Home</li>
           <li>FAQ</li>
           <li>Pricing</li>
