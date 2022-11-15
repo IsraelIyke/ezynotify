@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-arrange">
-          <div>
+          <div className="footer-shift">
             <ul>
               <li className="footer-content-title">Support</li>
               <li>Contact Us</li>
