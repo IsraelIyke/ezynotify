@@ -1,0 +1,147 @@
+:root {
+  --level-one: translateZ(3rem);
+  --level-two: translateZ(6rem);
+  --level-three: translateZ(9rem);
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --clr: #b7c9e5;
+}
+.banner-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3rem;
+  /* box-shadow: 0px 0px 1px gray; */
+}
+.card {
+  position: relative;
+}
+
+.card__content {
+  margin-top: 6rem;
+  text-align: center;
+  position: relative;
+  padding: 5em 5em;
+  transition: transform 4s;
+  transform-style: preserve-3d;
+  height: 12.5rem;
+  width: 50rem;
+}
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2em 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: grid;
+  align-content: center;
+}
+
+.card__front {
+  border-radius: 3rem;
+  margin-top: 1rem;
+  background-color: white;
+}
+
+.card__front::before {
+  content: "";
+  position: absolute;
+  --spacer: 1em;
+  top: var(--spacer);
+  bottom: var(--spacer);
+  left: var(--spacer);
+  right: var(--spacer);
+  transform: var(--level-one);
+}
+
+.card__title {
+  font-size: 3rem;
+  transform: var(--level-three);
+  order: 0;
+}
+
+.card__subtitle {
+  transform: var(--level-two);
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+.card__body {
+  transform: var(--level-two);
+  font-weight: var(fw-normal);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.card__back {
+  transform: rotateY(0.5turn);
+  color: black;
+  border-radius: 3rem;
+  margin-top: 1rem;
+  background-color: white;
+}
+
+.underline {
+  box-shadow: -0.01px 4px 0 black;
+}
+
+.hero_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .card:hover .card__content {
+    transform: rotateY(0.5turn);
+  } */
+
+.card__content.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.hero_btn {
+  position: relative;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0 1rem 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+.hero-back-btn {
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 3rem;
+  position: relative;
+  background-color: black;
+  cursor: pointer;
+  margin-left: -3rem;
+}
+.hero-back-toggle {
+  display: inline-block;
+  padding: 4px 30px;
+  border-radius: 3rem;
+  position: absolute;
+  /* z-index: 1; */
+  background-color: black;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+.banner-signup-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  text-align: center;
+}
+.banner-signup-btn button {
+  width: 10rem;
+  padding: 0.9rem 1.4rem;
+  border-radius: 2rem;
+  border: 1px solid black;
+  background-color: hsl(39, 77%, 53%);
+}

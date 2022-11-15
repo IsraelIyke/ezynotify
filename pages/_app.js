@@ -1,5 +1,12 @@
-const { motion, AnimatePresence } = require("framer-motion");
 import "../styles/globals.css";
+import "../styles/nav.css";
+import "../styles/banner.css";
+import "../styles/content.css";
+import "../styles/testimonial.css";
+import "../styles/footer.css";
+
+const { motion, AnimatePresence } = require("framer-motion");
+// import "../styles/globals.css";
 import "../styles/textfield.css";
 import "../styles/inputfield.css";
 import { useRouter } from "next/router";

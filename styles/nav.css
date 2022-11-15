@@ -1,0 +1,75 @@
+.nav-container {
+  position: fixed;
+  height: 5rem;
+  background-color: rgba(255, 255, 255, 0.808);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding-left: 1rem;
+}
+.nav-container ul {
+  display: flex;
+  list-style: none;
+}
+.nav-container ul li {
+  margin: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: 0.3s ease-in;
+}
+.nav-container ul li:hover {
+  text-decoration: underline;
+  color: hsl(197, 79%, 45%);
+}
+.nav-login {
+  padding: 0.9rem 1.8rem;
+  border-radius: 2rem;
+  border: 1px solid black;
+}
+.nav-signup {
+  padding: 0.9rem 1.4rem;
+  border-radius: 2rem;
+  border: 1px solid black;
+  background-color: hsl(197, 79%, 85%);
+}
+.nav-container .nav-button {
+  transition: 0.3s ease-in;
+}
+.nav-container .nav-button:hover {
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  background-color: rgb(185, 229, 247);
+}
+.nav-container-mobile {
+  position: fixed;
+  height: 5rem;
+  background-color: rgba(255, 255, 255, 0.658);
+  width: 100%;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-container-mobile ul {
+  display: flex;
+  list-style: none;
+}
+.nav-container-mobile ul li {
+  margin: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .nav-container {
+    display: none;
+  }
+  .nav-container-mobile {
+    display: flex;
+  }
+}
