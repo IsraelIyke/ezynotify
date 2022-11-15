@@ -9,8 +9,8 @@ import Link from "next/link";
 import Inputfield from "../../components/inputfield";
 
 export default function Notification() {
-  const [keyword, setKeyword] = useState(null);
-  const [website, setWebsite] = useState(null);
+  const [key1, setKey1] = useState(null);
+  const [web1, setWeb1] = useState(null);
 
   const [profile, setProfile] = useState(null);
   const router = useRouter();
@@ -33,17 +33,16 @@ export default function Notification() {
   }
   if (!profile) return null;
 
-  async function updateProfile({ keyword, website }) {
+  async function updateProfile({ key1, web1 }) {
     try {
       const user = supabase.auth.user();
       const updates = {
         id: user.id, //
-        keyword,
-        website,
-        updated_at: new Date(),
+        key1,
+        web1,
       };
 
-      let { error } = await supabase.from("profiles").upsert(updates, {
+      let { error } = await supabase.from("notification").upsert(updates, {
         returning: "minimal", //don't return the value after inserting
       });
 
@@ -117,8 +116,8 @@ export default function Notification() {
                       placeholder="keyword"
                       id="keyword"
                       label="keyword"
-                      setState={setKeyword}
-                      value={keyword}
+                      setState={setKey1}
+                      value={key1}
                     />
                   </Grid>
                   <Grid item xs={12} md={6}>
@@ -127,8 +126,8 @@ export default function Notification() {
                       placeholder="website"
                       id="website"
                       label="website"
-                      setState={setWebsite}
-                      value={website}
+                      setState={setWeb1}
+                      value={web1}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -141,8 +140,8 @@ export default function Notification() {
                     <div
                       onClick={() =>
                         updateProfile({
-                          keyword,
-                          website,
+                          key1,
+                          web1,
                         })
                       }
                       className="submit-button"
