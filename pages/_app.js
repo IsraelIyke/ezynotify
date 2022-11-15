@@ -4,6 +4,7 @@ import "../styles/banner.css";
 import "../styles/content.css";
 import "../styles/testimonial.css";
 import "../styles/footer.css";
+import "../styles/sign-up.css";
 
 const { motion, AnimatePresence } = require("framer-motion");
 // import "../styles/globals.css";

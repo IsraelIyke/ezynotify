@@ -31,8 +31,14 @@ export default function SignIn() {
   }
   return (
     <>
+      <Nav />
       <div className="explore-page-hero">
-        <Nav />
+        <img
+          src="./logo2.png"
+          alt=" "
+          width={150}
+          style={{ marginBottom: "2rem" }}
+        />
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -45,7 +51,7 @@ export default function SignIn() {
         >
           <div>
             <main>
-              <h1>Sign Up</h1>
+              <h1>Sign up</h1>
               <Textfield
                 type="email"
                 placeholder="Email"
@@ -70,7 +76,15 @@ export default function SignIn() {
                 setState={setConfirmPassword}
                 value={confirmPassword}
               />
-              <div onClick={() => signIn()} className="reg-btn">
+              <div
+                onClick={() => signIn()}
+                className="reg-btn"
+                style={{
+                  padding: "1rem 5rem",
+                  backgroundColor: "wheat",
+                  borderRadius: "0.5rem",
+                }}
+              >
                 Sign Up
               </div>
             </main>
