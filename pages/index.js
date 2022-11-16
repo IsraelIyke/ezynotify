@@ -14,34 +14,36 @@ import Footer from "../components/footer";
 export default function Home() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={0}>
-        <Grid item xs={12} md={12}>
-          <Nav />
-        </Grid>
-        <Grid item xs={12} md={12}>
-          <Banner />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Image />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Content />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Content2 />
-        </Grid>
+      <div className="explore-page-hero">
+        <Grid container spacing={0}>
+          <Grid item xs={12} md={12}>
+            <Nav />
+          </Grid>
+          <Grid item xs={12} md={12}>
+            <Banner />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Image />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Content />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Content2 />
+          </Grid>
 
-        <Grid item xs={12} md={6}>
-          <Image2 />
+          <Grid item xs={12} md={6}>
+            <Image2 />
+          </Grid>
+          <Grid item xs={12} md={12}>
+            <Testimonial />
+          </Grid>
+          <Grid item xs={12} md={12}>
+            <Footer />
+          </Grid>
+          <ScrollButton />
         </Grid>
-        <Grid item xs={12} md={12}>
-          <Testimonial />
-        </Grid>
-        <Grid item xs={12} md={12}>
-          <Footer />
-        </Grid>
-        <ScrollButton />
-      </Grid>
+      </div>
     </Box>
   );
 }
