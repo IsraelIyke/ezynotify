@@ -5,40 +5,97 @@ import Nav from "../components/nav";
 import Textfield from "../components/textfield";
 const { motion } = require("framer-motion");
 
-export default function SignIn() {
+import * as React from "react";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+import Link from "next/link";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
   const [submitted, setSubmitted] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const [error, setError] = useState(false);
+  const [validate, setValidate] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+  const handle = () => {
+    setError(true);
+  };
+
+  const valid = () => {
+    setValidate(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+    setError(false);
+    setValidate(false);
+  };
+
   const router = useRouter();
 
-  async function signIn() {
-    const { error } = await supabase.auth.signUp({ email, password });
-    if (error) {
-      console.log({ error });
+  async function signUp() {
+    if (password != confirmPassword) {
+      valid();
     } else {
-      setSubmitted(true);
+      try {
+        setLoading(true);
+        const { error } = await supabase.auth.signUp({ email, password });
+        if (error) {
+          throw error;
+        } else {
+          handleClick();
+        }
+      } catch (error) {
+        setErrorMessage(error.message);
+        handle();
+      } finally {
+        setLoading(false);
+      }
     }
   }
 
-  if (submitted) {
-    return (
-      <div>
-        <h1>Please check your email to sign in</h1>
-      </div>
-    );
-  }
   return (
     <>
+      <>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            Success! Verify email if this is your first signup
+          </Alert>
+        </Snackbar>
+        <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
+            {errorMessage === "Request Failed"
+              ? "Please check internet connection"
+              : errorMessage}
+          </Alert>
+        </Snackbar>
+        <Snackbar open={validate} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
+            password does not match
+          </Alert>
+        </Snackbar>
+      </>
       <Nav />
       <div className="explore-page-hero">
-        <img
-          src="./logo2.png"
-          alt=" "
-          width={150}
-          style={{ marginBottom: "2rem" }}
-        />
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -76,17 +133,24 @@ export default function SignIn() {
                 setState={setConfirmPassword}
                 value={confirmPassword}
               />
-              <div
-                onClick={() => signIn()}
+              <br />
+              <button
                 className="reg-btn"
-                style={{
-                  padding: "1rem 5rem",
-                  backgroundColor: "wheat",
-                  borderRadius: "0.5rem",
+                onClick={(e) => {
+                  e.preventDefault();
+                  signUp();
                 }}
               >
-                Sign Up
-              </div>
+                {(loading && "loading") || "Sign Up"}
+              </button>
+              <br />
+              <br />
+              <h5>
+                Already have an account?
+                <Link href="/sign-in">
+                  <span className="link-span"> sign in</span>
+                </Link>
+              </h5>
             </main>
           </div>
         </motion.div>

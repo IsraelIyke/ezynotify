@@ -2,8 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-// import { Avatar } from "@material-ui/core";
-// import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
+import Link from "next/link";
 
 const PreviousBtn = (props) => {
   console.log(props);
@@ -32,9 +31,9 @@ const Testimonial = () => {
             &quot; What Our Customers Are Saying
           </h1>
           <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>
-            <Card img="https://www.tutorialrepublic.com/examples/images/clients/1.jpg" />
-            <Card img="https://www.tutorialrepublic.com/examples/images/clients/2.jpg" />
-            <Card img="https://www.tutorialrepublic.com/examples/images/clients/3.jpg" />
+            <Card />
+            <Card />
+            <Card />
           </Slider>
         </div>
         <br />
@@ -48,7 +47,9 @@ const Testimonial = () => {
         }}
       >
         <h2>So What Are You Waiting For &#63; &nbsp;</h2>
-        <button>TRY FOR FREE</button>
+        <Link href="/sign-up">
+          <button>TRY FOR FREE</button>
+        </Link>
       </div>
     </>
   );

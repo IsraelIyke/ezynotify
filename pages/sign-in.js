@@ -5,6 +5,15 @@ import Nav from "../components/nav";
 const { motion } = require("framer-motion");
 import Textfield from "../components/textfield";
 
+import * as React from "react";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+import Link from "next/link";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,16 +21,51 @@ export default function SignIn() {
   const [submitted, setSubmitted] = useState(false);
   const router = useRouter();
 
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const [error, setError] = useState(false);
+  const [validate, setValidate] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+  const handle = () => {
+    setError(true);
+  };
+
+  const valid = () => {
+    setValidate(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+    setError(false);
+    setValidate(false);
+  };
+
   useEffect(() => {
     fetchProfile();
   }, []);
 
   async function signIn() {
-    const { error } = await supabase.auth.signIn({ email, password });
-    if (error) {
-      console.log({ error });
-    } else {
-      setSubmitted(true);
+    try {
+      setLoading(true);
+      const { error } = await supabase.auth.signIn({ email, password });
+      if (error) {
+        throw error;
+      } else {
+        handleClick();
+      }
+    } catch (error) {
+      setErrorMessage(error.message);
+      handle();
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -40,8 +84,27 @@ export default function SignIn() {
   }
   return (
     <>
+      <>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            Success! if you provided only email address, check email for login
+            link.
+          </Alert>
+        </Snackbar>
+        <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
+            {errorMessage === "Request Failed"
+              ? "Please check internet connection"
+              : errorMessage}
+          </Alert>
+        </Snackbar>
+      </>
+      <Nav />
       <div className="explore-page-hero">
-        <Nav />
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -71,9 +134,30 @@ export default function SignIn() {
                 setState={setPassword}
                 value={password}
               />
-              <div onClick={() => signIn()} className="reg-btn">
-                Sign In
-              </div>
+              <h5>
+                Forgot your password?
+                <Link href="/password-recovery">
+                  <span className="link-span"> click here</span>
+                </Link>
+              </h5>
+              <br />
+              <button
+                className="reg-btn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  signIn();
+                }}
+              >
+                {(loading && "loading") || "Sign In"}
+              </button>
+              <br />
+              <br />
+              <h5>
+                Don't have an account?
+                <Link href="/sign-up">
+                  <span className="link-span"> sign up</span>
+                </Link>
+              </h5>
             </main>
           </div>
         </motion.div>

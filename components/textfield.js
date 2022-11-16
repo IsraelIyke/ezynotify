@@ -11,6 +11,7 @@ export default function Textfield(props) {
         value={props.value}
         autoComplete="off"
         className={props.classname}
+        onKeyUp={props.onKeyUp}
       />
       <label htmlFor={props.id}>{props.label}</label>
     </div>

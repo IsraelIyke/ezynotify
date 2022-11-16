@@ -71,7 +71,9 @@ export default function Banner() {
             ></motion.div>
           </div>
           <div className="banner-signup-btn">
-            <button>TRY FOR FREE</button>
+            <Link href="/sign-up">
+              <button>TRY FOR FREE</button>
+            </Link>
           </div>
         </div>
       </div>

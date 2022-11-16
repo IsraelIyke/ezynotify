@@ -34,34 +34,46 @@ export default function Nav() {
       {/* for desktop */}
       <nav className="nav-container" id="header">
         <ul>
-          <img src="./logo2.png" alt=" " width={110} />
-        </ul>
-        <ul style={{ marginLeft: "9rem" }}>
-          <li>Home</li>
-          <li>FAQ</li>
-          <li>Pricing</li>
+          <Link href="/">
+            <img src="./logo2.png" alt=" " width={110} />
+          </Link>
         </ul>
         <ul>
-          <li className="nav-login nav-button">Login</li>
-          <li className="nav-signup nav-button">Sign up</li>
+          <Link href="/">
+            <li>Home</li>
+          </Link>
+          <Link href="/">
+            <li>FAQ</li>
+          </Link>
+          <Link href="/">
+            <li>Pricing</li>
+          </Link>
+        </ul>
+        <ul>
+          <Link href="/sign-in">
+            <li className="nav-login nav-button">Login</li>
+          </Link>
+          <Link href="/sign-up">
+            <li className="nav-signup nav-button">Sign up</li>
+          </Link>
         </ul>
       </nav>
 
       {/* for mobile */}
       <nav className="nav-container-mobile" id="header">
-        {/* <ul>
-          <li>Home</li>
-          <li>FAQ</li>
-          <li>Pricing</li>
-        </ul> */}
         <ul>
           {move ? (
-            <li>
-              <FaTimes
-                className="open"
-                onClick={handleClose}
-                style={{ marginRight: "0.5rem" }}
-              />
+            <li
+              style={{
+                marginRight: "1.5rem",
+                marginLeft: "0.5rem",
+                marginTop: "0.3rem",
+                fontSize: "2rem",
+                fontWeight: "bold",
+              }}
+              onClick={handleClose}
+            >
+              x
             </li>
           ) : (
             <li className="menu-toggle">
@@ -117,12 +129,14 @@ export default function Nav() {
         </ul>
 
         <ul>
-          <img
-            src="./logo2.png"
-            alt=" "
-            width={110}
-            className="nav-mobile-image"
-          />
+          <Link href="/sign-up">
+            <img
+              src="./logo2.png"
+              alt=" "
+              width={110}
+              className="nav-mobile-image"
+            />
+          </Link>
         </ul>
         <ul>
           <li className="nav-login nav-button">Login</li>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <div className="footer-container">
@@ -16,12 +18,14 @@ export default function Footer() {
       </div>
       <div className="footer-content">
         <div>
-          <img
-            src="./logo1.png"
-            alt=" "
-            width={180}
-            style={{ padding: "1rem 0 1rem 0" }}
-          />
+          <Link href="/">
+            <img
+              src="./logo1.png"
+              alt=" "
+              width={180}
+              style={{ padding: "1rem 0 1rem 0" }}
+            />
+          </Link>
         </div>
         <div className="footer-arrange">
           <div>
@@ -30,7 +34,9 @@ export default function Footer() {
               <li>About</li>
               <li>Features</li>
               <li>Integrations</li>
-              <li>login</li>
+              <Link href="/sign-in">
+                <li>login</li>
+              </Link>
             </ul>
           </div>
 

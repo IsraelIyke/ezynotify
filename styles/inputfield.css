@@ -38,12 +38,12 @@
 .forms-input input:not(:placeholder-shown) + label {
   top: 0;
   font-size: 0.6rem;
-  color: #0041a1;
+  color: hsl(39, 77%, 53%);
   background: #fff;
   padding: 3px;
   border-radius: 8px;
 }
 
 .forms-input input:focus {
-  outline: 1.2px solid #6197e9;
+  outline: 1.2px solid hsl(39, 77%, 73%);
 }

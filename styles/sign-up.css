@@ -98,7 +98,8 @@
   font-size: 1.5rem;
 }
 .link-span {
-  color: hsl(217, 97%, 15%);
+  color: hsl(197, 71%, 33%);
+  cursor: pointer;
 }
 .label {
   margin-bottom: -1rem;
@@ -107,6 +108,20 @@
 }
 .content h1 {
   font-size: 3rem;
+}
+.reg-btn {
+  padding: 1rem 8.5rem;
+  background-color: hsl(39, 77%, 63%);
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+}
+.rec-btn {
+  padding: 0.8rem 2.5rem;
+  background-color: hsl(39, 77%, 63%);
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.1rem;
 }
 @media screen and (max-width: 767px) {
   .sign-up-container {
