@@ -139,8 +139,9 @@ export default function Nav() {
           </Link>
         </ul>
         <ul>
-          <li className="nav-login nav-button">Login</li>
-          {/* <li>Sign up</li> */}
+          <Link href="/sign-in">
+            <li className="nav-login nav-button">Login</li>
+          </Link>
         </ul>
       </nav>
     </>

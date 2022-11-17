@@ -1,0 +1,235 @@
+.sidebar-desktop {
+  border-right: 1px solid hsl(0, 0%, 80%);
+  height: 100vh;
+  margin-top: -1.4rem;
+  position: relative;
+  width: 16.3rem;
+}
+.dash-nav {
+  padding: 18px;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  top: 0;
+  background-color: white;
+  height: 4rem;
+  width: 100%;
+  box-shadow: 0px 0px 2px gray;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.dash-nav h3 {
+  margin-top: -0.6rem;
+  margin-left: 0rem;
+}
+.dash-nav-content {
+  display: flex;
+  color: black;
+  list-style: none;
+  align-items: center;
+  margin-left: auto;
+  border-radius: 2rem;
+  border: 1px solid black;
+  padding: 0.7rem 0.7rem;
+}
+.dash-nav-content:hover {
+  border: 2px solid black;
+}
+
+.dash-nav-content li {
+  margin-right: 0rem;
+  font-size: 0.8rem;
+}
+.dash-options-container h1 {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-left: 4rem;
+}
+
+.dash-tile {
+  height: 7rem;
+  width: 80%;
+  margin-left: 4rem;
+  padding: 0.5rem 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.dash-tile.search {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-left: 0.5rem solid skyblue;
+}
+.dash-tile.referral {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-left: 0.5rem solid skyblue;
+}
+.dash-tile.update {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-left: 0.5rem solid skyblue;
+}
+.dash-tile.profile {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-left: 0.5rem solid skyblue;
+}
+
+.dash-option-title {
+  font-size: 1.1rem;
+  text-align: center;
+  color: hsl(39, 77%, 13%);
+  margin-top: 0.5rem;
+}
+.dash-option-content {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* sidebar-list */
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-top: 0.3rem;
+}
+.sidebar-list li {
+  padding: 0.8rem 5rem 0.9rem 1.3rem;
+  /* border-radius: 2rem 0 0 2rem; */
+  /* margin-bottom: 1rem; */
+  background-color: white;
+  color: #000b1c;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.sidebar-list li .icon {
+  font-size: 1.6rem;
+  margin-left: -0.3rem;
+  /* margin-right: 0.8rem; */
+  color: hsl(197, 71%, 53%);
+}
+
+.sidebar-list li:hover {
+  margin-left: 0.5rem;
+  background-color: hsl(216, 100%, 90%);
+  color: #000b1c;
+}
+.dash-tile-subscription {
+  height: 10rem;
+  padding: 0.5rem 0.5rem;
+}
+.dash-tile-subscription h2 {
+  margin-top: 1rem;
+  border-radius: 0.4rem;
+  background-color: hsl(216, 100%, 95%);
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin-bottom: 1.2rem;
+}
+.notification-tile {
+  height: 10rem;
+  padding: 0.5rem 0.5rem;
+  margin-top: 1rem;
+  border-radius: 0.4rem;
+  background-color: hsl(216, 100%, 95%);
+}
+.not-found {
+  background-color: hsl(0, 0%, 100%);
+}
+.partial-found {
+  background-color: hsl(68, 100%, 93%);
+}
+.found {
+  background-color: hsl(120, 100%, 94%);
+}
+.sidebar-list-item {
+  display: block;
+  margin-left: 0.5rem;
+  /* font-family: monospace; */
+  font-size: 1rem;
+  font-weight: lighter;
+}
+.profile {
+  border-top: 1px solid hsl(0, 0%, 80%);
+  border-bottom: 1px solid hsl(0, 0%, 80%);
+  margin-top: 1rem;
+}
+.sidebar-blur {
+  position: fixed;
+  background-color: hsla(39, 77%, 13%, 0.418);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.sidebar-open {
+  width: 15rem;
+  z-index: 1;
+  position: fixed;
+  background-color: white;
+  height: 100%;
+}
+
+.instruction-list {
+  list-style: circle;
+  margin: 1rem 0 1rem 2rem;
+  font-size: 0.9rem;
+}
+.instruction {
+  font-size: 0.9rem;
+}
+.icon-sidebar {
+  display: none;
+  border-right: 1px solid hsl(0, 0%, 80%);
+  height: 100vh;
+  margin-top: -1.3rem;
+}
+.submit-button {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border: none;
+  height: 2.5rem;
+  width: 7rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  position: relative;
+  background-color: hsl(217, 97%, 15%);
+  color: white;
+  font-size: 0.9rem;
+  font-family: var(--title-font);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .icon-sidebar {
+    display: block;
+  }
+  .sidebar-list li {
+    padding: 1rem 0rem 1rem 1rem;
+
+    margin-bottom: 1rem;
+    margin-right: 0.1rem;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar-desktop {
+    display: none;
+  }
+  .dash-tile {
+    height: 10rem;
+    width: 90%;
+    margin-left: 1rem;
+  }
+  .dash-options-container h1 {
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+  }
+}

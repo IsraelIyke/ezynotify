@@ -54,68 +54,56 @@ export default function Profile() {
             <p>User ID: {profile.id}</p> */}
             {/* <p style={{ color: "black" }}></p> */}
             <Grid container spacing={1}>
-              <Grid
-                item
-                xs={12}
-                md={8}
-                style={{ padding: "2rem 1.2rem 2rem 1rem" }}
-                className="dash-options-container"
-              >
+              <Grid item xs={12} md={8} className="dash-options-container">
                 <Grid container>
                   <Grid item xs={12}>
                     <h1>Dashboard</h1>
                   </Grid>
 
-                  <Grid item xs={6.5} md={7}>
+                  <Grid item xs={12} md={12}>
                     <Link href="/dashboard/notification">
                       <div className="dash-tile search">
                         <h3 className="dash-option-title">
-                          Notification
-                          <hr style={{ color: "white", height: "0.2rem" }} />
+                          Keyword Notification
                         </h3>
                         <p className="dash-option-content">
-                          create search notification
-                          <br />
-                          view search status
+                          Create notification alert for a particular word,
+                          phrase or sentence in a website. <br />
+                          This feature checks your desired website for the
+                          keyword you entered at intervals and notifies you.
                         </p>
                       </div>
                     </Link>
                   </Grid>
 
-                  <Grid item xs={5.5} md={5}>
+                  <Grid item xs={12} md={12}>
                     <Link href="/dashboard/update">
                       <div className="dash-tile shift referral">
                         <h3 className="dash-option-title">
-                          Update
-                          <hr style={{ color: "white", height: "0.2rem" }} />
+                          Update Notification
                         </h3>
                         <p className="dash-option-content">
-                          Get notification for every update in a website
+                          Create notification alert to get notified for every
+                          update made in a website
                         </p>
                       </div>
                     </Link>
                   </Grid>
-                  <Grid item xs={5.5} md={5}>
+                  <Grid item xs={12} md={12}>
                     <Link href="/dashboard/referral">
                       <div className="dash-tile update">
-                        <h3 className="dash-option-title">
-                          Referral
-                          <hr style={{ color: "white", height: "0.2rem" }} />
-                        </h3>
+                        <h3 className="dash-option-title">Referral</h3>
                         <p className="dash-option-content">
                           Refer ezynotify to your friends and accumulate upgrade
-                          points
+                          points you can use for features limited to free plan.
                         </p>
                       </div>
                     </Link>
                   </Grid>
-                  <Grid item xs={6.5} md={7}>
+                  <Grid item xs={12} md={12}>
                     <Link href="/dashboard/profile">
                       <div className="dash-tile profile shift">
-                        <h3 className="dash-option-title">
-                          Profile
-                          <hr style={{ color: "white", height: "0.2rem" }} />
-                        </h3>
+                        <h3 className="dash-option-title">Profile</h3>
                         <p className="dash-option-content">
                           Change password
                           <br />
@@ -133,18 +121,6 @@ export default function Profile() {
                     <div className="dash-tile-subscription">
                       <h2>Subscription</h2>
                       <p>Free</p>
-                    </div>
-                  </Grid>
-                  <Grid item xs={12} style={{ padding: "0 0.5rem 0 1rem" }}>
-                    <div className="dash-tile-subscription">
-                      <h2>Activity Chart</h2>
-                      <p>bar chart</p>
-                    </div>
-                  </Grid>
-                  <Grid item xs={12} style={{ padding: "0 0.5rem 0 1rem" }}>
-                    <div className="dash-tile-subscription">
-                      <h2>Recent</h2>
-                      <p>webtoon</p>
                     </div>
                   </Grid>
                 </Grid>

@@ -17,8 +17,6 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const [submitted, setSubmitted] = useState(false);
   const router = useRouter();
 
   const [loading, setLoading] = useState(false);
@@ -26,6 +24,10 @@ export default function SignIn() {
   const [error, setError] = useState(false);
   const [validate, setValidate] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
 
   const handleClick = () => {
     setOpen(true);
@@ -48,10 +50,6 @@ export default function SignIn() {
     setValidate(false);
   };
 
-  useEffect(() => {
-    fetchProfile();
-  }, []);
-
   async function signIn() {
     try {
       setLoading(true);
@@ -60,6 +58,7 @@ export default function SignIn() {
         throw error;
       } else {
         handleClick();
+        fetchProfile();
       }
     } catch (error) {
       setErrorMessage(error.message);
@@ -79,9 +78,6 @@ export default function SignIn() {
     }
   }
 
-  if (submitted) {
-    fetchProfile();
-  }
   return (
     <>
       <>

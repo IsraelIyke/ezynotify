@@ -128,6 +128,7 @@
   margin: 1rem;
   font-size: 0.9rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .nav-container-mobile .nav-button {

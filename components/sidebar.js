@@ -20,7 +20,15 @@ export default function SideBar(props) {
   return (
     <>
       <div className="sidebar-desktop">
-        <p style={{ textAlign: "center", marginTop: "5rem" }}>
+        <p
+          style={{
+            textAlign: "center",
+            paddingTop: "3rem",
+            paddingBottom: "1rem",
+            borderBottom: "1px solid hsl(0, 0%, 80%)",
+            fontWeight: "bolder",
+          }}
+        >
           {props.profile.email}
         </p>
         <ul className="sidebar-list">
@@ -49,9 +57,9 @@ export default function SideBar(props) {
             </li>
           </Link>
           <Link href="/dashboard/profile">
-            <li>
+            <li className="profile">
               <HiUserCircle className="icon" />
-              <div className="sidebar-list-item">profile</div>
+              <div className="sidebar-list-item ">profile</div>
             </li>
           </Link>
         </ul>
@@ -61,7 +69,15 @@ export default function SideBar(props) {
         <>
           <div className="sidebar-blur" onClick={handleToggle}></div>
           <div className="sidebar-open">
-            <p style={{ textAlign: "center", marginTop: "1.6rem" }}>
+            <p
+              style={{
+                textAlign: "center",
+                paddingTop: "1.7rem",
+                paddingBottom: "1.2rem",
+                borderBottom: "1px solid hsl(0, 0%, 80%)",
+                fontWeight: "bolder",
+              }}
+            >
               {props.profile.email}
             </p>
             <ul className="sidebar-list">
@@ -90,18 +106,25 @@ export default function SideBar(props) {
                 </li>
               </Link>
               <Link href="/dashboard/profile">
-                <li>
+                <li className="profile">
                   <HiUserCircle className="icon" />
                   <div className="sidebar-list-item">profile</div>
                 </li>
               </Link>
             </ul>
-            <p
-              style={{ textAlign: "center", marginTop: "2rem" }}
-              onClick={handleToggle}
-            >
-              &lt;&lt;&lt;
-            </p>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <p
+                style={{
+                  textAlign: "center",
+                  marginTop: "2rem",
+                  color: "black",
+                  width: "2rem",
+                }}
+                onClick={handleToggle}
+              >
+                &lt;&lt;&lt;
+              </p>
+            </div>
           </div>
         </>
       ) : (
@@ -141,18 +164,26 @@ export default function SideBar(props) {
               </li>
             </Link>
             <Link href="/dashboard/profile">
-              <li>
+              <li className="profile">
                 <HiUserCircle className="icon" />
                 <div className="sidebar-list-item"></div>
               </li>
             </Link>
           </ul>
-          <p
-            style={{ textAlign: "center", marginTop: "2rem" }}
-            onClick={handleToggle}
-          >
-            &gt;&gt;&gt;
-          </p>
+
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <p
+              style={{
+                textAlign: "center",
+                marginTop: "2rem",
+                color: "black",
+                width: "2rem",
+              }}
+              onClick={handleToggle}
+            >
+              &gt;&gt;&gt;
+            </p>
+          </div>
         </div>
       )}
     </>
