@@ -10,40 +10,39 @@ import Image2 from "../components/image2";
 import Content2 from "../components/content2";
 import Testimonial from "../components/testimonial";
 import Footer from "../components/footer";
+const { motion } = require("framer-motion");
 
 export default function Home() {
   return (
-    <div className="explore-page-hero">
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={0}>
-          <Grid item xs={12} md={12}>
-            <Nav />
-          </Grid>
-          <Grid item xs={12} md={12}>
-            <Banner />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Image />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Content />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Content2 />
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-            <Image2 />
-          </Grid>
-          <Grid item xs={12} md={12}>
-            <Testimonial />
-          </Grid>
-          <Grid item xs={12} md={12}>
-            <Footer />
-          </Grid>
-          <ScrollButton />
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={0}>
+        <Grid item xs={12} md={12}>
+          <Nav />
         </Grid>
-      </Box>{" "}
-    </div>
+        <Grid item xs={12} md={12}>
+          <Banner />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Image />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Content />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Content2 />
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <Image2 />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Testimonial />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Footer />
+        </Grid>
+        <ScrollButton />
+      </Grid>
+    </Box>
   );
 }

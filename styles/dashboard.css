@@ -4,6 +4,7 @@
   margin-top: -1.4rem;
   position: relative;
   width: 16.3rem;
+  position: fixed;
 }
 .dash-nav {
   padding: 18px;
@@ -93,9 +94,11 @@
   flex-direction: column;
   list-style: none;
   padding-top: 0.3rem;
+  padding-right: -3rem;
+  /* width: 1rem; */
 }
 .sidebar-list li {
-  padding: 0.8rem 5rem 0.9rem 1.3rem;
+  padding: 0.8rem 0rem 0.9rem 1.3rem;
   /* border-radius: 2rem 0 0 2rem; */
   /* margin-bottom: 1rem; */
   background-color: white;
@@ -145,7 +148,7 @@
 }
 .sidebar-list-item {
   display: block;
-  margin-left: 0.5rem;
+  margin-left: 1.3rem;
   /* font-family: monospace; */
   font-size: 1rem;
   font-weight: lighter;
@@ -157,7 +160,7 @@
 }
 .sidebar-blur {
   position: fixed;
-  background-color: hsla(39, 77%, 13%, 0.418);
+  background-color: hsla(200, 80%, 10%, 0.527);
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -184,7 +187,9 @@
   display: none;
   border-right: 1px solid hsl(0, 0%, 80%);
   height: 100vh;
+  width: 3.4rem;
   margin-top: -1.3rem;
+  position: fixed;
 }
 .submit-button {
   display: flex;
@@ -198,7 +203,7 @@
   align-items: center;
   border-radius: 2rem;
   position: relative;
-  background-color: hsl(217, 97%, 15%);
+  background-color: hsl(39, 77%, 53%);
   color: white;
   font-size: 0.9rem;
   font-family: var(--title-font);

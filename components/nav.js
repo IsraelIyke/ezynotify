@@ -13,22 +13,22 @@ export default function Nav() {
   function handleClose() {
     setMove(false);
   }
-  useEffect(() => {
-    window.onscroll = function () {
-      scrollFunction();
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.onscroll = function () {
+  //     scrollFunction();
+  //   };
+  // }, []);
 
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 70 ||
-      document.documentElement.scrollTop > 70
-    ) {
-      document.getElementById("header").style.boxShadow = "0px 0px 1px gray";
-    } else {
-      document.getElementById("header").style.boxShadow = "none";
-    }
-  }
+  // function scrollFunction() {
+  //   if (
+  //     document.body.scrollTop > 70 ||
+  //     document.documentElement.scrollTop > 70
+  //   ) {
+  //     document.getElementById("header").style.boxShadow = "0px 0px 1px gray";
+  //   } else {
+  //     document.getElementById("header").style.boxShadow = "0px 0px 0px white";
+  //   }
+  // }
   return (
     <>
       {/* for desktop */}

@@ -76,6 +76,7 @@ export default function SideBar(props) {
                 paddingBottom: "1.2rem",
                 borderBottom: "1px solid hsl(0, 0%, 80%)",
                 fontWeight: "bolder",
+                marginBottom: "0.65rem",
               }}
             >
               {props.profile.email}
@@ -142,31 +143,26 @@ export default function SideBar(props) {
             <Link href="/dashboard/">
               <li>
                 <AiFillHome className="icon" />
-                <div className="sidebar-list-item"></div>
               </li>
             </Link>
             <Link href="/dashboard/notification">
               <li>
                 <MdNotificationAdd className="icon" />
-                <div className="sidebar-list-item"></div>
               </li>
             </Link>
             <Link href="/dashboard/update">
               <li>
                 <MdOutlineUpdate className="icon" />
-                <div className="sidebar-list-item"></div>
               </li>
             </Link>
             <Link href="/dashboard/referral">
               <li>
                 <HiUserGroup className="icon" />
-                <div className="sidebar-list-item"></div>
               </li>
             </Link>
             <Link href="/dashboard/profile">
               <li className="profile">
                 <HiUserCircle className="icon" />
-                <div className="sidebar-list-item"></div>
               </li>
             </Link>
           </ul>
