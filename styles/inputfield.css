@@ -5,6 +5,7 @@
   width: 100%;
   z-index: 0;
   /* margin: 0.8rem 0 0.8rem 0; */
+  margin-bottom: 1rem;
 }
 
 .forms-input input::placeholder {

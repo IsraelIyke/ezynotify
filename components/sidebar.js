@@ -3,7 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { AiFillHome } from "react-icons/ai";
 import { HiUserGroup, HiUserCircle } from "react-icons/hi";
-import { MdNotificationAdd, MdOutlineUpdate } from "react-icons/md";
+import { MdOutlineUpdate } from "react-icons/md";
+import { VscSymbolKeyword } from "react-icons/vsc";
 
 export default function SideBar(props) {
   const [move, setMove] = useState(false);
@@ -38,16 +39,16 @@ export default function SideBar(props) {
               <div className="sidebar-list-item">dashboard</div>
             </li>
           </Link>
-          <Link href="/dashboard/notification">
+          <Link href="/dashboard/keyword-notification">
             <li>
-              <MdNotificationAdd className="icon" />
-              <div className="sidebar-list-item">notification</div>
+              <VscSymbolKeyword className="icon" />
+              <div className="sidebar-list-item">keyword notification</div>
             </li>
           </Link>
-          <Link href="/dashboard/update">
+          <Link href="/dashboard/update-notification">
             <li>
               <MdOutlineUpdate className="icon" />
-              <div className="sidebar-list-item">update</div>
+              <div className="sidebar-list-item">update notification</div>
             </li>
           </Link>
           <Link href="/dashboard/referral">
@@ -88,16 +89,16 @@ export default function SideBar(props) {
                   <div className="sidebar-list-item">dashboard</div>
                 </li>
               </Link>
-              <Link href="/dashboard/notification">
+              <Link href="/dashboard/keyword-notification">
                 <li>
-                  <MdNotificationAdd className="icon" />
-                  <div className="sidebar-list-item">notification</div>
+                  <VscSymbolKeyword className="icon" />
+                  <div className="sidebar-list-item">keyword notification</div>
                 </li>
               </Link>
-              <Link href="/dashboard/update">
+              <Link href="/dashboard/update-notification">
                 <li>
                   <MdOutlineUpdate className="icon" />
-                  <div className="sidebar-list-item">update</div>
+                  <div className="sidebar-list-item">update notification</div>
                 </li>
               </Link>
               <Link href="/dashboard/referral">
@@ -145,12 +146,12 @@ export default function SideBar(props) {
                 <AiFillHome className="icon" />
               </li>
             </Link>
-            <Link href="/dashboard/notification">
+            <Link href="/dashboard/keyword-notification">
               <li>
-                <MdNotificationAdd className="icon" />
+                <VscSymbolKeyword className="icon" />
               </li>
             </Link>
-            <Link href="/dashboard/update">
+            <Link href="/dashboard/update-notification">
               <li>
                 <MdOutlineUpdate className="icon" />
               </li>

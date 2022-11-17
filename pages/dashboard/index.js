@@ -36,23 +36,18 @@ export default function Profile() {
         </Grid>
 
         <Grid item xs={1.8} md={2.5}>
-          <div style={{ marginTop: "3.5rem" }}>
-            <SideBar profile={profile} />
-          </div>
+          <SideBar profile={profile} />
         </Grid>
         <Grid item xs={10.2} md={9.5}>
           <div
             style={{
-              marginTop: "3.5rem",
+              paddingTop: "3.5rem",
               backgroundColor: "white",
-              minHeight: "100vh",
+              minHeight: "98vh",
               maxHeight: "100%",
               color: "black",
             }}
           >
-            {/* <h2>Hello, {profile.email}</h2>
-            <p>User ID: {profile.id}</p> */}
-            {/* <p style={{ color: "black" }}></p> */}
             <Grid container spacing={1}>
               <Grid item xs={12} md={8} className="dash-options-container">
                 <Grid container>

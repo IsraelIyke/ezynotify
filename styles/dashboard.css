@@ -1,7 +1,7 @@
 .sidebar-desktop {
   border-right: 1px solid hsl(0, 0%, 80%);
   height: 100vh;
-  margin-top: -1.4rem;
+  margin-top: 2.1rem;
   position: relative;
   width: 16.3rem;
   position: fixed;
@@ -120,10 +120,32 @@
   color: #000b1c;
 }
 .dash-tile-subscription {
-  height: 10rem;
+  height: 5rem;
+  width: 78vw;
   padding: 0.5rem 0.5rem;
+  margin-left: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
 }
 .dash-tile-subscription h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+  background-color: hsl(216, 100%, 95%);
+  padding: 0.5rem 1.4rem 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dash-tile-subs {
+  height: 10rem;
+  padding: 0.5rem 0.5rem;
+  display: block;
+}
+.dash-tile-subs h2 {
   margin-top: 1rem;
   border-radius: 0.4rem;
   background-color: hsl(216, 100%, 95%);
@@ -173,11 +195,15 @@
   position: fixed;
   background-color: white;
   height: 100%;
+  margin-top: 3.5rem;
 }
-
+.inputfield-container {
+  margin-left: 4rem;
+}
 .instruction-list {
   list-style: circle;
-  margin: 1rem 0 1rem 2rem;
+  margin: 0rem 0 1rem 6rem;
+  padding-right: 1rem;
   font-size: 0.9rem;
 }
 .instruction {
@@ -188,7 +214,7 @@
   border-right: 1px solid hsl(0, 0%, 80%);
   height: 100vh;
   width: 3.4rem;
-  margin-top: -1.3rem;
+  margin-top: 2.2rem;
   position: fixed;
 }
 .submit-button {
@@ -196,18 +222,22 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   outline: none;
-  border: none;
   height: 2.5rem;
   width: 7rem;
   justify-content: center;
   align-items: center;
   border-radius: 2rem;
   position: relative;
-  background-color: hsl(39, 77%, 53%);
-  color: white;
+  background-color: hsl(39, 77%, 43%);
+  border: 1px solid black;
+  color: black;
   font-size: 0.9rem;
   font-family: var(--title-font);
   cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.submit-button:hover {
+  border: 2px solid black;
 }
 
 @media screen and (max-width: 767px) {
@@ -237,4 +267,89 @@
     margin-top: 2rem;
     margin-left: 1rem;
   }
+  .inputfield-container {
+    margin-left: 1rem;
+  }
+  .instruction-list {
+    margin: 0rem 0rem 1rem 3rem;
+    padding: 1rem;
+  }
+  .dash-tile-subscription {
+    display: block;
+  }
+  .dash-tile-subs {
+    display: none;
+  }
+}
+
+/* notification */
+.notify-card {
+  width: 100%;
+  height: 5rem;
+  border: 1px solid black;
+  border-left: 0.5rem solid hsl(197, 71%, 53%);
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+/* .keyword-limit {
+  background-color: transparent;
+  z-index: 1;
+  width: 98.8vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.keyword-limit p {
+  margin-top: 1rem;
+  width: 18rem;
+  height: 6rem;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
+}
+.keyword-limit-blur {
+  background-color: rgba(0, 0, 0, 0.603);
+  width: 98.8vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.closing {
+  margin-bottom: -0.4rem;
+  margin-left: 90%;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.key {
+  display: flex;
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.green {
+  border: 1px solid black;
+  padding: 0.2rem 0.2rem;
+  border-left: 1rem solid green;
+  margin-left: 1rem;
+  border-radius: 0.3rem;
+}
+.yellow {
+  border: 1px solid black;
+  padding: 0.2rem 0.2rem;
+  border-left: 1rem solid orange;
+  margin-left: 1rem;
+  border-radius: 0.3rem;
+}
+.skyblue {
+  border: 1px solid black;
+  padding: 0.2rem 0.2rem;
+  border-left: 1rem solid skyblue;
+  margin-left: 1rem;
+  border-radius: 0.3rem;
 }
