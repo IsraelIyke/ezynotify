@@ -10,20 +10,27 @@ import Image2 from "../components/image2";
 import Content2 from "../components/content2";
 import Testimonial from "../components/testimonial";
 import Footer from "../components/footer";
+import Head from "next/head";
 const { motion } = require("framer-motion");
 
 export default function Home() {
   return (
     <Box sx={{ flexGrow: 1 }}>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
+      </Head>
       <Grid container spacing={0}>
         <Grid item xs={12} md={12}>
           <Nav />
         </Grid>
-        <motion.div>
-          <Grid item xs={12} md={12}>
-            <Banner />
-          </Grid>
-        </motion.div>
+
+        <Grid item xs={12} md={12}>
+          <Banner />
+        </Grid>
+
         <Grid item xs={12} md={6}>
           <Image />
         </Grid>
