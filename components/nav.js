@@ -32,7 +32,7 @@ export default function Nav() {
   return (
     <>
       {/* for desktop */}
-      <nav className="nav-container" id="header">
+      <nav className="nav-container">
         <ul>
           <Link href="/">
             <img src="./logo2.png" alt=" " width={110} />
@@ -60,7 +60,7 @@ export default function Nav() {
       </nav>
 
       {/* for mobile */}
-      <nav className="nav-container-mobile" id="header">
+      <nav className="nav-container-mobile">
         <ul>
           {move ? (
             <li
@@ -129,7 +129,7 @@ export default function Nav() {
         </ul>
 
         <ul>
-          <Link href="/sign-up">
+          <Link href="/">
             <img
               src="./logo2.png"
               alt=" "
