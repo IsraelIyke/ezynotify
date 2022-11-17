@@ -13,8 +13,8 @@ import Footer from "../components/footer";
 
 export default function Home() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <div className="explore-page-hero">
+    <div className="explore-page-hero">
+      <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={0}>
           <Grid item xs={12} md={12}>
             <Nav />
@@ -43,7 +43,7 @@ export default function Home() {
           </Grid>
           <ScrollButton />
         </Grid>
-      </div>
-    </Box>
+      </Box>{" "}
+    </div>
   );
 }
