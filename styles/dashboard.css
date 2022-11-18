@@ -264,7 +264,7 @@
     margin-left: 1rem;
   }
   .dash-options-container h1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
     margin-top: 2rem;
     margin-left: 1rem;
   }
@@ -290,7 +290,7 @@
   border: 1px solid black;
   border-left: 0.5rem solid hsl(197, 71%, 53%);
   border-radius: 0.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 /* .keyword-limit {
   background-color: transparent;
