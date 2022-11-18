@@ -343,7 +343,7 @@ export default function Notification() {
                             <p>
                               You have exceeded you five input limit. You can
                               delete an input you no longer need from the status
-                              panel. Thanks
+                              panel. Thanks &#128151;
                             </p>
                           </div>
                         )}
