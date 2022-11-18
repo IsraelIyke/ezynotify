@@ -106,10 +106,8 @@ export default function Notification() {
       setLoading(false);
     }
   }
-  console.log(keyCount);
   async function fetchProfile() {
     const profileData = await supabase.auth.user();
-    console.log("profileData: ", profileData);
     if (!profileData) {
       router.push("/sign-in");
     } else {
@@ -134,8 +132,6 @@ export default function Notification() {
     key5,
     web5,
   }) {
-    console.log(keyCount);
-
     try {
       setLoading(true);
       const user = supabase.auth.user();
@@ -234,7 +230,7 @@ export default function Notification() {
                         select the messaging platform you wish to get
                         notification
                       </li> */}
-                        <li>click submit</li>
+                        <li>click create</li>
                         <li>you can edit your search in the status panel</li>
                       </ul>
                     </Grid>
