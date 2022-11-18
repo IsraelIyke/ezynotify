@@ -269,7 +269,7 @@
     margin-left: 1rem;
   }
   .inputfield-container {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
   .instruction-list {
     margin: 0rem 0rem 1rem 3rem;
@@ -307,7 +307,7 @@
 .keyword-limit p {
   margin-top: 1rem;
   width: 18rem;
-  height: 6rem;
+  height: 8rem;
   border: 1px solid rgba(0, 0, 0, 0.267);
   padding: 1rem 1rem;
   border-radius: 0.5rem;
