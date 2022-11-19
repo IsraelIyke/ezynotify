@@ -56,7 +56,7 @@ export default function Profile() {
                   </Grid>
 
                   <Grid item xs={12} md={12}>
-                    <Link href="/dashboard/notification">
+                    <Link href="/dashboard/keyword-notification">
                       <div className="dash-tile search">
                         <h3 className="dash-option-title">
                           Keyword Notification
@@ -72,7 +72,7 @@ export default function Profile() {
                   </Grid>
 
                   <Grid item xs={12} md={12}>
-                    <Link href="/dashboard/update">
+                    <Link href="/dashboard/update-notification">
                       <div className="dash-tile shift referral">
                         <h3 className="dash-option-title">
                           Update Notification
