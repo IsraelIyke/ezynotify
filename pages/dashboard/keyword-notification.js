@@ -412,7 +412,7 @@ export default function Notification() {
                       <div className="dash-tile-subscription">
                         <h2 onClick={() => setStat((prev) => !prev)}>
                           Notification Status{" "}
-                          <AiOutlineUp style={{ marginLeft: "7rem", color: "skyblue" }} />
+                          <AiOutlineUp style={{ marginLeft: "6rem", color: "hsl(216, 100%, 25%)" }} />
                         </h2>
                       </div>
                     ) : (
@@ -427,7 +427,7 @@ export default function Notification() {
                       >
                         <h2 onClick={() => setStat((prev) => !prev)}>
                           Notification Status{" "}
-                          <AiOutlineDown style={{ marginLeft: "7rem", color: "skyblue" }} />
+                          <AiOutlineDown style={{ marginLeft: "6rem", color: "hsl(216, 100%, 25%)" }} />
                         </h2>
                         {/* <div className="key">
                         key <div className="green">perfect match</div>
