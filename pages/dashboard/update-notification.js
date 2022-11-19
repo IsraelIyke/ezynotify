@@ -20,7 +20,6 @@ export default function Update() {
   const [limit, setLimit] = useState(false);
   const [stat, setStat] = useState(true);
 
-  const [keyword, setKeyword] = useState(null);
   const [website, setWebsite] = useState(null);
 
   const [profile, setProfile] = useState(null);
@@ -62,7 +61,7 @@ export default function Update() {
 
       let { data, error, status } = await supabase
         .from("notification")
-        .select(`website,keyword`) //
+        .select(`website`) //
         .eq("id", user.id)
         .single();
 
@@ -70,8 +69,7 @@ export default function Update() {
         throw error;
       }
       if (data) {
-        setWebsite(data.web1); //
-        setKeyword(data.key5);
+        setWebsite(data.website); //
       }
     } catch (error) {
       // alert(error.message);
@@ -95,13 +93,12 @@ export default function Update() {
   }
   if (!profile) return null;
 
-  async function updateProfile({ keyword, website }) {
+  async function updateProfile({ website }) {
     try {
       setLoading(true);
       const user = supabase.auth.user();
       const updates = {
         id: user.id, //
-        keyword,
         website,
       };
 
