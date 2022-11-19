@@ -113,9 +113,19 @@ export default function Profile() {
               <Grid item xs={12} md={4}>
                 <Grid container spacing={1}>
                   <Grid item xs={12} style={{ padding: "0 0.5rem 0 1rem" }}>
-                    <div className="dash-tile-subscription">
-                      <h2>Subscription</h2>
-                      <p>Free</p>
+                    <div className="dash-tile-subs">
+                      <h2>
+                        Subscription
+                        <span
+                          style={{
+                            fontSize: "1rem",
+                            marginLeft: "1rem",
+                            color: "hsl(216, 100%, 25%)",
+                          }}
+                        >
+                          Free
+                        </span>
+                      </h2>
                     </div>
                   </Grid>
                 </Grid>

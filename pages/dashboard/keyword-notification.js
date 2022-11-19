@@ -83,7 +83,7 @@ export default function Notification() {
         .eq("id", user.id)
         .single();
 
-      if (error && status !== 406) {
+      if (error && status === 406) {
         throw error;
       }
       if (data) {
@@ -236,139 +236,218 @@ export default function Notification() {
                     </Grid>
                     <div className="inputfield-container">
                       <Grid item xs={12} md={6}>
-                        {keyCount == 1 && (
-                          <Inputfield
-                            type="text"
-                            placeholder="keyword"
-                            id="keyword"
-                            label="keyword"
-                            setState={setKey1}
-                            value={key1}
-                          />
-                        )}
-                        {keyCount == 2 && (
-                          <Inputfield
-                            type="text"
-                            placeholder="keyword"
-                            id="keyword"
-                            label="keyword"
-                            setState={setKey2}
-                            value={key2}
-                          />
-                        )}
-                        {keyCount == 3 && (
-                          <Inputfield
-                            type="text"
-                            placeholder="keyword"
-                            id="keyword"
-                            label="keyword"
-                            setState={setKey3}
-                            value={key3}
-                          />
-                        )}
-                        {keyCount == 4 && (
-                          <Inputfield
-                            type="text"
-                            placeholder="keyword"
-                            id="keyword"
-                            label="keyword"
-                            setState={setKey4}
-                            value={key4}
-                          />
-                        )}
-                        {keyCount == 5 && (
-                          <Inputfield
-                            type="text"
-                            placeholder="keyword"
-                            id="keyword"
-                            label="keyword"
-                            setState={setKey5}
-                            value={key5}
-                          />
-                        )}
-                      </Grid>
-                      <Grid item xs={12} md={6}>
-                        {keyCount == 1 && (
-                          <Inputfield
-                            type="text"
-                            placeholder="website"
-                            id="website"
-                            label="website"
-                            setState={setWeb1}
-                            value={web1}
-                          />
-                        )}
-                        {keyCount == 2 && (
-                          <Inputfield
-                            type="text"
-                            placeholder="website"
-                            id="website"
-                            label="website"
-                            setState={setWeb2}
-                            value={web2}
-                          />
-                        )}
-                        {keyCount == 3 && (
-                          <Inputfield
-                            type="text"
-                            placeholder="website"
-                            id="website"
-                            label="website"
-                            setState={setWeb3}
-                            value={web3}
-                          />
-                        )}
-                        {keyCount == 4 && (
-                          <Inputfield
-                            type="text"
-                            placeholder="website"
-                            id="website"
-                            label="website"
-                            setState={setWeb4}
-                            value={web4}
-                          />
-                        )}
-                        {keyCount == 5 && (
-                          <Inputfield
-                            type="text"
-                            placeholder="website"
-                            id="website"
-                            label="website"
-                            setState={setWeb5}
-                            value={web5}
-                          />
-                        )}
-                        {keyCount >= 6 && (
+                        {key1 == "" ? (
+                          <div>
+                            <Inputfield
+                              type="text"
+                              placeholder="keyword"
+                              id="keyword"
+                              label="keyword"
+                              setState={setKey1}
+                              value={key1}
+                            />
+                            <Inputfield
+                              type="text"
+                              placeholder="website"
+                              id="website"
+                              label="website"
+                              setState={setWeb1}
+                              value={web1}
+                            />{" "}
+                            <Grid item xs={12}>
+                              <div
+                                onClick={() => {
+                                  updateProfile({
+                                    key1,
+                                    web1,
+                                    key2,
+                                    web2,
+                                    key3,
+                                    web3,
+                                    key4,
+                                    web4,
+                                    key5,
+                                    web5,
+                                    keyCount,
+                                  });
+                                }}
+                                className="submit-button"
+                              >
+                                {(loading && "Loading") || "create"}
+                              </div>
+                            </Grid>
+                          </div>
+                        ) : key2 == "" ? (
+                          <div>
+                            <Inputfield
+                              type="text"
+                              placeholder="keyword"
+                              id="keyword"
+                              label="keyword"
+                              setState={setKey2}
+                              value={key2}
+                            />{" "}
+                            <Inputfield
+                              type="text"
+                              placeholder="website"
+                              id="website"
+                              label="website"
+                              setState={setWeb2}
+                              value={web2}
+                            />
+                            <Grid item xs={12}>
+                              <div
+                                onClick={() => {
+                                  updateProfile({
+                                    key1,
+                                    web1,
+                                    key2,
+                                    web2,
+                                    key3,
+                                    web3,
+                                    key4,
+                                    web4,
+                                    key5,
+                                    web5,
+                                    keyCount,
+                                  });
+                                }}
+                                className="submit-button"
+                              >
+                                {(loading && "Loading") || "create"}
+                              </div>
+                            </Grid>
+                          </div>
+                        ) : key3 == "" ? (
+                          <div>
+                            <Inputfield
+                              type="text"
+                              placeholder="keyword"
+                              id="keyword"
+                              label="keyword"
+                              setState={setKey3}
+                              value={key3}
+                            />
+                            <Inputfield
+                              type="text"
+                              placeholder="website"
+                              id="website"
+                              label="website"
+                              setState={setWeb3}
+                              value={web3}
+                            />
+                            <Grid item xs={12}>
+                              <div
+                                onClick={() => {
+                                  updateProfile({
+                                    key1,
+                                    web1,
+                                    key2,
+                                    web2,
+                                    key3,
+                                    web3,
+                                    key4,
+                                    web4,
+                                    key5,
+                                    web5,
+                                    keyCount,
+                                  });
+                                }}
+                                className="submit-button"
+                              >
+                                {(loading && "Loading") || "create"}
+                              </div>
+                            </Grid>
+                          </div>
+                        ) : key4 == "" ? (
+                          <div>
+                            <Inputfield
+                              type="text"
+                              placeholder="keyword"
+                              id="keyword"
+                              label="keyword"
+                              setState={setKey4}
+                              value={key4}
+                            />{" "}
+                            <Inputfield
+                              type="text"
+                              placeholder="website"
+                              id="website"
+                              label="website"
+                              setState={setWeb4}
+                              value={web4}
+                            />
+                            <Grid item xs={12}>
+                              <div
+                                onClick={() => {
+                                  updateProfile({
+                                    key1,
+                                    web1,
+                                    key2,
+                                    web2,
+                                    key3,
+                                    web3,
+                                    key4,
+                                    web4,
+                                    key5,
+                                    web5,
+                                    keyCount,
+                                  });
+                                }}
+                                className="submit-button"
+                              >
+                                {(loading && "Loading") || "create"}
+                              </div>
+                            </Grid>
+                          </div>
+                        ) : key5 == "" ? (
+                          <div>
+                            <Inputfield
+                              type="text"
+                              placeholder="keyword"
+                              id="keyword"
+                              label="keyword"
+                              setState={setKey5}
+                              value={key5}
+                            />{" "}
+                            <Inputfield
+                              type="text"
+                              placeholder="website"
+                              id="website"
+                              label="website"
+                              setState={setWeb5}
+                              value={web5}
+                            />
+                            <Grid item xs={12}>
+                              <div
+                                onClick={() => {
+                                  updateProfile({
+                                    key1,
+                                    web1,
+                                    key2,
+                                    web2,
+                                    key3,
+                                    web3,
+                                    key4,
+                                    web4,
+                                    key5,
+                                    web5,
+                                    keyCount,
+                                  });
+                                }}
+                                className="submit-button"
+                              >
+                                {(loading && "Loading") || "create"}
+                              </div>
+                            </Grid>
+                          </div>
+                        ) : (
                           <div className="keyword-limit">
                             <p>
                               You have used up you five input limit. But you can
-                              delete an input you no longer need from the notification status
-                              panel. Thanks &#128151;
+                              delete an input you no longer need from the
+                              notification status panel. Thanks &#128151;
                             </p>
-                          </div>
-                        )}
-                      </Grid>
-                      <Grid item xs={12}>
-                        {keyCount < 6 && (
-                          <div
-                            onClick={() => {
-                              updateProfile({
-                                key1,
-                                web1,
-                                key2,
-                                web2,
-                                key3,
-                                web3,
-                                key4,
-                                web4,
-                                key5,
-                                web5,
-                                keyCount,
-                              });
-                            }}
-                            className="submit-button"
-                          >
-                            {(loading && "Loading") || "create"}
                           </div>
                         )}
                       </Grid>
@@ -412,7 +491,12 @@ export default function Notification() {
                       <div className="dash-tile-subscription">
                         <h2 onClick={() => setStat((prev) => !prev)}>
                           Notification Status{" "}
-                          <AiOutlineUp style={{ marginLeft: "6rem", color: "hsl(216, 100%, 25%)" }} />
+                          <AiOutlineUp
+                            style={{
+                              marginLeft: "6rem",
+                              color: "hsl(216, 100%, 25%)",
+                            }}
+                          />
                         </h2>
                       </div>
                     ) : (
@@ -427,7 +511,12 @@ export default function Notification() {
                       >
                         <h2 onClick={() => setStat((prev) => !prev)}>
                           Notification Status{" "}
-                          <AiOutlineDown style={{ marginLeft: "6rem", color: "hsl(216, 100%, 25%)" }} />
+                          <AiOutlineDown
+                            style={{
+                              marginLeft: "6rem",
+                              color: "hsl(216, 100%, 25%)",
+                            }}
+                          />
                         </h2>
                         {/* <div className="key">
                         key <div className="green">perfect match</div>
