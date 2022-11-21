@@ -7,6 +7,7 @@ import "../styles/footer.css";
 import "../styles/sign-up.css";
 import "../styles/dashboard.css";
 import "../styles/key.css";
+import "../styles/referral.css";
 
 const { motion, AnimatePresence } = require("framer-motion");
 // import "../styles/globals.css";

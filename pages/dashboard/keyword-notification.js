@@ -136,7 +136,7 @@ export default function Notification() {
 
       const { err } = await supabase
         .from("notification")
-        .update({ emailStatus2: "pending", status2: "No"  })
+        .update({ emailStatus2: "pending", status2: "No" })
         .eq("id", user.id);
 
       if (error) {
@@ -157,7 +157,7 @@ export default function Notification() {
 
       const { err } = await supabase
         .from("notification")
-        .update({ emailStatus3: "pending", status3: "No"   })
+        .update({ emailStatus3: "pending", status3: "No" })
         .eq("id", user.id);
 
       if (error) {
@@ -178,7 +178,7 @@ export default function Notification() {
 
       const { err } = await supabase
         .from("notification")
-        .update({ emailStatus4: "pending", status4: "No"   })
+        .update({ emailStatus4: "pending", status4: "No" })
         .eq("id", user.id);
 
       if (error) {
@@ -199,7 +199,7 @@ export default function Notification() {
 
       const { err } = await supabase
         .from("notification")
-        .update({ emailStatus5: "pending", status5: "No"   })
+        .update({ emailStatus5: "pending", status5: "No" })
         .eq("id", user.id);
 
       if (error) {
@@ -597,7 +597,9 @@ export default function Notification() {
                       <ul className="instruction-list">
                         <li>
                           enter the particular word, phrase or sentence you want
-                          to set notification for and then the website
+                          to set notification for and then the website. The
+                          website should start with <b>http://</b> or
+                          <b> https://</b>
                         </li>
                         {/* <li>
                         select the messaging platform you wish to get
@@ -628,7 +630,7 @@ export default function Notification() {
                               type="text"
                               placeholder="website"
                               id="website"
-                              label="website"
+                              label="http://example.com"
                               setState={setWeb1}
                               value={web1}
                             />
@@ -661,7 +663,7 @@ export default function Notification() {
                               type="text"
                               placeholder="website"
                               id="website"
-                              label="website"
+                              label="http://example.com"
                               setState={setWeb2}
                               value={web2}
                             />
@@ -694,7 +696,7 @@ export default function Notification() {
                               type="text"
                               placeholder="website"
                               id="website"
-                              label="website"
+                              label="http://example.com"
                               setState={setWeb3}
                               value={web3}
                             />
@@ -727,7 +729,7 @@ export default function Notification() {
                               type="text"
                               placeholder="website"
                               id="website"
-                              label="website"
+                              label="http://example.com"
                               setState={setWeb4}
                               value={web4}
                             />
@@ -760,7 +762,7 @@ export default function Notification() {
                               type="text"
                               placeholder="website"
                               id="website"
-                              label="website"
+                              label="http://example.com"
                               setState={setWeb5}
                               value={web5}
                             />

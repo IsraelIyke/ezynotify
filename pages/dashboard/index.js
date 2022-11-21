@@ -50,7 +50,7 @@ export default function Profile() {
           >
             <Grid container spacing={1}>
               <Grid item xs={12} md={8} className="dash-options-container">
-                <Grid container>
+                <Grid container style={{ marginBottom: "3rem" }}>
                   <Grid item xs={12}>
                     <h1>Dashboard</h1>
                   </Grid>
@@ -112,9 +112,40 @@ export default function Profile() {
 
               <Grid item xs={12} md={4}>
                 <Grid container spacing={1}>
-                  <Grid item xs={12} style={{ padding: "0 0.5rem 0 1rem" }}>
+                  <Grid
+                    item
+                    xs={12}
+                    style={{ padding: "0 0.5rem 0 1rem", position: "fixed" }}
+                  >
                     <div className="dash-tile-subs">
-                      <h2>
+                      <h2
+                        style={{
+                          padding: "0.5rem 2rem 0.5rem 2rem",
+                        }}
+                      >
+                        Subscription
+                        <span
+                          style={{
+                            fontSize: "1rem",
+                            marginLeft: "1rem",
+                            color: "hsl(216, 100%, 25%)",
+                          }}
+                        >
+                          Free
+                        </span>
+                      </h2>
+                    </div>
+                    <div
+                      // style={{ width: "100vw" }}
+                      className="dash-tile-subscription"
+                    >
+                      <h2
+                        style={{
+                          marginTop: "-15rem",
+                          boxShadow: "-4px 0.9rem 1px white",
+                          fontSize: "1rem",
+                        }}
+                      >
                         Subscription
                         <span
                           style={{

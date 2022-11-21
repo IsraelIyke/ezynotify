@@ -5,13 +5,10 @@ import { useRouter } from "next/router";
 import SideBar from "../../components/sidebar";
 import DashNav from "../../components/dash-nav";
 import { Box, Grid } from "@mui/material";
-import Link from "next/link";
-import Inputfield from "../../components/inputfield";
 
 import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -20,9 +17,12 @@ export default function Update() {
   const [limit, setLimit] = useState(false);
   const [stat, setStat] = useState(true);
 
-  const [website, setWebsite] = useState(null);
+  const [referral, setReferral] = useState(null);
 
   const [profile, setProfile] = useState(null);
+  const [copyText, setCopyText] = useState();
+  const [copyTex, setCopyTex] = useState();
+  const [copyTxt, setCopyTxt] = useState();
 
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = React.useState(false);
@@ -54,6 +54,19 @@ export default function Update() {
     fetchProfile();
   }, []);
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(copyText);
+    handleClick();
+  };
+  const handleCop = () => {
+    navigator.clipboard.writeText(copyTex);
+    handleClick();
+  };
+  const handleCo = () => {
+    navigator.clipboard.writeText(copyTxt);
+    handleClick();
+  };
+
   async function getDetail() {
     try {
       setLoading(true);
@@ -61,7 +74,7 @@ export default function Update() {
 
       let { data, error, status } = await supabase
         .from("notification")
-        .select(`website`) //
+        .select(`number`) //
         .eq("id", user.id)
         .single();
 
@@ -69,7 +82,12 @@ export default function Update() {
         throw error;
       }
       if (data) {
-        setWebsite(data.website); //
+        setReferral(data.number); //
+        setCopyText(`${data.number}AeR`);
+        setCopyTex(`https://ezynotify.com/ref?${data.number}AeR`);
+        setCopyTxt(
+          `hi there, I found a website that notifies you whenever an update is made in a website. Here is the link, you can check it out https://ezynotify.com/sign-up/ref?${data.number}AeR`
+        );
       }
     } catch (error) {
       // alert(error.message);
@@ -93,32 +111,6 @@ export default function Update() {
   }
   if (!profile) return null;
 
-  async function updateProfile({ website }) {
-    try {
-      setLoading(true);
-      const user = supabase.auth.user();
-      const updates = {
-        id: user.id, //
-        website,
-      };
-
-      let { error } = await supabase.from("notification").upsert(updates, {
-        returning: "minimal", //don't return the value after inserting
-      });
-
-      if (error) {
-        throw error;
-      }
-      getDetail();
-      handleClick();
-    } catch (error) {
-      setErrorMessage(error.message);
-      handle();
-    } finally {
-      setLoading(false);
-    }
-  }
-
   return (
     <Box flexGrow={1}>
       <>
@@ -128,7 +120,7 @@ export default function Update() {
             severity="success"
             sx={{ width: "100%" }}
           >
-            Success!.
+            Copied!.
           </Alert>
         </Snackbar>
         <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
@@ -166,46 +158,63 @@ export default function Update() {
                 ) : (
                   <Grid container>
                     <Grid item xs={12}>
-                      <h1>Create Keyword Notification</h1>
+                      <h1>Refer your friends</h1>
                     </Grid>
 
                     <Grid item xs={12} md={12}>
                       <ul className="instruction-list">
-                        <li>
-                          enter the particular the website you want to get
-                          update from
-                        </li>
+                        <li>refer and earn points to enjoy premium features</li>
                         {/* <li>
                         select the messaging platform you wish to get
                         notification
                       </li> */}
-                        <li>click create</li>
-                        <li>you can edit your website later.</li>
+                        <li>1 referral = 5 days of premium plan</li>
+                        <li>This rate will last until 1st February, 2023.</li>
+                        <li>
+                          Your referral becomes valid once your friend logs in
+                        </li>
                       </ul>
                     </Grid>
+
                     <div className="inputfield-container">
-                      <Grid item xs={12} md={6}>
-                        <Inputfield
-                          type="text"
-                          placeholder="website"
-                          id="website"
-                          label="website"
-                          setState={setWebsite}
-                          value={website}
+                      <div className="referral-input">
+                        <h5>Referral code:</h5>
+                        <input
+                          value={copyText}
+                          onChange={(e) => setCopyText(e.target.value)}
+                          disabled
                         />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <div
-                          onClick={() => {
-                            updateProfile({
-                              website,
-                            });
-                          }}
-                          className="submit-button"
-                        >
-                          {(loading && "Loading") || "create"}
-                        </div>
-                      </Grid>
+                        <button onClick={handleCopy}>Copy</button>
+                      </div>
+                      <div className="referral-input">
+                        {" "}
+                        <h5>Referrals: 2</h5>
+                      </div>
+                      <div className="referral-input">
+                        <h5>Days accumulated: 20days</h5>
+                      </div>
+                      <div className="referral-input">
+                        <h5>Days used: 3days</h5>
+                      </div>
+
+                      <div className="referral-input">
+                        <h5>Referral link:</h5>
+                        <input
+                          value={copyTex}
+                          onChange={(e) => setCopyTex(e.target.value)}
+                          disabled
+                        />
+                        <button onClick={handleCop}>Copy</button>
+                      </div>
+                      <div className="referral-input">
+                        <h5>Referral message:</h5>
+                        <input
+                          value={copyTxt}
+                          onChange={(e) => setCopyTxt(e.target.value)}
+                          disabled
+                        />
+                        <button onClick={handleCop}>Copy</button>
+                      </div>
                     </div>
                   </Grid>
                 )}

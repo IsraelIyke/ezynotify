@@ -212,14 +212,17 @@ export default function Update() {
                       <ul className="instruction-list">
                         <li>
                           enter the particular the website you want to get
-                          update from
+                          update from. The website should start with{" "}
+                          <b>http://</b> or
+                          <b> https://</b>
                         </li>
                         {/* <li>
                         select the messaging platform you wish to get
                         notification
                       </li> */}
-                        <li>click create</li>
-                        <li>you can edit your website anytime.</li>
+                        <li>
+                          click create. You can edit your website anytime.
+                        </li>
                         <li>
                           the recent update made from the time of notification
                           creation will be sent to you as a message
@@ -236,7 +239,7 @@ export default function Update() {
                           type="text"
                           placeholder="website"
                           id="website"
-                          label="website"
+                          label="http://example.com"
                           setState={setWebsite}
                           value={website}
                         />
@@ -270,7 +273,9 @@ export default function Update() {
                             {(loading && "Loading") || "create"}
                           </div>
                         ) : (
-                          <div style={{ display: "flex", position: "relative" }}>
+                          <div
+                            style={{ display: "flex", position: "relative" }}
+                          >
                             <div
                               onClick={() => {
                                 updateProfile({
