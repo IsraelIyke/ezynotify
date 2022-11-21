@@ -322,7 +322,7 @@ export default function Update() {
                                   Yes
                                 </span>
                                 <span
-                                  onClick={() => setDel1(false)}
+                                  onClick={() => setDel(false)}
                                   style={{
                                     padding: "0.3rem 1rem 0.3rem 1rem",
                                     backgroundColor: "white",
