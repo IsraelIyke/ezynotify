@@ -226,7 +226,7 @@ export default function Update() {
                         </li>
                         <li>
                           Note! this feature finds every update made to a
-                          website, ignore the ones you don't need. Thanks
+                          website, ignore the ones you don&apos;t need. Thanks
                         </li>
                       </ul>
                     </Grid>
