@@ -270,7 +270,7 @@ export default function Update() {
                             {(loading && "Loading") || "create"}
                           </div>
                         ) : (
-                          <div style={{ display: "flex" }}>
+                          <div style={{ display: "flex", position: "relative" }}>
                             <div
                               onClick={() => {
                                 updateProfile({
