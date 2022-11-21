@@ -115,7 +115,7 @@ export default function Notification() {
 
       const { err } = await supabase
         .from("notification")
-        .update({ emailStatus1: "pending" })
+        .update({ emailStatus1: "pending", status1: "No" })
         .eq("id", user.id);
 
       if (error) {
@@ -136,7 +136,7 @@ export default function Notification() {
 
       const { err } = await supabase
         .from("notification")
-        .update({ emailStatus2: "pending" })
+        .update({ emailStatus2: "pending", status2: "No"  })
         .eq("id", user.id);
 
       if (error) {
@@ -157,7 +157,7 @@ export default function Notification() {
 
       const { err } = await supabase
         .from("notification")
-        .update({ emailStatus3: "pending" })
+        .update({ emailStatus3: "pending", status3: "No"   })
         .eq("id", user.id);
 
       if (error) {
@@ -178,7 +178,7 @@ export default function Notification() {
 
       const { err } = await supabase
         .from("notification")
-        .update({ emailStatus4: "pending" })
+        .update({ emailStatus4: "pending", status4: "No"   })
         .eq("id", user.id);
 
       if (error) {
@@ -199,7 +199,7 @@ export default function Notification() {
 
       const { err } = await supabase
         .from("notification")
-        .update({ emailStatus5: "pending" })
+        .update({ emailStatus5: "pending", status5: "No"   })
         .eq("id", user.id);
 
       if (error) {
