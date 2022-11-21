@@ -203,7 +203,7 @@
 }
 .instruction-list {
   list-style: circle;
-  margin: 0rem 0 1rem 6rem;
+  margin: 0rem 0 3rem 6rem;
   padding-right: 1rem;
   font-size: 0.9rem;
 }
@@ -241,7 +241,7 @@
   border: 2px solid black;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .icon-sidebar {
     display: block;
   }
@@ -264,8 +264,8 @@
     margin-left: 1rem;
   }
   .dash-options-container h1 {
-    margin-bottom: 0.8rem;
-    margin-top: 2rem;
+    margin-bottom: -0.4rem;
+    margin-top: 1rem;
     margin-left: 1rem;
     font-size: 1.2rem;
   }
@@ -273,7 +273,7 @@
     margin-left: 0.5rem;
   }
   .instruction-list {
-    margin: 0rem 0rem 1rem 3rem;
+    margin: 0rem 0rem 0rem 3rem;
     padding: 1rem;
   }
   .dash-tile-subscription {
@@ -284,27 +284,6 @@
   }
 }
 
-/* notification */
-.notify-card {
-  width: 100%;
-  height: 5rem;
-  border: 1px solid black;
-  border-left: 0.5rem solid hsl(197, 71%, 53%);
-  border-radius: 0.4rem;
-  margin-bottom: 0.5rem;
-}
-/* .keyword-limit {
-  background-color: transparent;
-  z-index: 1;
-  width: 98.8vw;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 .keyword-limit p {
   margin-top: 1rem;
   width: 18rem;
@@ -333,25 +312,4 @@
   margin-bottom: 0.5rem;
   justify-content: center;
   align-items: center;
-}
-.green {
-  border: 1px solid black;
-  padding: 0.2rem 0.2rem;
-  border-left: 1rem solid green;
-  margin-left: 1rem;
-  border-radius: 0.3rem;
-}
-.yellow {
-  border: 1px solid black;
-  padding: 0.2rem 0.2rem;
-  border-left: 1rem solid orange;
-  margin-left: 1rem;
-  border-radius: 0.3rem;
-}
-.skyblue {
-  border: 1px solid black;
-  padding: 0.2rem 0.2rem;
-  border-left: 1rem solid skyblue;
-  margin-left: 1rem;
-  border-radius: 0.3rem;
 }

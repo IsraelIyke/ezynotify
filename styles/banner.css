@@ -146,7 +146,7 @@
   background-color: hsl(39, 77%, 53%);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .card__content {
     height: 24rem;
     width: 100vw;

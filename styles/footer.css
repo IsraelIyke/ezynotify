@@ -58,7 +58,7 @@
 }
 
 /** For mobile devices **/
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .custom-shape-divider-top-1668414877 svg {
     width: calc(116% + 1.3px);
     height: 60px;
@@ -68,7 +68,7 @@
 }
 
 /** For mobile devices **/
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .footer-content {
     padding: 0rem 0rem;
     display: flex;

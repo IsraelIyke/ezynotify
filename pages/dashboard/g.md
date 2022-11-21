@@ -8,88 +8,96 @@ import { Box, Grid } from "@mui/material";
 import Link from "next/link";
 import Inputfield from "../../components/inputfield";
 
-import * as React from "react";
+import \* as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 export default function Notification() {
-  const [del1, setDel1] = useState(false);
-  const [del2, setDel2] = useState(false);
-  const [del3, setDel3] = useState(false);
-  const [del4, setDel4] = useState(false);
-  const [del5, setDel5] = useState(false);
+const [del1, setDel1] = useState(false);
+const [del2, setDel2] = useState(false);
+const [del3, setDel3] = useState(false);
+const [del4, setDel4] = useState(false);
+const [del5, setDel5] = useState(false);
 
-  const [status1, setStatus1] = useState("No");
-  const [status2, setStatus2] = useState("No");
-  const [status3, setStatus3] = useState("No");
-  const [status4, setStatus4] = useState("No");
-  const [status5, setStatus5] = useState("No");
+const [check, setCheck] = useState(true);
 
-  const [stat, setStat] = useState(true);
-  const [key1, setKey1] = useState(null);
-  const [web1, setWeb1] = useState(null);
-  const [key2, setKey2] = useState(null);
-  const [web2, setWeb2] = useState(null);
-  const [key3, setKey3] = useState(null);
-  const [web3, setWeb3] = useState(null);
-  const [key4, setKey4] = useState(null);
-  const [web4, setWeb4] = useState(null);
-  const [key5, setKey5] = useState(null);
-  const [web5, setWeb5] = useState(null);
-  const [emailStatus1, setEmailStatus1] = useState();
-  const [emailStatus2, setEmailStatus2] = useState();
-  const [emailStatus3, setEmailStatus3] = useState();
-  const [emailStatus4, setEmailStatus4] = useState();
-  const [emailStatus5, setEmailStatus5] = useState();
-  const [k1, setK1] = useState(null);
-  const [k2, setK2] = useState(null);
-  const [k3, setK3] = useState(null);
-  const [k4, setK4] = useState(null);
-  const [k5, setK5] = useState(null);
-  const [profile, setProfile] = useState(null);
-  const [loading, setloading] = useState(false);
-  const [open, setOpen] = React.useState(false);
-  const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+const [stat, setStat] = useState(true);
 
-  const router = useRouter();
-  useEffect(() => {
-    fetchProfile();
-    getDetail();
-  }, []);
+const [key1, setKey1] = useState(null);
+const [web1, setWeb1] = useState(null);
 
-  async function updateProfile({
-    key1,
-    web1,
-    key2,
-    web2,
-    key3,
-    web3,
-    key4,
-    web4,
-    key5,
-    web5,
-  }) {
-    try {
-      setloading(true);
-      const user = supabase.auth.user();
-      const updates = {
-        id: user.id, //
-        key1,
-        web1,
-        key2,
-        web2,
-        key3,
-        web3,
-        key4,
-        web4,
-        key5,
-        web5,
-      };
+const [key2, setKey2] = useState(null);
+const [web2, setWeb2] = useState(null);
+
+const [key3, setKey3] = useState(null);
+const [web3, setWeb3] = useState(null);
+
+const [key4, setKey4] = useState(null);
+const [web4, setWeb4] = useState(null);
+
+const [key5, setKey5] = useState(null);
+const [web5, setWeb5] = useState(null);
+
+const [emailStatus1, setEmailStatus1] = useState();
+const [emailStatus2, setEmailStatus2] = useState();
+const [emailStatus3, setEmailStatus3] = useState();
+const [emailStatus4, setEmailStatus4] = useState();
+const [emailStatus5, setEmailStatus5] = useState();
+// const [web6, setWeb6] = useState(null);
+
+const [k1, setK1] = useState(null);
+const [k2, setK2] = useState(null);
+const [k3, setK3] = useState(null);
+const [k4, setK4] = useState(null);
+const [k5, setK5] = useState(null);
+
+const [keyCount, setKeyCount] = useState();
+
+const [profile, setProfile] = useState(null);
+
+const [loading, setloading] = useState(false);
+const [open, setOpen] = React.useState(false);
+const [error, setError] = useState(false);
+const [errorMessage, setErrorMessage] = useState("");
+
+const router = useRouter();
+useEffect(() => {
+fetchProfile();
+getDetail();
+}, []);
+
+async function updateProfile({
+key1,
+web1,
+key2,
+web2,
+key3,
+web3,
+key4,
+web4,
+key5,
+web5,
+}) {
+try {
+setloading(true);
+const user = supabase.auth.user();
+const updates = {
+id: user.id, //
+key1,
+web1,
+key2,
+web2,
+key3,
+web3,
+key4,
+web4,
+key5,
+web5,
+};
 
       let { error } = await supabase.from("notification").upsert(updates, {
         returning: "minimal", //don't return the value after inserting
@@ -108,10 +116,11 @@ export default function Notification() {
     } finally {
       setloading(false);
     }
-  }
-  async function handleStatusPending1() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleStatusPending1() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -129,10 +138,11 @@ export default function Notification() {
       handle();
     } finally {
     }
-  }
-  async function handleStatusPending2() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleStatusPending2() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -150,10 +160,11 @@ export default function Notification() {
       handle();
     } finally {
     }
-  }
-  async function handleStatusPending3() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleStatusPending3() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -171,10 +182,11 @@ export default function Notification() {
       handle();
     } finally {
     }
-  }
-  async function handleStatusPending4() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleStatusPending4() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -192,10 +204,11 @@ export default function Notification() {
       handle();
     } finally {
     }
-  }
-  async function handleStatusPending5() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleStatusPending5() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -213,10 +226,11 @@ export default function Notification() {
       handle();
     } finally {
     }
-  }
-  async function handleStatusSent1() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleStatusSent1() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -234,10 +248,11 @@ export default function Notification() {
       handle();
     } finally {
     }
-  }
-  async function handleStatusSent2() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleStatusSent2() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -255,10 +270,11 @@ export default function Notification() {
       handle();
     } finally {
     }
-  }
-  async function handleStatusSent3() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleStatusSent3() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -276,10 +292,11 @@ export default function Notification() {
       handle();
     } finally {
     }
-  }
-  async function handleStatusSent4() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleStatusSent4() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -297,10 +314,11 @@ export default function Notification() {
       handle();
     } finally {
     }
-  }
-  async function handleStatusSent5() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleStatusSent5() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -318,10 +336,11 @@ export default function Notification() {
       handle();
     } finally {
     }
-  }
-  async function handleDel1() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleDel1() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -344,10 +363,11 @@ export default function Notification() {
     } finally {
       setDel1(false);
     }
-  }
-  async function handleDel2() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleDel2() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -370,10 +390,11 @@ export default function Notification() {
     } finally {
       setDel2(false);
     }
-  }
-  async function handleDel3() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleDel3() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -396,10 +417,11 @@ export default function Notification() {
     } finally {
       setDel3(false);
     }
-  }
-  async function handleDel4() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleDel4() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -422,10 +444,11 @@ export default function Notification() {
     } finally {
       setDel4(false);
     }
-  }
-  async function handleDel5() {
-    try {
-      const user = supabase.auth.user();
+
+}
+async function handleDel5() {
+try {
+const user = supabase.auth.user();
 
       const { err } = await supabase
         .from("notification")
@@ -448,44 +471,45 @@ export default function Notification() {
     } finally {
       setDel5(false);
     }
-  }
-  const handleClick = () => {
-    setOpen(true);
-  };
-  const handle = () => {
-    setError(true);
-  };
 
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpen(false);
-    setError(false);
-  };
+}
+const handleClick = () => {
+setOpen(true);
+};
+const handle = () => {
+setError(true);
+};
 
-  async function fetchProfile() {
-    const profileData = await supabase.auth.user();
-    if (!profileData) {
-      router.push("/sign-in");
-    } else {
-      setProfile(profileData);
-    }
-  }
-  async function signOut() {
-    await supabase.auth.signOut();
-    router.push("/sign-in");
-  }
-  if (!profile) return null;
+const handleClose = (event, reason) => {
+if (reason === "clickaway") {
+return;
+}
+setOpen(false);
+setError(false);
+};
 
-  async function getDetail() {
-    try {
-      const user = supabase.auth.user();
+async function fetchProfile() {
+const profileData = await supabase.auth.user();
+if (!profileData) {
+router.push("/sign-in");
+} else {
+setProfile(profileData);
+}
+}
+async function signOut() {
+await supabase.auth.signOut();
+router.push("/sign-in");
+}
+if (!profile) return null;
+
+async function getDetail() {
+try {
+const user = supabase.auth.user();
 
       let { data, error, status } = await supabase
         .from("notification")
         .select(
-          `web1,web2,web3,web4,web5,key1,key2,key3,key4,key5,emailStatus1,emailStatus2,emailStatus3,emailStatus4,emailStatus5,status1,status2,status3,status4,status5`
+          `web1,web2,web3,web4,web5,key1,key2,key3,key4,key5,emailStatus1,emailStatus2,emailStatus3,emailStatus4,emailStatus5`
         ) //
         .eq("id", user.id)
         .single();
@@ -516,57 +540,50 @@ export default function Notification() {
         setEmailStatus3(data.emailStatus3);
         setEmailStatus4(data.emailStatus4);
         setEmailStatus5(data.emailStatus5);
-
-        setStatus1(data.status1);
-        setStatus2(data.status2);
-        setStatus3(data.status3);
-        setStatus4(data.status4);
-        setStatus5(data.status5);
       }
     } catch (error) {
       // alert(error.message);
       handle();
     } finally {
     }
-  }
-  let check = null;
-  if (k1 == null) {
-    check = 1;
-  } else if (k2 == null) {
-    check = 2;
-  } else if (k3 == null) {
-    check = 3;
-  } else if (k4 == null) {
-    check = 4;
-  } else if (k5 == null) {
-    check = 5;
-  } else {
-    check = 6;
-  }
-  return (
-    <Box flexGrow={1}>
-      <>
-        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-          <Alert
-            onClose={handleClose}
-            severity="success"
-            sx={{ width: "100%" }}
-          >
-            Success!.
-          </Alert>
-        </Snackbar>
-        <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
-          <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
-            {errorMessage === "Request Failed"
-              ? "Please check internet connection"
-              : errorMessage}
-          </Alert>
-        </Snackbar>
-      </>
-      <Grid container spacing={1}>
-        <Grid item xs={12}>
-          <DashNav signOut={signOut} />
-        </Grid>
+
+}
+if (k1 == null) {
+setCheck(1);
+} else if (k2 == null) {
+setCheck(2);
+} else if (k3 == null) {
+setCheck(3);
+} else if (k4 == null) {
+setCheck(4);
+} else if (k5 == null) {
+setCheck(5);
+} else {
+setCheck(6);
+}
+return (
+<Box flexGrow={1}>
+<>
+<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+<Alert
+onClose={handleClose}
+severity="success"
+sx={{ width: "100%" }} >
+Success!.
+</Alert>
+</Snackbar>
+<Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
+<Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
+{errorMessage === "Request Failed"
+? "Please check internet connection"
+: errorMessage}
+</Alert>
+</Snackbar>
+</>
+<Grid container spacing={1}>
+<Grid item xs={12}>
+<DashNav signOut={signOut} />
+</Grid>
 
         <Grid item xs={1.8} md={2.5}>
           <div>
@@ -608,7 +625,7 @@ export default function Notification() {
                         <li>
                           Once your keyword gets a perfect or partial match, the
                           search will stop/unmount. But you can mount it if
-                          still needed.
+                          still needed
                         </li>
                       </ul>
                     </Grid>
@@ -818,15 +835,7 @@ export default function Notification() {
                           <div className="notify-card">no notification yet</div>
                         )}
                       {k1 != null && (
-                        <div
-                          className={
-                            status1 == "No"
-                              ? "notify-card"
-                              : status1 == "Perfect"
-                              ? "notify-card green"
-                              : "notify-card yellow"
-                          }
-                        >
+                        <div className="notify-card">
                           <div>
                             <input
                               type="text"
@@ -849,7 +858,7 @@ export default function Notification() {
                           >
                             <div style={{ marginLeft: "-0.6rem" }}>
                               <h5>Status</h5>
-                              <h6>{status1} match</h6>
+                              <h6>Perfect match</h6>
                             </div>
                             <div>
                               <button
@@ -937,15 +946,7 @@ export default function Notification() {
                         </div>
                       )}
                       {k2 != null && (
-                        <div
-                          className={
-                            status2 == "No"
-                              ? "notify-card"
-                              : status2 == "Perfect"
-                              ? "notify-card green"
-                              : "notify-card yellow"
-                          }
-                        >
+                        <div className="notify-card">
                           <div>
                             <input
                               type="text"
@@ -968,7 +969,7 @@ export default function Notification() {
                           >
                             <div style={{ marginLeft: "-0.6rem" }}>
                               <h5>Status</h5>
-                              <h6>{status2} match</h6>
+                              <h6>Perfect match</h6>
                             </div>
                             <div>
                               <button
@@ -1056,15 +1057,7 @@ export default function Notification() {
                         </div>
                       )}
                       {k3 != null && (
-                        <div
-                          className={
-                            status3 == "No"
-                              ? "notify-card"
-                              : status3 == "Perfect"
-                              ? "notify-card green"
-                              : "notify-card yellow"
-                          }
-                        >
+                        <div className="notify-card">
                           <div>
                             <input
                               type="text"
@@ -1087,7 +1080,7 @@ export default function Notification() {
                           >
                             <div style={{ marginLeft: "-0.6rem" }}>
                               <h5>Status</h5>
-                              <h6>{status3} match</h6>
+                              <h6>Perfect match</h6>
                             </div>
                             <div>
                               <button
@@ -1175,15 +1168,7 @@ export default function Notification() {
                         </div>
                       )}
                       {k4 != null && (
-                        <div
-                          className={
-                            status4 == "No"
-                              ? "notify-card"
-                              : status4 == "Perfect"
-                              ? "notify-card green"
-                              : "notify-card yellow"
-                          }
-                        >
+                        <div className="notify-card">
                           <div>
                             <input
                               type="text"
@@ -1206,7 +1191,7 @@ export default function Notification() {
                           >
                             <div style={{ marginLeft: "-0.6rem" }}>
                               <h5>Status</h5>
-                              <h6>{status4} match</h6>
+                              <h6>Perfect match</h6>
                             </div>
                             <div>
                               <button
@@ -1294,15 +1279,7 @@ export default function Notification() {
                         </div>
                       )}
                       {k5 != null && (
-                        <div
-                          className={
-                            status5 == "No"
-                              ? "notify-card"
-                              : status5 == "Perfect"
-                              ? "notify-card green"
-                              : "notify-card yellow"
-                          }
-                        >
+                        <div className="notify-card">
                           <div>
                             <input
                               type="text"
@@ -1325,7 +1302,7 @@ export default function Notification() {
                           >
                             <div style={{ marginLeft: "-0.6rem" }}>
                               <h5>Status</h5>
-                              <h6>{status5} match</h6>
+                              <h6>Perfect match</h6>
                             </div>
                             <div>
                               <button
@@ -1413,7 +1390,6 @@ export default function Notification() {
                         </div>
                       )}
                     </div>
-
                     {stat ? (
                       <div className="dash-tile-subscription">
                         <h2 onClick={() => setStat((prev) => !prev)}>
@@ -1454,601 +1430,7 @@ export default function Notification() {
                               no notification yet
                             </div>
                           )}
-                        {k1 != null && (
-                          <div
-                            className={
-                              status1 == "No"
-                                ? "notify-card"
-                                : status1 == "Perfect"
-                                ? "notify-card green"
-                                : "notify-card yellow"
-                            }
-                          >
-                            <div>
-                              <input
-                                type="text"
-                                placeholder="keyword"
-                                id="key1"
-                                onChange={(e) => setKey1(e.target.value)}
-                                value={key1}
-                              />
-                              <input
-                                type="text"
-                                placeholder="website"
-                                id="web1"
-                                onChange={(e) => setWeb1(e.target.value)}
-                                value={web1}
-                              />
-                            </div>
-                            <div
-                              className="notify-card-status"
-                              style={{ position: "relative" }}
-                            >
-                              <div style={{ marginLeft: "-0.6rem" }}>
-                                <h5>Status</h5>
-                                <h6>{status1} match</h6>
-                              </div>
-                              <div>
-                                <button
-                                  className="update"
-                                  onClick={() => {
-                                    updateProfile({ key1, web1 });
-                                  }}
-                                >
-                                  update
-                                </button>
-                              </div>
-                              <div>
-                                {emailStatus1 == "sent" ? (
-                                  <button
-                                    className="mount"
-                                    onClick={handleStatusPending1}
-                                  >
-                                    mount
-                                  </button>
-                                ) : (
-                                  <button
-                                    className="mount"
-                                    onClick={handleStatusSent1}
-                                  >
-                                    unmount
-                                  </button>
-                                )}
-                              </div>
-                              <div>
-                                <button
-                                  className="delete"
-                                  onClick={() => setDel1(true)}
-                                >
-                                  delete
-                                </button>
-                                {del1 && (
-                                  <div
-                                    style={{
-                                      backgroundColor: "skyblue",
-                                      height: "5rem",
-                                      width: "100%",
-                                      position: "absolute",
-                                      top: "2rem",
-                                      left: "-0.4rem",
-                                      borderRadius: "0.5rem",
-                                      fontSize: "0.8rem",
-                                      padding: "0.5rem",
-                                      boxShadow: "2px 2px 2px gray",
-                                      zIndex: 1,
-                                      textAlign: "center",
-                                    }}
-                                  >
-                                    <h4>Are you sure you want to delete?</h4>
-                                    <br />
-                                    <span
-                                      style={{
-                                        padding: "0.3rem 1rem 0.3rem 1rem",
-                                        backgroundColor: "red",
-                                        border: "1px solid black",
-                                        borderRadius: "0.8rem",
-                                        marginRight: "2rem",
-                                        cursor: "pointer",
-                                      }}
-                                      onClick={handleDel1}
-                                    >
-                                      Yes
-                                    </span>
-                                    <span
-                                      onClick={() => setDel1(false)}
-                                      style={{
-                                        padding: "0.3rem 1rem 0.3rem 1rem",
-                                        backgroundColor: "white",
-                                        border: "1px solid black",
-                                        borderRadius: "0.8rem",
-                                        marginLeft: "2rem",
-                                        cursor: "pointer",
-                                      }}
-                                    >
-                                      No
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                        {k2 != null && (
-                          <div
-                            className={
-                              status2 == "No"
-                                ? "notify-card"
-                                : status2 == "Perfect"
-                                ? "notify-card green"
-                                : "notify-card yellow"
-                            }
-                          >
-                            <div>
-                              <input
-                                type="text"
-                                placeholder="keyword"
-                                id="key2"
-                                onChange={(e) => setKey2(e.target.value)}
-                                value={key2}
-                              />
-                              <input
-                                type="text"
-                                placeholder="website"
-                                id="web2"
-                                onChange={(e) => setWeb2(e.target.value)}
-                                value={web2}
-                              />
-                            </div>
-                            <div
-                              className="notify-card-status"
-                              style={{ position: "relative" }}
-                            >
-                              <div style={{ marginLeft: "-0.6rem" }}>
-                                <h5>Status</h5>
-                                <h6>{status2} match</h6>
-                              </div>
-                              <div>
-                                <button
-                                  className="update"
-                                  onClick={() => {
-                                    updateProfile({ key2, web2 });
-                                  }}
-                                >
-                                  update
-                                </button>
-                              </div>
-                              <div>
-                                {emailStatus2 == "sent" ? (
-                                  <button
-                                    className="mount"
-                                    onClick={handleStatusPending2}
-                                  >
-                                    mount
-                                  </button>
-                                ) : (
-                                  <button
-                                    className="mount"
-                                    onClick={handleStatusSent2}
-                                  >
-                                    unmount
-                                  </button>
-                                )}
-                              </div>
-                              <div>
-                                <button
-                                  className="delete"
-                                  onClick={() => setDel2(true)}
-                                >
-                                  delete
-                                </button>
-                                {del2 && (
-                                  <div
-                                    style={{
-                                      backgroundColor: "skyblue",
-                                      height: "5rem",
-                                      width: "100%",
-                                      position: "absolute",
-                                      top: "2rem",
-                                      left: "-0.4rem",
-                                      borderRadius: "0.5rem",
-                                      fontSize: "0.8rem",
-                                      padding: "0.5rem",
-                                      boxShadow: "2px 2px 2px gray",
-                                      zIndex: 1,
-                                      textAlign: "center",
-                                    }}
-                                  >
-                                    <h4>Are you sure you want to delete?</h4>
-                                    <br />
-                                    <span
-                                      style={{
-                                        padding: "0.3rem 1rem 0.3rem 1rem",
-                                        backgroundColor: "red",
-                                        border: "1px solid black",
-                                        borderRadius: "0.8rem",
-                                        marginRight: "2rem",
-                                        cursor: "pointer",
-                                      }}
-                                      onClick={handleDel2}
-                                    >
-                                      Yes
-                                    </span>
-                                    <span
-                                      onClick={() => setDel2(false)}
-                                      style={{
-                                        padding: "0.3rem 1rem 0.3rem 1rem",
-                                        backgroundColor: "white",
-                                        border: "1px solid black",
-                                        borderRadius: "0.8rem",
-                                        marginLeft: "2rem",
-                                        cursor: "pointer",
-                                      }}
-                                    >
-                                      No
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                        {k3 != null && (
-                          <div
-                            className={
-                              status3 == "No"
-                                ? "notify-card"
-                                : status3 == "Perfect"
-                                ? "notify-card green"
-                                : "notify-card yellow"
-                            }
-                          >
-                            <div>
-                              <input
-                                type="text"
-                                placeholder="keyword"
-                                id="key3"
-                                onChange={(e) => setKey3(e.target.value)}
-                                value={key3}
-                              />
-                              <input
-                                type="text"
-                                placeholder="website"
-                                id="web3"
-                                onChange={(e) => setWeb3(e.target.value)}
-                                value={web3}
-                              />
-                            </div>
-                            <div
-                              className="notify-card-status"
-                              style={{ position: "relative" }}
-                            >
-                              <div style={{ marginLeft: "-0.6rem" }}>
-                                <h5>Status</h5>
-                                <h6>{status3} match</h6>
-                              </div>
-                              <div>
-                                <button
-                                  className="update"
-                                  onClick={() => {
-                                    updateProfile({ key3, web3 });
-                                  }}
-                                >
-                                  update
-                                </button>
-                              </div>
-                              <div>
-                                {emailStatus3 == "sent" ? (
-                                  <button
-                                    className="mount"
-                                    onClick={handleStatusPending3}
-                                  >
-                                    mount
-                                  </button>
-                                ) : (
-                                  <button
-                                    className="mount"
-                                    onClick={handleStatusSent3}
-                                  >
-                                    unmount
-                                  </button>
-                                )}
-                              </div>
-                              <div>
-                                <button
-                                  className="delete"
-                                  onClick={() => setDel3(true)}
-                                >
-                                  delete
-                                </button>
-                                {del3 && (
-                                  <div
-                                    style={{
-                                      backgroundColor: "skyblue",
-                                      height: "5rem",
-                                      width: "100%",
-                                      position: "absolute",
-                                      top: "2rem",
-                                      left: "-0.4rem",
-                                      borderRadius: "0.5rem",
-                                      fontSize: "0.8rem",
-                                      padding: "0.5rem",
-                                      boxShadow: "2px 2px 2px gray",
-                                      zIndex: 1,
-                                      textAlign: "center",
-                                    }}
-                                  >
-                                    <h4>Are you sure you want to delete?</h4>
-                                    <br />
-                                    <span
-                                      style={{
-                                        padding: "0.3rem 1rem 0.3rem 1rem",
-                                        backgroundColor: "red",
-                                        border: "1px solid black",
-                                        borderRadius: "0.8rem",
-                                        marginRight: "2rem",
-                                        cursor: "pointer",
-                                      }}
-                                      onClick={handleDel3}
-                                    >
-                                      Yes
-                                    </span>
-                                    <span
-                                      onClick={() => setDel3(false)}
-                                      style={{
-                                        padding: "0.3rem 1rem 0.3rem 1rem",
-                                        backgroundColor: "white",
-                                        border: "1px solid black",
-                                        borderRadius: "0.8rem",
-                                        marginLeft: "2rem",
-                                        cursor: "pointer",
-                                      }}
-                                    >
-                                      No
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                        {k4 != null && (
-                          <div
-                            className={
-                              status4 == "No"
-                                ? "notify-card"
-                                : status4 == "Perfect"
-                                ? "notify-card green"
-                                : "notify-card yellow"
-                            }
-                          >
-                            <div>
-                              <input
-                                type="text"
-                                placeholder="keyword"
-                                id="key4"
-                                onChange={(e) => setKey4(e.target.value)}
-                                value={key4}
-                              />
-                              <input
-                                type="text"
-                                placeholder="website"
-                                id="web4"
-                                onChange={(e) => setWeb4(e.target.value)}
-                                value={web4}
-                              />
-                            </div>
-                            <div
-                              className="notify-card-status"
-                              style={{ position: "relative" }}
-                            >
-                              <div style={{ marginLeft: "-0.6rem" }}>
-                                <h5>Status</h5>
-                                <h6>{status4} match</h6>
-                              </div>
-                              <div>
-                                <button
-                                  className="update"
-                                  onClick={() => {
-                                    updateProfile({ key4, web4 });
-                                  }}
-                                >
-                                  update
-                                </button>
-                              </div>
-                              <div>
-                                {emailStatus4 == "sent" ? (
-                                  <button
-                                    className="mount"
-                                    onClick={handleStatusPending4}
-                                  >
-                                    mount
-                                  </button>
-                                ) : (
-                                  <button
-                                    className="mount"
-                                    onClick={handleStatusSent4}
-                                  >
-                                    unmount
-                                  </button>
-                                )}
-                              </div>
-                              <div>
-                                <button
-                                  className="delete"
-                                  onClick={() => setDel4(true)}
-                                >
-                                  delete
-                                </button>
-                                {del4 && (
-                                  <div
-                                    style={{
-                                      backgroundColor: "skyblue",
-                                      height: "5rem",
-                                      width: "100%",
-                                      position: "absolute",
-                                      top: "2rem",
-                                      left: "-0.4rem",
-                                      borderRadius: "0.5rem",
-                                      fontSize: "0.8rem",
-                                      padding: "0.5rem",
-                                      boxShadow: "2px 2px 2px gray",
-                                      zIndex: 1,
-                                      textAlign: "center",
-                                    }}
-                                  >
-                                    <h4>Are you sure you want to delete?</h4>
-                                    <br />
-                                    <span
-                                      style={{
-                                        padding: "0.3rem 1rem 0.3rem 1rem",
-                                        backgroundColor: "red",
-                                        border: "1px solid black",
-                                        borderRadius: "0.8rem",
-                                        marginRight: "2rem",
-                                        cursor: "pointer",
-                                      }}
-                                      onClick={handleDel4}
-                                    >
-                                      Yes
-                                    </span>
-                                    <span
-                                      onClick={() => setDel4(false)}
-                                      style={{
-                                        padding: "0.3rem 1rem 0.3rem 1rem",
-                                        backgroundColor: "white",
-                                        border: "1px solid black",
-                                        borderRadius: "0.8rem",
-                                        marginLeft: "2rem",
-                                        cursor: "pointer",
-                                      }}
-                                    >
-                                      No
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                        {k5 != null && (
-                          <div
-                            className={
-                              status5 == "No"
-                                ? "notify-card"
-                                : status5 == "Perfect"
-                                ? "notify-card green"
-                                : "notify-card yellow"
-                            }
-                          >
-                            <div>
-                              <input
-                                type="text"
-                                placeholder="keyword"
-                                id="key5"
-                                onChange={(e) => setKey5(e.target.value)}
-                                value={key5}
-                              />
-                              <input
-                                type="text"
-                                placeholder="website"
-                                id="web5"
-                                onChange={(e) => setWeb5(e.target.value)}
-                                value={web5}
-                              />
-                            </div>
-                            <div
-                              className="notify-card-status"
-                              style={{ position: "relative" }}
-                            >
-                              <div style={{ marginLeft: "-0.6rem" }}>
-                                <h5>Status</h5>
-                                <h6>{status5} match</h6>
-                              </div>
-                              <div>
-                                <button
-                                  className="update"
-                                  onClick={() => {
-                                    updateProfile({ key5, web5 });
-                                  }}
-                                >
-                                  update
-                                </button>
-                              </div>
-                              <div>
-                                {emailStatus5 == "sent" ? (
-                                  <button
-                                    className="mount"
-                                    onClick={handleStatusPending5}
-                                  >
-                                    mount
-                                  </button>
-                                ) : (
-                                  <button
-                                    className="mount"
-                                    onClick={handleStatusSent5}
-                                  >
-                                    unmount
-                                  </button>
-                                )}
-                              </div>
-                              <div>
-                                <button
-                                  className="delete"
-                                  onClick={() => setDel5(true)}
-                                >
-                                  delete
-                                </button>
-                                {del5 && (
-                                  <div
-                                    style={{
-                                      backgroundColor: "skyblue",
-                                      height: "5rem",
-                                      width: "100%",
-                                      position: "absolute",
-                                      top: "2rem",
-                                      left: "-0.4rem",
-                                      borderRadius: "0.5rem",
-                                      fontSize: "0.8rem",
-                                      padding: "0.5rem",
-                                      boxShadow: "2px 2px 2px gray",
-                                      zIndex: 1,
-                                      textAlign: "center",
-                                    }}
-                                  >
-                                    <h4>Are you sure you want to delete?</h4>
-                                    <br />
-                                    <span
-                                      style={{
-                                        padding: "0.3rem 1rem 0.3rem 1rem",
-                                        backgroundColor: "red",
-                                        border: "1px solid black",
-                                        borderRadius: "0.8rem",
-                                        marginRight: "2rem",
-                                        cursor: "pointer",
-                                      }}
-                                      onClick={handleDel5}
-                                    >
-                                      Yes
-                                    </span>
-                                    <span
-                                      onClick={() => setDel5(false)}
-                                      style={{
-                                        padding: "0.3rem 1rem 0.3rem 1rem",
-                                        backgroundColor: "white",
-                                        border: "1px solid black",
-                                        borderRadius: "0.8rem",
-                                        marginLeft: "2rem",
-                                        cursor: "pointer",
-                                      }}
-                                    >
-                                      No
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        )}
+                        const [emailStatus1, setEmailStatus1] = useState();
                       </div>
                     )}
                   </Grid>
@@ -2059,5 +1441,6 @@ export default function Notification() {
         </Grid>
       </Grid>
     </Box>
-  );
+
+);
 }

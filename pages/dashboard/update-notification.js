@@ -17,17 +17,19 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 export default function Update() {
-  const [limit, setLimit] = useState(false);
+  const [w1, setW1] = useState();
+  const [t, setT] = useState();
+  const [checker1, setChecker1] = useState(false);
   const [stat, setStat] = useState(true);
-
+  const [del, setDel] = useState(false);
   const [website, setWebsite] = useState(null);
-
   const [profile, setProfile] = useState(null);
-
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = React.useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  let times = "";
 
   useEffect(() => {
     fetchProfile();
@@ -49,6 +51,33 @@ export default function Update() {
     setError(false);
   };
 
+  async function handleDel1() {
+    try {
+      const user = supabase.auth.user();
+
+      const { err } = await supabase
+        .from("notification")
+        .update({
+          website: null,
+          prev: null,
+          change: null,
+          times: "once",
+        })
+        .eq("id", user.id);
+
+      if (error) {
+        throw error;
+      }
+      getDetail();
+      handleClick();
+    } catch (error) {
+      setErrorMessage(error.message);
+      handle();
+    } finally {
+      setDel(false);
+    }
+  }
+
   const router = useRouter();
   useEffect(() => {
     fetchProfile();
@@ -61,7 +90,7 @@ export default function Update() {
 
       let { data, error, status } = await supabase
         .from("notification")
-        .select(`website`) //
+        .select(`website, times`) //
         .eq("id", user.id)
         .single();
 
@@ -70,6 +99,10 @@ export default function Update() {
       }
       if (data) {
         setWebsite(data.website); //
+        setW1(data.website);
+        if (data.times.length > 4) {
+          setChecker1(true);
+        }
       }
     } catch (error) {
       // alert(error.message);
@@ -94,12 +127,18 @@ export default function Update() {
   if (!profile) return null;
 
   async function updateProfile({ website }) {
+    if (checker1) {
+      times = "continue";
+    } else {
+      times = "once";
+    }
     try {
       setLoading(true);
       const user = supabase.auth.user();
       const updates = {
         id: user.id, //
         website,
+        times,
       };
 
       let { error } = await supabase.from("notification").upsert(updates, {
@@ -166,7 +205,7 @@ export default function Update() {
                 ) : (
                   <Grid container>
                     <Grid item xs={12}>
-                      <h1>Create Keyword Notification</h1>
+                      <h1>Create Update Notification</h1>
                     </Grid>
 
                     <Grid item xs={12} md={12}>
@@ -180,7 +219,15 @@ export default function Update() {
                         notification
                       </li> */}
                         <li>click create</li>
-                        <li>you can edit your website later.</li>
+                        <li>you can edit your website anytime.</li>
+                        <li>
+                          the recent update made from the time of notification
+                          creation will be sent to you as a message
+                        </li>
+                        <li>
+                          Note! this feature finds every update made to a
+                          website, ignore the ones you don't need. Thanks
+                        </li>
                       </ul>
                     </Grid>
                     <div className="inputfield-container">
@@ -194,17 +241,103 @@ export default function Update() {
                           value={website}
                         />
                       </Grid>
-                      <Grid item xs={12}>
-                        <div
-                          onClick={() => {
-                            updateProfile({
-                              website,
-                            });
+                      <h5>
+                        Do you wish to run continously until you delete
+                        manually?
+                        <input
+                          type="checkbox"
+                          id="checker1"
+                          checked={checker1}
+                          onChange={(e) => setChecker1(e.target.checked)}
+                          style={{
+                            accentColor: "black",
+                            marginLeft: "1rem",
+                            marginTop: "0.3rem",
                           }}
-                          className="submit-button"
-                        >
-                          {(loading && "Loading") || "create"}
-                        </div>
+                        />
+                      </h5>
+
+                      <Grid item xs={12}>
+                        {w1 == null ? (
+                          <div
+                            onClick={() => {
+                              updateProfile({
+                                website,
+                              });
+                            }}
+                            className="submit-button"
+                          >
+                            {(loading && "Loading") || "create"}
+                          </div>
+                        ) : (
+                          <div style={{ display: "flex" }}>
+                            <div
+                              onClick={() => {
+                                updateProfile({
+                                  website,
+                                });
+                              }}
+                              className="submit-button"
+                              style={{ marginRight: "1rem" }}
+                            >
+                              {(loading && "Loading") || "update"}
+                            </div>
+                            <div
+                              style={{ backgroundColor: "white" }}
+                              onClick={() => setDel(true)}
+                              className="submit-button"
+                            >
+                              delete
+                            </div>
+                            {del && (
+                              <div
+                                style={{
+                                  backgroundColor: "skyblue",
+                                  height: "5rem",
+                                  width: "100%",
+                                  position: "absolute",
+                                  top: "2rem",
+                                  left: "-0.4rem",
+                                  borderRadius: "0.5rem",
+                                  fontSize: "0.8rem",
+                                  padding: "0.5rem",
+                                  boxShadow: "2px 2px 2px gray",
+                                  zIndex: 1,
+                                  textAlign: "center",
+                                }}
+                              >
+                                <h4>Are you sure you want to delete?</h4>
+                                <br />
+                                <span
+                                  style={{
+                                    padding: "0.3rem 1rem 0.3rem 1rem",
+                                    backgroundColor: "red",
+                                    border: "1px solid black",
+                                    borderRadius: "0.8rem",
+                                    marginRight: "2rem",
+                                    cursor: "pointer",
+                                  }}
+                                  onClick={handleDel1}
+                                >
+                                  Yes
+                                </span>
+                                <span
+                                  onClick={() => setDel1(false)}
+                                  style={{
+                                    padding: "0.3rem 1rem 0.3rem 1rem",
+                                    backgroundColor: "white",
+                                    border: "1px solid black",
+                                    borderRadius: "0.8rem",
+                                    marginLeft: "2rem",
+                                    cursor: "pointer",
+                                  }}
+                                >
+                                  No
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        )}
                       </Grid>
                     </div>
                   </Grid>
