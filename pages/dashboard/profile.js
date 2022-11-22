@@ -17,10 +17,11 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 export default function Update() {
-  const [limit, setLimit] = useState(false);
-  const [stat, setStat] = useState(true);
-
-  const [website, setWebsite] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [tel, setTel] = useState(false);
+  const [telegram, setTelegram] = useState(null);
+  const [days, setDays] = useState(null);
 
   const [profile, setProfile] = useState(null);
 
@@ -49,6 +50,9 @@ export default function Update() {
     setError(false);
   };
 
+  function handleTel() {
+    setTel((prev) => !prev);
+  }
   const router = useRouter();
   useEffect(() => {
     fetchProfile();
@@ -61,7 +65,7 @@ export default function Update() {
 
       let { data, error, status } = await supabase
         .from("notification")
-        .select(`website`) //
+        .select(`email,days`) //
         .eq("id", user.id)
         .single();
 
@@ -69,7 +73,8 @@ export default function Update() {
         throw error;
       }
       if (data) {
-        setWebsite(data.website); //
+        setEmail(data.email); //
+        setDays(data.days);
       }
     } catch (error) {
       // alert(error.message);
@@ -161,54 +166,129 @@ export default function Update() {
           >
             <Grid container spacing={1}>
               <Grid item xs={12} md={12} className="dash-options-container">
-                {!stat ? (
-                  <div></div>
-                ) : (
-                  <Grid container>
-                    <Grid item xs={12}>
-                      <h1>Create Keyword Notification</h1>
-                    </Grid>
-
-                    <Grid item xs={12} md={12}>
-                      <ul className="instruction-list">
-                        <li>
-                          enter the particular the website you want to get
-                          update from
-                        </li>
-                        {/* <li>
-                        select the messaging platform you wish to get
-                        notification
-                      </li> */}
-                        <li>click create</li>
-                        <li>you can edit your website later.</li>
-                      </ul>
-                    </Grid>
-                    <div className="inputfield-container">
-                      <Grid item xs={12} md={6}>
-                        <Inputfield
-                          type="text"
-                          placeholder="website"
-                          id="website"
-                          label="website"
-                          setState={setWebsite}
-                          value={website}
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <div
-                          onClick={() => {
-                            updateProfile({
-                              website,
-                            });
-                          }}
-                          className="submit-button"
-                        >
-                          {(loading && "Loading") || "create"}
-                        </div>
-                      </Grid>
-                    </div>
+                <Grid container>
+                  <Grid item xs={12}>
+                    <h1>Profile</h1>
                   </Grid>
-                )}
+                  <div className="inputfield-container">
+                    <h4 style={{ marginBottom: "1rem" }}>Update email</h4>
+                    <Grid item xs={12} md={6}>
+                      <Inputfield
+                        type="text"
+                        placeholder="email"
+                        id="email"
+                        label="email"
+                        setState={setEmail}
+                        value={email}
+                      />
+                      <div
+                        onClick={() => {
+                          updateProfile({
+                            email,
+                          });
+                        }}
+                        className="submit-button"
+                        style={{ width: "18rem" }}
+                      >
+                        {(loading && "Loading") || "update email"}
+                      </div>
+                    </Grid>
+                    <h4 style={{ marginBottom: "1rem" }}>Update Password</h4>
+                    <Grid item xs={12} md={6}>
+                      <Inputfield
+                        type="text"
+                        placeholder="password"
+                        id="password"
+                        label="change password"
+                        setState={setPassword}
+                        value={password}
+                      />
+                      <div
+                        onClick={() => {
+                          updateProfile({
+                            password,
+                          });
+                        }}
+                        className="submit-button"
+                        style={{ width: "18rem" }}
+                      >
+                        {(loading && "Loading") || "change password"}
+                      </div>
+                    </Grid>
+                    <Grid item xs={12}>
+                      {tel == false && (
+                        <h4 style={{ marginTop: "1rem" }}>
+                          Update Telegram Setup
+                          <span
+                            style={{
+                              marginLeft: "3.9rem",
+                              backgroundColor: "skyblue",
+                              padding: "0.3rem",
+                              borderRadius: "0.8rem",
+                              fontSize: "0.8rem",
+                              border: "1px solid black",
+                              cursor: "pointer",
+                            }}
+                            onClick={handleTel}
+                          >
+                            begin
+                          </span>
+                        </h4>
+                      )}
+
+                      {tel && days > 0 && (
+                        <div>
+                          <h4
+                            style={{ marginTop: "1rem", marginBottom: "1rem" }}
+                          >
+                            Update Telegram Setup
+                          </h4>
+                          <Grid item xs={12} md={6}>
+                            <Inputfield
+                              type="text"
+                              placeholder="telegram"
+                              id="telegram"
+                              label="telegram chat id"
+                              setState={setTelegram}
+                              value={telegram}
+                            />
+                            <p style={{ fontSize: "0.8rem", width: "19rem" }}>
+                              don&apos;t know how to get telegram chat id?{" "}
+                              <span style={{ color: "skyblue" }}>
+                                click here
+                              </span>
+                            </p>
+                            <div
+                              onClick={() => {
+                                updateProfile({
+                                  telegram,
+                                });
+                              }}
+                              className="submit-button"
+                              style={{ width: "18rem" }}
+                            >
+                              {(loading && "Loading") || "update telegram"}
+                            </div>
+                          </Grid>
+                        </div>
+                      )}
+
+                      {/* free plan */}
+                      {tel && days == 0 && (
+                        <div>
+                          <h4
+                            style={{ marginTop: "1rem", marginBottom: "1rem" }}
+                          >
+                            Update Telegram Setup
+                          </h4>
+                          <Grid item xs={12} md={12}>
+                            telegram is limited to premium plan.
+                          </Grid>
+                        </div>
+                      )}
+                    </Grid>
+                  </div>
+                </Grid>
               </Grid>
             </Grid>
           </div>

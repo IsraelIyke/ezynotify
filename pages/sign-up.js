@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../client";
 import Nav from "../components/nav";
@@ -17,8 +17,6 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [ref, setRef] = useState();
-
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = React.useState(false);
   const [error, setError] = useState(false);
@@ -47,15 +45,7 @@ export default function SignUp() {
   };
 
   const router = useRouter();
-  const { query } = useRouter();
 
-  useEffect(() => {
-    console.log(query);
-    if (query.ref) {
-      localStorage.setItem("ref", query.ref);
-    }
-    setRef(query.ref);
-  }, [query]);
   async function signUp() {
     if (password != confirmPassword) {
       valid();
@@ -140,14 +130,6 @@ export default function SignUp() {
                 label="Confirm Password"
                 setState={setConfirmPassword}
                 value={confirmPassword}
-              />
-              <Textfield
-                type="text"
-                placeholder="Referral Code"
-                id="referral"
-                label="Referral Code -- optional"
-                setState={setRef}
-                value={ref}
               />
               <br />
               <button

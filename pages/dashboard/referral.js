@@ -63,7 +63,7 @@ export default function Update() {
 
       let { data, error, status } = await supabase
         .from("notification")
-        .select(`number`) //
+        .select(`number,referral`) //
         .eq("id", user.id)
         .single();
 
@@ -71,15 +71,40 @@ export default function Update() {
         throw error;
       }
       if (data) {
-        setReferral(data.number); //
+        setReferral(data.referral); //
         setCopyText(`${data.number}AeR`);
-        setCopyTex(`https://ezynotify.com/sign-up/ref?${data.number}AeR`);
+        setCopyTex(`https://ezynotify.com/sign-up?ref=${data.number}AeR`);
         setCopyTxt(
-          `Hi there, I found a website that notifies you whenever an update is made in a website. Here is the link, you can check it out https://ezynotify.com/sign-up/ref?${data.number}AeR`
+          `Hi there, I found a website that notifies you whenever an update is made in a website. Here is the link, you can check it out https://ezynotify.com/sign-up?ref=${data.number}AeR`
         );
       }
     } catch (error) {
       // alert(error.message);
+      handle();
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function updateProfile() {
+    try {
+      setLoading(true);
+      const user = supabase.auth.user();
+      const updates = {
+        id: user.id, //
+        referral: copyText,
+      };
+
+      let { error } = await supabase.from("notification").upsert(updates, {
+        returning: "minimal", //don't return the value after inserting
+      });
+
+      if (error) {
+        throw error;
+      }
+      getDetail();
+    } catch (error) {
+      setErrorMessage(error.message);
       handle();
     } finally {
       setLoading(false);
@@ -158,53 +183,56 @@ export default function Update() {
                       </li> */}
                         <li>1 referral = 5 days of premium plan</li>
                         <li>This rate will last until 1st February, 2023.</li>
-                        <li>
-                          Your referral becomes valid once your friend logs in
-                        </li>
                       </ul>
                     </Grid>
-                    <div className="inputfield-container">
-                      <div className="referral-input">
-                        <h5>Referral code:</h5>
-                        <input
-                          value={copyText}
-                          onChange={(e) => setCopyText(e.target.value)}
-                        />
-                        <CopyToClipboard text={copyText}>
-                          <button onClick={() => handleClick()}>Copy</button>
-                        </CopyToClipboard>
-                      </div>
-                      <div className="referral-input">
-                        <h5>Referrals: 2</h5>
-                      </div>
-                      <div className="referral-input">
-                        <h5>Days accumulated: 20days</h5>
-                      </div>
-                      <div className="referral-input">
-                        <h5>Days used: 3days</h5>
-                      </div>
+                    {referral == null ? (
+                      <button onClick={updateProfile}>
+                        Generate Referral Code
+                      </button>
+                    ) : (
+                      <div className="inputfield-container">
+                        <div className="referral-input">
+                          <h5>Referral code:</h5>
+                          <input
+                            value={copyText}
+                            onChange={(e) => setCopyText(e.target.value)}
+                          />
+                          <CopyToClipboard text={copyText}>
+                            <button onClick={() => handleClick()}>Copy</button>
+                          </CopyToClipboard>
+                        </div>
+                        <div className="referral-input">
+                          <h5>Referrals: 2</h5>
+                        </div>
+                        <div className="referral-input">
+                          <h5>Days accumulated: 20days</h5>
+                        </div>
+                        <div className="referral-input">
+                          <h5>Days used: 3days</h5>
+                        </div>
 
-                      <div className="referral-input">
-                        <h5>Referral link:</h5>
-                        <input
-                          value={copyTex}
-                          onChange={(e) => setCopyTex(e.target.value)}
-                        />
-                        <CopyToClipboard text={copyTex}>
-                          <button onClick={() => handleClick()}>Copy</button>
-                        </CopyToClipboard>
+                        <div className="referral-input">
+                          <h5>Referral link:</h5>
+                          <input
+                            value={copyTex}
+                            onChange={(e) => setCopyTex(e.target.value)}
+                          />
+                          <CopyToClipboard text={copyTex}>
+                            <button onClick={() => handleClick()}>Copy</button>
+                          </CopyToClipboard>
+                        </div>
+                        <div className="referral-input">
+                          <h5>Referral message:</h5>
+                          <input
+                            value={copyTxt}
+                            onChange={(e) => setCopyTxt(e.target.value)}
+                          />
+                          <CopyToClipboard text={copyTxt}>
+                            <button onClick={() => handleClick()}>Copy</button>
+                          </CopyToClipboard>
+                        </div>
                       </div>
-                      <div className="referral-input">
-                        <h5>Referral message:</h5>
-                        <input
-                          value={copyTxt}
-                          onChange={(e) => setCopyTxt(e.target.value)}
-                        />
-                        <CopyToClipboard text={copyTxt}>
-                          <button onClick={() => handleClick()}>Copy</button>
-                        </CopyToClipboard>
-                      </div>
-                    </div>
+                    )}
                   </Grid>
                 )}
               </Grid>

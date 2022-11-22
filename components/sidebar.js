@@ -51,12 +51,12 @@ export default function SideBar(props) {
               <div className="sidebar-list-item">update notification</div>
             </li>
           </Link>
-          <Link href="/dashboard/referral">
+          {/* <Link href="/dashboard/referral">
             <li>
               <HiUserGroup className="icon" />
               <div className="sidebar-list-item">referral</div>
             </li>
-          </Link>
+          </Link> */}
           <Link href="/dashboard/profile">
             <li className="profile">
               <HiUserCircle className="icon" />
@@ -101,12 +101,12 @@ export default function SideBar(props) {
                   <div className="sidebar-list-item">update notification</div>
                 </li>
               </Link>
-              <Link href="/dashboard/referral">
+              {/* <Link href="/dashboard/referral">
                 <li>
                   <HiUserGroup className="icon" />
                   <div className="sidebar-list-item">referral</div>
                 </li>
-              </Link>
+              </Link> */}
               <Link href="/dashboard/profile">
                 <li className="profile">
                   <HiUserCircle className="icon" />
@@ -156,11 +156,11 @@ export default function SideBar(props) {
                 <MdOutlineUpdate className="icon" />
               </li>
             </Link>
-            <Link href="/dashboard/referral">
+            {/* <Link href="/dashboard/referral">
               <li>
                 <HiUserGroup className="icon" />
               </li>
-            </Link>
+            </Link> */}
             <Link href="/dashboard/profile">
               <li className="profile">
                 <HiUserCircle className="icon" />

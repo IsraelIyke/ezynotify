@@ -84,7 +84,7 @@ export default function Profile() {
                       </div>
                     </Link>
                   </Grid>
-                  <Grid item xs={12} md={12}>
+                  {/* <Grid item xs={12} md={12}>
                     <Link href="/dashboard/referral">
                       <div className="dash-tile update">
                         <h3 className="dash-option-title">Referral</h3>
@@ -94,7 +94,7 @@ export default function Profile() {
                         </p>
                       </div>
                     </Link>
-                  </Grid>
+                  </Grid> */}
                   <Grid item xs={12} md={12}>
                     <Link href="/dashboard/profile">
                       <div className="dash-tile profile shift">
@@ -102,7 +102,7 @@ export default function Profile() {
                         <p className="dash-option-content">
                           Change password
                           <br />
-                          Update social media handle for telegram and facebook
+                          Update setup for telegram
                         </p>
                       </div>
                     </Link>
