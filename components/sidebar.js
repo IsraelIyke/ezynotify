@@ -2,7 +2,8 @@ const { motion } = require("framer-motion");
 import Link from "next/link";
 import { useState } from "react";
 import { AiFillHome } from "react-icons/ai";
-import { HiUserGroup, HiUserCircle } from "react-icons/hi";
+import { HiUserCircle } from "react-icons/hi";
+import { BiSupport } from "react-icons/bi";
 import { MdOutlineUpdate } from "react-icons/md";
 import { VscSymbolKeyword } from "react-icons/vsc";
 
@@ -51,16 +52,17 @@ export default function SideBar(props) {
               <div className="sidebar-list-item">update notification</div>
             </li>
           </Link>
-          {/* <Link href="/dashboard/referral">
-            <li>
-              <HiUserGroup className="icon" />
-              <div className="sidebar-list-item">referral</div>
-            </li>
-          </Link> */}
+
           <Link href="/dashboard/profile">
             <li className="profile">
               <HiUserCircle className="icon" />
               <div className="sidebar-list-item ">profile</div>
+            </li>
+          </Link>
+          <Link href="/dashboard/referral">
+            <li>
+              <BiSupport className="icon" />
+              <div className="sidebar-list-item">support</div>
             </li>
           </Link>
         </ul>
@@ -101,16 +103,17 @@ export default function SideBar(props) {
                   <div className="sidebar-list-item">update notification</div>
                 </li>
               </Link>
-              {/* <Link href="/dashboard/referral">
-                <li>
-                  <HiUserGroup className="icon" />
-                  <div className="sidebar-list-item">referral</div>
-                </li>
-              </Link> */}
+
               <Link href="/dashboard/profile">
                 <li className="profile">
                   <HiUserCircle className="icon" />
                   <div className="sidebar-list-item">profile</div>
+                </li>
+              </Link>
+              <Link href="/dashboard/referral">
+                <li>
+                  <BiSupport className="icon" />
+                  <div className="sidebar-list-item">support</div>
                 </li>
               </Link>
             </ul>
@@ -156,14 +159,15 @@ export default function SideBar(props) {
                 <MdOutlineUpdate className="icon" />
               </li>
             </Link>
-            {/* <Link href="/dashboard/referral">
-              <li>
-                <HiUserGroup className="icon" />
-              </li>
-            </Link> */}
+
             <Link href="/dashboard/profile">
               <li className="profile">
                 <HiUserCircle className="icon" />
+              </li>
+            </Link>
+            <Link href="/dashboard/referral">
+              <li>
+                <BiSupport className="icon" />
               </li>
             </Link>
           </ul>
