@@ -3,6 +3,9 @@
   align-items: center;
   margin-bottom: 0.4rem;
 }
+.referral-input input {
+  width: 8rem;
+}
 .referral-input button {
   background-color: black;
   color: white;

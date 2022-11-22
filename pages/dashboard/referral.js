@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import SideBar from "../../components/sidebar";
 import DashNav from "../../components/dash-nav";
 import { Box, Grid } from "@mui/material";
-
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
@@ -14,6 +14,8 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 export default function Update() {
+  const [inputValue, setInputValue] = useState("");
+
   const [limit, setLimit] = useState(false);
   const [stat, setStat] = useState(true);
 
@@ -54,19 +56,6 @@ export default function Update() {
     fetchProfile();
   }, []);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(copyText);
-    handleClick();
-  };
-  const handleCop = () => {
-    navigator.clipboard.writeText(copyTex);
-    handleClick();
-  };
-  const handleCo = () => {
-    navigator.clipboard.writeText(copyTxt);
-    handleClick();
-  };
-
   async function getDetail() {
     try {
       setLoading(true);
@@ -84,9 +73,9 @@ export default function Update() {
       if (data) {
         setReferral(data.number); //
         setCopyText(`${data.number}AeR`);
-        setCopyTex(`https://ezynotify.com/ref?${data.number}AeR`);
+        setCopyTex(`https://ezynotify.com/sign-up/ref?${data.number}AeR`);
         setCopyTxt(
-          `hi there, I found a website that notifies you whenever an update is made in a website. Here is the link, you can check it out https://ezynotify.com/sign-up/ref?${data.number}AeR`
+          `Hi there, I found a website that notifies you whenever an update is made in a website. Here is the link, you can check it out https://ezynotify.com/sign-up/ref?${data.number}AeR`
         );
       }
     } catch (error) {
@@ -110,7 +99,6 @@ export default function Update() {
     router.push("/sign-in");
   }
   if (!profile) return null;
-
   return (
     <Box flexGrow={1}>
       <>
@@ -175,19 +163,18 @@ export default function Update() {
                         </li>
                       </ul>
                     </Grid>
-
                     <div className="inputfield-container">
                       <div className="referral-input">
                         <h5>Referral code:</h5>
                         <input
                           value={copyText}
                           onChange={(e) => setCopyText(e.target.value)}
-                          disabled
                         />
-                        <button onClick={handleCopy}>Copy</button>
+                        <CopyToClipboard text={copyText}>
+                          <button onClick={() => handleClick()}>Copy</button>
+                        </CopyToClipboard>
                       </div>
                       <div className="referral-input">
-                        {" "}
                         <h5>Referrals: 2</h5>
                       </div>
                       <div className="referral-input">
@@ -202,18 +189,20 @@ export default function Update() {
                         <input
                           value={copyTex}
                           onChange={(e) => setCopyTex(e.target.value)}
-                          disabled
                         />
-                        <button onClick={handleCop}>Copy</button>
+                        <CopyToClipboard text={copyTex}>
+                          <button onClick={() => handleClick()}>Copy</button>
+                        </CopyToClipboard>
                       </div>
                       <div className="referral-input">
                         <h5>Referral message:</h5>
                         <input
                           value={copyTxt}
                           onChange={(e) => setCopyTxt(e.target.value)}
-                          disabled
                         />
-                        <button onClick={handleCop}>Copy</button>
+                        <CopyToClipboard text={copyTxt}>
+                          <button onClick={() => handleClick()}>Copy</button>
+                        </CopyToClipboard>
                       </div>
                     </div>
                   </Grid>
