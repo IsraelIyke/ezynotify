@@ -228,8 +228,11 @@ export default function Update() {
                           creation will be sent to you as a message
                         </li>
                         <li>
-                          Note! this feature finds every update made to a
-                          website, ignore the ones you don&apos;t need. Thanks
+                          Note! this feature finds every update(first
+                          occurrence) made to a website, ignore the ones you
+                          don&apos;t need. Also, it does not search website
+                          content behind a login example facebook, instagram
+                          etc. Thanks.
                         </li>
                       </ul>
                     </Grid>

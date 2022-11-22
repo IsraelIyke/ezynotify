@@ -612,6 +612,11 @@ export default function Notification() {
                           search will stop/unmount. But you can mount it if
                           still needed.
                         </li>
+                        <li>
+                          Note! this feature does not search website content
+                          behind a login example facebook, instagram etc.
+                          Thanks.
+                        </li>
                       </ul>
                     </Grid>
                     <div className="inputfield-container">

@@ -141,7 +141,7 @@ export default function Profile() {
                     >
                       <h2
                         style={{
-                          marginTop: "-15rem",
+                          marginTop: "-5rem",
                           boxShadow: "-4px 0.9rem 1px white",
                           fontSize: "1rem",
                         }}
