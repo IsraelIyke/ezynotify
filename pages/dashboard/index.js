@@ -136,13 +136,16 @@ export default function Profile() {
                       </h2>
                     </div>
                     <div
-                      // style={{ width: "100vw" }}
+                      style={{
+                        width: "20rem",
+                        marginLeft: "-0.3rem",
+                      }}
                       className="dash-tile-subscription"
                     >
                       <h2
                         style={{
-                          marginTop: "-5rem",
-                          boxShadow: "-4px 0.9rem 1px white",
+                          marginTop: "-7rem",
+                          boxShadow: "-4px 1rem 1px white",
                           fontSize: "1rem",
                         }}
                       >
