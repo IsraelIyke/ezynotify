@@ -55,7 +55,14 @@ export default function Notification() {
   const [open, setOpen] = React.useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [info, setInfo] = useState(false);
 
+  function handleInfo() {
+    setInfo(true);
+  }
+  function handleCloseInfo() {
+    setInfo(false);
+  }
   const router = useRouter();
   useEffect(() => {
     fetchProfile();
@@ -594,30 +601,54 @@ export default function Notification() {
                     </Grid>
 
                     <Grid item xs={12} md={12}>
-                      <ul className="instruction-list">
-                        <li>
-                          enter the particular word, phrase or sentence you want
-                          to set notification for and then the website. The
-                          website should start with <b>http://</b> or
-                          <b> https://</b>
-                        </li>
-                        {/* <li>
+                      {info ? (
+                        <div>
+                          <div
+                            className="info-blur"
+                            onClick={handleCloseInfo}
+                          ></div>
+                          <div className="info-container">
+                            <ul className="instruction-list">
+                              <p
+                                onClick={handleCloseInfo}
+                                className="info-close"
+                              >
+                                X
+                              </p>
+                              <li>
+                                enter the particular word, phrase or sentence
+                                you want to set notification for and then the
+                                website. The website should start with{" "}
+                                <b>http://</b> or
+                                <b> https://</b>
+                              </li>
+                              {/* <li>
                         select the messaging platform you wish to get
                         notification
                       </li> */}
-                        <li>click create</li>
-                        <li>you can edit your search in the status panel</li>
-                        <li>
-                          Once your keyword gets a perfect or partial match, the
-                          search will stop/unmount. But you can mount it if
-                          still needed.
-                        </li>
-                        <li>
-                          Note! this feature does not search website content
-                          behind a login example facebook, instagram etc.
-                          Thanks.
-                        </li>
-                      </ul>
+                              <li>click create</li>
+                              <li>
+                                you can edit your search in the status panel
+                              </li>
+                              <li>
+                                Once your keyword gets a perfect or partial
+                                match, the search will stop/unmount. But you can
+                                mount it if still needed.
+                              </li>
+                              <li>
+                                Note! this feature does not search website
+                                content behind a login example facebook,
+                                instagram etc. Thanks.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      ) : (
+                        <h4 className="info-title">
+                          Instructions
+                          <span onClick={handleInfo}>open</span>
+                        </h4>
+                      )}
                     </Grid>
                     <div className="inputfield-container">
                       <Grid item xs={12} md={6}>

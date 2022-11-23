@@ -19,6 +19,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 export default function Update() {
   const [w1, setW1] = useState();
   const [t, setT] = useState();
+  const [info, setInfo] = useState(false);
   const [checker1, setChecker1] = useState(false);
   const [stat, setStat] = useState(true);
   const [del, setDel] = useState(false);
@@ -36,6 +37,12 @@ export default function Update() {
     getDetail();
   }, []);
 
+  function handleInfo() {
+    setInfo(true);
+  }
+  function handleCloseInfo() {
+    setInfo(false);
+  }
   const handleClick = () => {
     setOpen(true);
   };
@@ -209,32 +216,54 @@ export default function Update() {
                     </Grid>
 
                     <Grid item xs={12} md={12}>
-                      <ul className="instruction-list">
-                        <li>
-                          enter the particular the website you want to get
-                          update from. The website should start with{" "}
-                          <b>http://</b> or
-                          <b> https://</b>
-                        </li>
-                        {/* <li>
+                      {info ? (
+                        <div>
+                          <div
+                            className="info-blur"
+                            onClick={handleCloseInfo}
+                          ></div>
+                          <div className="info-container">
+                            <ul className="instruction-list">
+                              <p
+                                onClick={handleCloseInfo}
+                                className="info-close"
+                              >
+                                X
+                              </p>
+                              <li>
+                                enter the particular the website you want to get
+                                update from. The website should start with{" "}
+                                <b>http://</b> or
+                                <b> https://</b>
+                              </li>
+                              {/* <li>
                         select the messaging platform you wish to get
                         notification
                       </li> */}
-                        <li>
-                          click create. You can edit your website anytime.
-                        </li>
-                        <li>
-                          the recent update made from the time of notification
-                          creation will be sent to you as a message
-                        </li>
-                        <li>
-                          Note! this feature finds every update(first
-                          occurrence) made to a website, ignore the ones you
-                          don&apos;t need. Also, it does not search website
-                          content behind a login example facebook, instagram
-                          etc. Thanks.
-                        </li>
-                      </ul>
+                              <li>
+                                click create. You can edit your website anytime.
+                              </li>
+                              <li>
+                                the recent update made from the time of
+                                notification creation will be sent to you as a
+                                message
+                              </li>
+                              <li>
+                                Note! this feature finds every update(first
+                                occurrence) made to a website, ignore the ones
+                                you don&apos;t need. Also, it does not search
+                                website content behind a login example facebook,
+                                instagram etc. Thanks.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      ) : (
+                        <h4 className="info-title">
+                          Instructions
+                          <span onClick={handleInfo}>open</span>
+                        </h4>
+                      )}
                     </Grid>
                     <div className="inputfield-container">
                       <Grid item xs={12} md={6}>

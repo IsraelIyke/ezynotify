@@ -1,0 +1,75 @@
+.info-title {
+  padding: 0.5rem;
+  border: 2px solid black;
+  width: 18rem;
+  border-radius: 0.5rem;
+  margin-left: 4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: hsl(216, 100%, 99%);
+  margin-bottom: 2rem;
+}
+.info-title span {
+  cursor: pointer;
+  margin-left: 8.4rem;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.7rem;
+  background-color: skyblue;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+}
+.info-blur {
+  position: fixed;
+  background-color: hsla(200, 80%, 10%, 0.527);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.info-container {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4rem;
+}
+.instruction-list {
+  list-style: circle;
+  background-color: white;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+.instruction {
+  font-size: 0.9rem;
+}
+.info-close {
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 991px) {
+  .instruction-list {
+    height: 60vh;
+    width: 86vw;
+  }
+  .info-container {
+    margin-left: -2rem;
+  }
+  .info-title {
+    margin-left: 0.6rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}

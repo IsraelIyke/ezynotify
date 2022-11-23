@@ -2,7 +2,6 @@
   border-right: 1px solid hsl(0, 0%, 80%);
   height: 100vh;
   margin-top: 2.1rem;
-  position: relative;
   width: 16.3rem;
   position: fixed;
 }
@@ -201,15 +200,7 @@
 .inputfield-container {
   margin-left: 4rem;
 }
-.instruction-list {
-  list-style: circle;
-  margin: 0rem 0 3rem 6rem;
-  padding-right: 1rem;
-  font-size: 0.9rem;
-}
-.instruction {
-  font-size: 0.9rem;
-}
+
 .icon-sidebar {
   display: none;
   border-right: 1px solid hsl(0, 0%, 80%);
@@ -266,15 +257,11 @@
   .dash-options-container h1 {
     margin-bottom: -0.4rem;
     margin-top: 1rem;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     font-size: 1.2rem;
   }
   .inputfield-container {
     margin-left: 0.5rem;
-  }
-  .instruction-list {
-    margin: 0rem 0rem 0rem 3rem;
-    padding: 1rem;
   }
   .dash-tile-subscription {
     display: block;
