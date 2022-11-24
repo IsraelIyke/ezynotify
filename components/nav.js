@@ -40,13 +40,20 @@ export default function Nav() {
         </ul>
         <ul>
           <Link href="/">
-            <li>Home</li>
+            <a>
+              {" "}
+              <li>Home</li>
+            </a>
           </Link>
           <Link href="/">
-            <li>FAQ</li>
+            <a>
+              <li>FAQ</li>
+            </a>
           </Link>
-          <Link href="/">
-            <li>Pricing</li>
+          <Link href="/pricing">
+            <a>
+              <li>Pricing</li>
+            </a>
           </Link>
         </ul>
         <ul>
@@ -108,7 +115,7 @@ export default function Nav() {
               </li>
               <hr />
               <li>
-                <Link href="/">
+                <Link href="/pricing">
                   <a className="pricing-btn">Pricing</a>
                 </Link>
               </li>

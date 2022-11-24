@@ -64,7 +64,7 @@
 }
 @media screen and (max-width: 991px) {
   .instruction-list {
-    height: 60vh;
+    height: 80vh;
     width: 86vw;
   }
   .info-container {
@@ -190,6 +190,7 @@
   }
   .feedback-form input {
     margin: 0.5rem 0;
+    width: 17rem;
   }
   .feedback-form button {
     margin-left: 0rem;

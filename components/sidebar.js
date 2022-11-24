@@ -35,35 +35,45 @@ export default function SideBar(props) {
         </p>
         <ul className="sidebar-list">
           <Link href="/dashboard">
-            <li>
-              <AiFillHome className="icon" />
-              <div className="sidebar-list-item">dashboard</div>
-            </li>
+            <a>
+              <li>
+                <AiFillHome className="icon" />
+                <div className="sidebar-list-item">dashboard</div>
+              </li>
+            </a>
           </Link>
           <Link href="/dashboard/keyword-notification">
-            <li>
-              <VscSymbolKeyword className="icon" />
-              <div className="sidebar-list-item">keyword notification</div>
-            </li>
+            <a>
+              <li>
+                <VscSymbolKeyword className="icon" />
+                <div className="sidebar-list-item">keyword notification</div>
+              </li>
+            </a>
           </Link>
           <Link href="/dashboard/update-notification">
-            <li>
-              <MdOutlineUpdate className="icon" />
-              <div className="sidebar-list-item">update notification</div>
-            </li>
+            <a>
+              <li>
+                <MdOutlineUpdate className="icon" />
+                <div className="sidebar-list-item">update notification</div>
+              </li>
+            </a>
           </Link>
 
           <Link href="/dashboard/profile">
-            <li className="profile">
-              <HiUserCircle className="icon" />
-              <div className="sidebar-list-item ">profile</div>
-            </li>
+            <a>
+              <li className="profile">
+                <HiUserCircle className="icon" />
+                <div className="sidebar-list-item ">profile</div>
+              </li>
+            </a>
           </Link>
           <Link href="/dashboard/support">
-            <li>
-              <BiSupport className="icon" />
-              <div className="sidebar-list-item">support</div>
-            </li>
+            <a>
+              <li>
+                <BiSupport className="icon" />
+                <div className="sidebar-list-item">support</div>
+              </li>
+            </a>
           </Link>
         </ul>
       </div>
@@ -86,35 +96,50 @@ export default function SideBar(props) {
             </p>
             <ul className="sidebar-list">
               <Link href="/dashboard">
-                <li>
-                  <AiFillHome className="icon" />
-                  <div className="sidebar-list-item">dashboard</div>
-                </li>
+                <a>
+                  {" "}
+                  <li>
+                    <AiFillHome className="icon" />
+                    <div className="sidebar-list-item">dashboard</div>
+                  </li>
+                </a>
               </Link>
               <Link href="/dashboard/keyword-notification">
-                <li>
-                  <VscSymbolKeyword className="icon" />
-                  <div className="sidebar-list-item">keyword notification</div>
-                </li>
+                <a>
+                  {" "}
+                  <li>
+                    <VscSymbolKeyword className="icon" />
+                    <div className="sidebar-list-item">
+                      keyword notification
+                    </div>
+                  </li>
+                </a>
               </Link>
               <Link href="/dashboard/update-notification">
-                <li>
-                  <MdOutlineUpdate className="icon" />
-                  <div className="sidebar-list-item">update notification</div>
-                </li>
+                <a>
+                  <li>
+                    <MdOutlineUpdate className="icon" />
+                    <div className="sidebar-list-item">update notification</div>
+                  </li>
+                </a>
               </Link>
 
               <Link href="/dashboard/profile">
-                <li className="profile">
-                  <HiUserCircle className="icon" />
-                  <div className="sidebar-list-item">profile</div>
-                </li>
+                <a>
+                  {" "}
+                  <li className="profile">
+                    <HiUserCircle className="icon" />
+                    <div className="sidebar-list-item">profile</div>
+                  </li>
+                </a>
               </Link>
               <Link href="/dashboard/support">
-                <li>
-                  <BiSupport className="icon" />
-                  <div className="sidebar-list-item">support</div>
-                </li>
+                <a>
+                  <li>
+                    <BiSupport className="icon" />
+                    <div className="sidebar-list-item">support</div>
+                  </li>
+                </a>
               </Link>
             </ul>
             <div style={{ display: "flex", justifyContent: "center" }}>
@@ -145,30 +170,40 @@ export default function SideBar(props) {
           </p>
           <ul className="sidebar-list">
             <Link href="/dashboard/">
-              <li>
-                <AiFillHome className="icon" />
-              </li>
+              <a>
+                <li>
+                  <AiFillHome className="icon" />
+                </li>
+              </a>
             </Link>
             <Link href="/dashboard/keyword-notification">
-              <li>
-                <VscSymbolKeyword className="icon" />
-              </li>
+              <a>
+                <li>
+                  <VscSymbolKeyword className="icon" />
+                </li>
+              </a>
             </Link>
             <Link href="/dashboard/update-notification">
-              <li>
-                <MdOutlineUpdate className="icon" />
-              </li>
+              <a>
+                <li>
+                  <MdOutlineUpdate className="icon" />
+                </li>
+              </a>
             </Link>
 
             <Link href="/dashboard/profile">
-              <li className="profile">
-                <HiUserCircle className="icon" />
-              </li>
+              <a>
+                <li className="profile">
+                  <HiUserCircle className="icon" />
+                </li>
+              </a>
             </Link>
             <Link href="/dashboard/support">
-              <li>
-                <BiSupport className="icon" />
-              </li>
+              <a>
+                <li>
+                  <BiSupport className="icon" />
+                </li>
+              </a>
             </Link>
           </ul>
 

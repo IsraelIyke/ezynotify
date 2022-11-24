@@ -33,7 +33,6 @@ export default function Footer() {
               <li className="footer-content-title">Company</li>
               <li>About</li>
               <li>Features</li>
-              <li>Integrations</li>
               <Link href="/sign-in">
                 <li>login</li>
               </Link>
@@ -43,8 +42,11 @@ export default function Footer() {
           <div>
             <ul>
               <li className="footer-content-title">Pricing</li>
-              <li>Plans</li>
-              <li>Free vs Paid</li>
+              <Link href="/pricing">
+                <a>
+                  <li>Plans</li>
+                </a>
+              </Link>
             </ul>
           </div>
         </div>

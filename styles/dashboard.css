@@ -32,6 +32,7 @@
   border-radius: 2rem;
   border: 1px solid black;
   padding: 0.7rem 0.7rem;
+  cursor: pointer;
 }
 .dash-nav-content:hover {
   border: 2px solid black;

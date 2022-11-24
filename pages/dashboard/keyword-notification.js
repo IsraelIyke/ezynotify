@@ -11,7 +11,7 @@ import Inputfield from "../../components/inputfield";
 import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import { AiOutlineDown, AiOutlineUp, AiOutlineWarning } from "react-icons/ai";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -63,6 +63,9 @@ export default function Notification() {
   const [errorMessage, setErrorMessage] = useState("");
   const [info, setInfo] = useState(false);
   const [days, setDays] = useState(null);
+
+  const [email, setEmail] = useState(null);
+  const [telegram, setTelegram] = useState(null);
 
   function handleInfo() {
     setInfo(true);
@@ -509,7 +512,7 @@ export default function Notification() {
       let { data, error, status } = await supabase
         .from("notification")
         .select(
-          `web1,web2,web3,web4,web5,key1,key2,key3,key4,key5,emailStatus1,emailStatus2,emailStatus3,emailStatus4,emailStatus5,status1,status2,status3,status4,status5,days,mailer1,mailer2,mailer3,mailer4,mailer5`
+          `web1,web2,web3,web4,web5,key1,key2,key3,key4,key5,emailStatus1,emailStatus2,emailStatus3,emailStatus4,emailStatus5,status1,status2,status3,status4,status5,days,mailer1,mailer2,mailer3,mailer4,mailer5,email,telegram`
         ) //
         .eq("id", user.id)
         .single();
@@ -554,6 +557,8 @@ export default function Notification() {
         setStatus5(data.status5);
 
         setDays(data.days);
+        setEmail(data.email);
+        setTelegram(data.telegram);
       }
     } catch (error) {
       // alert(error.message);
@@ -624,7 +629,24 @@ export default function Notification() {
                     <Grid item xs={12}>
                       <h1>Create Keyword Notification</h1>
                     </Grid>
-
+                    {check < 6 && (email == null || telegram == null) && (
+                      <div
+                        style={{
+                          fontSize: "0.9rem",
+                          width: "70vw",
+                          color: "red",
+                        }}
+                      >
+                        <AiOutlineWarning /> You have not completed your profile
+                        setup for email{" "}
+                        {days > 0 && telegram == null && <>or telegram </>}
+                        <span style={{ color: "skyblue" }}>
+                          <Link href="/dashboard/profile">
+                            click here to start
+                          </Link>
+                        </span>
+                      </div>
+                    )}
                     <Grid item xs={12} md={12}>
                       {info ? (
                         <div>

@@ -24,7 +24,9 @@ export default function DashNav(props) {
           }}
         >
           <Link href="/">
-            <img src="/logo3.png" alt=" " width={110} />
+            <a>
+              <img src="/logo3.png" alt=" " width={110} />
+            </a>
           </Link>
         </motion.h3>
 
@@ -38,11 +40,9 @@ export default function DashNav(props) {
           className="dash-nav-content"
         >
           <li>
-            <Link href="/">
-              <a className="home-btn" onClick={props.signOut}>
-                Log Out
-              </a>
-            </Link>
+            <a className="home-btn" onClick={props.signOut}>
+              Log Out
+            </a>
           </li>
         </motion.ul>
       </div>

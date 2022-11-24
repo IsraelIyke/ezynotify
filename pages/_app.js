@@ -9,6 +9,7 @@ import "../styles/dashboard.css";
 import "../styles/key.css";
 import "../styles/referral.css";
 import "../styles/info.css";
+import "../styles/pricing.css";
 
 const { motion, AnimatePresence } = require("framer-motion");
 // import "../styles/globals.css";

@@ -88,7 +88,7 @@ export default function Profile() {
                         <input
                           type="hidden"
                           name="_next"
-                          value="http://localhost:3000/dashboard/support"
+                          value="https://ezynotify.pages.dev/dashboard/support"
                         />
                         <button type="submit">Send</button>
                       </form>
