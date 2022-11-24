@@ -227,7 +227,7 @@ export default function Update() {
                     <Grid item xs={12}>
                       <h1>Create Update Notification</h1>
                     </Grid>
-                    {check < 6 && (email == null || telegram == null) && (
+                    {email == null || telegram == null && (
                       <div
                         style={{
                           fontSize: "0.9rem",
