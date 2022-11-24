@@ -49,42 +49,48 @@ export default function Profile() {
             }}
           >
             <Grid container spacing={1}>
-              <Grid item xs={12} md={8} className="dash-options-container">
-                <Grid container style={{ marginBottom: "3rem" }}>
+              <Grid
+                item
+                xs={12}
+                md={8}
+                className="dash-options-container option"
+              >
+                <Grid container>
                   <Grid item xs={12}>
                     <h1>Dashboard</h1>
                   </Grid>
+                  <div className="ult-contain">
+                    <div className="options-container">
+                      <Grid item xs={12} md={12}>
+                        <Link href="/dashboard/keyword-notification">
+                          <div className="dash-tile search">
+                            <h3 className="dash-option-title">
+                              Keyword Notification
+                            </h3>
+                            <p className="dash-option-content">
+                              Create notification alert for a particular word,
+                              phrase or sentence in a website. <br />
+                              This feature checks your desired website for the
+                              keyword you entered at intervals and notifies you.
+                            </p>
+                          </div>
+                        </Link>
+                      </Grid>
 
-                  <Grid item xs={12} md={12}>
-                    <Link href="/dashboard/keyword-notification">
-                      <div className="dash-tile search">
-                        <h3 className="dash-option-title">
-                          Keyword Notification
-                        </h3>
-                        <p className="dash-option-content">
-                          Create notification alert for a particular word,
-                          phrase or sentence in a website. <br />
-                          This feature checks your desired website for the
-                          keyword you entered at intervals and notifies you.
-                        </p>
-                      </div>
-                    </Link>
-                  </Grid>
-
-                  <Grid item xs={12} md={12}>
-                    <Link href="/dashboard/update-notification">
-                      <div className="dash-tile shift referral">
-                        <h3 className="dash-option-title">
-                          Update Notification
-                        </h3>
-                        <p className="dash-option-content">
-                          Create notification alert to get notified for every
-                          update made in a website
-                        </p>
-                      </div>
-                    </Link>
-                  </Grid>
-                  {/* <Grid item xs={12} md={12}>
+                      <Grid item xs={12} md={12}>
+                        <Link href="/dashboard/update-notification">
+                          <div className="dash-tile shift referral">
+                            <h3 className="dash-option-title">
+                              Update Notification
+                            </h3>
+                            <p className="dash-option-content">
+                              Create notification alert to get notified for
+                              every update made in a website
+                            </p>
+                          </div>
+                        </Link>
+                      </Grid>
+                      {/* <Grid item xs={12} md={12}>
                     <Link href="/dashboard/referral">
                       <div className="dash-tile update">
                         <h3 className="dash-option-title">Referral</h3>
@@ -94,74 +100,53 @@ export default function Profile() {
                         </p>
                       </div>
                     </Link>
-                  </Grid> */}
-                  <Grid item xs={12} md={12}>
-                    <Link href="/dashboard/profile">
-                      <div className="dash-tile profile shift">
-                        <h3 className="dash-option-title">Profile</h3>
-                        <p className="dash-option-content">
-                          Change password
-                          <br />
-                          Update setup for telegram
-                        </p>
+                   </Grid> */}
+                      <Grid item xs={12} md={12}>
+                        <Link href="/dashboard/profile">
+                          <div className="dash-tile profile shift">
+                            <h3 className="dash-option-title">Profile</h3>
+                            <p className="dash-option-content">
+                              Change password
+                              <br />
+                              Update setup for telegram
+                            </p>
+                          </div>
+                        </Link>
+                      </Grid>
+                      <Grid item xs={12} md={12}>
+                        <Link href="/dashboard/support">
+                          <div className="dash-tile profile shift">
+                            <h3 className="dash-option-title">Support</h3>
+                            <p className="dash-option-content">
+                              Report any issue
+                              <br />
+                              Give feedbacks
+                            </p>
+                          </div>
+                        </Link>
+                      </Grid>
+                    </div>
+                    <div>
+                      <div className="dash-tile-sub">
+                        <h2
+                          style={{
+                            padding: "0.5rem 2rem 0.5rem 2rem",
+                          }}
+                        >
+                          Subscription
+                          <span
+                            style={{
+                              fontSize: "1rem",
+                              marginLeft: "1rem",
+                              color: "hsl(216, 100%, 25%)",
+                            }}
+                          >
+                            Free
+                          </span>
+                        </h2>
                       </div>
-                    </Link>
-                  </Grid>
-                </Grid>
-              </Grid>
-
-              <Grid item xs={12} md={4}>
-                <Grid container spacing={1}>
-                  <Grid
-                    item
-                    xs={12}
-                    style={{ padding: "0 0.5rem 0 1rem", position: "fixed" }}
-                  >
-                    <div className="dash-tile-subs">
-                      <h2
-                        style={{
-                          padding: "0.5rem 2rem 0.5rem 2rem",
-                        }}
-                      >
-                        Subscription
-                        <span
-                          style={{
-                            fontSize: "1rem",
-                            marginLeft: "1rem",
-                            color: "hsl(216, 100%, 25%)",
-                          }}
-                        >
-                          Free
-                        </span>
-                      </h2>
                     </div>
-                    <div
-                      style={{
-                        width: "20rem",
-                        marginLeft: "-0.3rem",
-                      }}
-                      className="dash-tile-subscription"
-                    >
-                      <h2
-                        style={{
-                          marginTop: "-7rem",
-                          boxShadow: "-4px 1rem 1px white",
-                          fontSize: "1rem",
-                        }}
-                      >
-                        Subscription
-                        <span
-                          style={{
-                            fontSize: "1rem",
-                            marginLeft: "1rem",
-                            color: "hsl(216, 100%, 25%)",
-                          }}
-                        >
-                          Free
-                        </span>
-                      </h2>
-                    </div>
-                  </Grid>
+                  </div>
                 </Grid>
               </Grid>
             </Grid>

@@ -19,6 +19,9 @@
   border-radius: 0.5rem;
   border: 2px solid black;
 }
+.info-free {
+  margin-left: 4rem;
+}
 .info-blur {
   position: fixed;
   background-color: hsla(200, 80%, 10%, 0.527);
@@ -72,4 +75,136 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
+  .info-free {
+    margin-left: 0.6rem;
+  }
+}
+
+.inputfield-cont {
+  display: flex;
+}
+.ult-container {
+  margin: 0 1rem;
+}
+.ult-container p {
+  font-size: 0.9rem;
+  list-style: circle;
+}
+.ult-container li {
+  font-size: 0.9rem;
+  list-style: circle;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+.ult-container button {
+  margin-left: 1rem;
+}
+.ult-container p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.ult-container h5 {
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+}
+.options h1 {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (width < 991px) {
+  .inputfield-cont {
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+  .ult-container {
+    margin-top: 0.5rem;
+  }
+}
+
+.ult-contain {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.ult-contains {
+  display: flex;
+  margin-bottom: 1rem;
+  width: 100%;
+  margin-right: 4rem;
+}
+
+.options-container {
+  width: 53vw;
+}
+.dash-tile-sub {
+  height: 10rem;
+  padding: 0.5rem 0.5rem;
+  display: block;
+}
+.dash-tile-sub h2 {
+  border-radius: 0.4rem;
+  background-color: hsl(216, 100%, 95%);
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin-bottom: 1.2rem;
+}
+.option h1 {
+  margin-left: 4rem;
+  margin-bottom: 1rem;
+}
+.limit-margin {
+  margin-left: 4rem;
+}
+@media screen and (width < 991px) {
+  .option h1 {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  .ult-contain {
+    flex-direction: column;
+  }
+  .options-container {
+    width: 83vw;
+  }
+  .limit-margin {
+    margin-left: 0.7rem;
+  }
+}
+
+.feedback-form {
+  margin-left: 4rem;
+}
+.feedback-form input {
+  width: 18rem;
+  height: 3rem;
+  margin: 0.5rem;
+}
+.feedback-form button {
+  width: 5rem;
+  height: 3rem;
+  margin-left: 0.5rem;
+}
+
+@media screen and (width < 991px) {
+  .feedback-form {
+    margin-left: 1rem;
+  }
+  .feedback-form input {
+    margin: 0.5rem 0;
+  }
+  .feedback-form button {
+    margin-left: 0rem;
+  }
+}
+legend {
+  padding: 5px 0.5rem;
+}
+fieldset {
+  height: 6rem;
+  width: 18rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+input[type="radio"] {
+  margin-right: 0.75rem;
 }

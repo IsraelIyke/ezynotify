@@ -17,6 +17,12 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 export default function Notification() {
+  const [mailer1, setMailer1] = useState("");
+  const [mailer2, setMailer2] = useState("");
+  const [mailer3, setMailer3] = useState("");
+  const [mailer4, setMailer4] = useState("");
+  const [mailer5, setMailer5] = useState("");
+
   const [del1, setDel1] = useState(false);
   const [del2, setDel2] = useState(false);
   const [del3, setDel3] = useState(false);
@@ -56,6 +62,7 @@ export default function Notification() {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [info, setInfo] = useState(false);
+  const [days, setDays] = useState(null);
 
   function handleInfo() {
     setInfo(true);
@@ -80,6 +87,11 @@ export default function Notification() {
     web4,
     key5,
     web5,
+    mailer1,
+    mailer2,
+    mailer3,
+    mailer4,
+    mailer5,
   }) {
     try {
       setloading(true);
@@ -96,6 +108,11 @@ export default function Notification() {
         web4,
         key5,
         web5,
+        mailer1,
+        mailer2,
+        mailer3,
+        mailer4,
+        mailer5,
       };
 
       let { error } = await supabase.from("notification").upsert(updates, {
@@ -492,7 +509,7 @@ export default function Notification() {
       let { data, error, status } = await supabase
         .from("notification")
         .select(
-          `web1,web2,web3,web4,web5,key1,key2,key3,key4,key5,emailStatus1,emailStatus2,emailStatus3,emailStatus4,emailStatus5,status1,status2,status3,status4,status5`
+          `web1,web2,web3,web4,web5,key1,key2,key3,key4,key5,emailStatus1,emailStatus2,emailStatus3,emailStatus4,emailStatus5,status1,status2,status3,status4,status5,days,mailer1,mailer2,mailer3,mailer4,mailer5`
         ) //
         .eq("id", user.id)
         .single();
@@ -518,6 +535,12 @@ export default function Notification() {
         setK4(data.key4);
         setK5(data.key5);
 
+        setMailer1(data.mailer1);
+        setMailer2(data.mailer2);
+        setMailer3(data.mailer3);
+        setMailer4(data.mailer4);
+        setMailer5(data.mailer5);
+
         setEmailStatus1(data.emailStatus1);
         setEmailStatus2(data.emailStatus2);
         setEmailStatus3(data.emailStatus3);
@@ -529,6 +552,8 @@ export default function Notification() {
         setStatus3(data.status3);
         setStatus4(data.status4);
         setStatus5(data.status5);
+
+        setDays(data.days);
       }
     } catch (error) {
       // alert(error.message);
@@ -622,10 +647,10 @@ export default function Notification() {
                                 <b>http://</b> or
                                 <b> https://</b>
                               </li>
-                              {/* <li>
-                        select the messaging platform you wish to get
-                        notification
-                      </li> */}
+                              <li>
+                                select the messaging platform you wish to get
+                                notification
+                              </li>
                               <li>click create</li>
                               <li>
                                 you can edit your search in the status panel
@@ -644,10 +669,27 @@ export default function Notification() {
                           </div>
                         </div>
                       ) : (
-                        <h4 className="info-title">
-                          Instructions
-                          <span onClick={handleInfo}>open</span>
-                        </h4>
+                        <>
+                          {days == "0" && (
+                            <h5 className="info-free">
+                              You can only create one keyword notification in{" "}
+                              <b>free</b> plan.{" "}
+                              <span
+                                style={{
+                                  color: "skyblue",
+                                  textDecoration: "underline",
+                                }}
+                              >
+                                Upgrade
+                              </span>{" "}
+                              to enjoy more
+                            </h5>
+                          )}
+                          <h4 className="info-title">
+                            Instructions
+                            <span onClick={handleInfo}>open</span>
+                          </h4>
+                        </>
                       )}
                     </Grid>
                     <div className="inputfield-container">
@@ -670,6 +712,28 @@ export default function Notification() {
                               setState={setWeb1}
                               value={web1}
                             />
+                            <fieldset>
+                              <legend>messaging platform</legend>
+                              <input
+                                type="radio"
+                                id="email1"
+                                name="mailer1"
+                                value="email1"
+                                onChange={(e) => setMailer1(e.target.value)}
+                                checked={mailer1 === "email1"}
+                              />
+                              <label htmlFor="email1">email</label>
+                              <br />
+                              <input
+                                type="radio"
+                                id="telegram1"
+                                name="mailer1"
+                                value="telegram1"
+                                onChange={(e) => setMailer1(e.target.value)}
+                                checked={mailer1 === "telegram1"}
+                              />
+                              <label htmlFor="telegram1">telegram</label>
+                            </fieldset>
                             <Grid item xs={12}>
                               <div
                                 className="submit-button"
@@ -685,7 +749,7 @@ export default function Notification() {
                             </Grid>
                           </div>
                         )}
-                        {check == 2 && (
+                        {check == 2 && days > "0" && (
                           <div>
                             <Inputfield
                               type="text"
@@ -703,6 +767,28 @@ export default function Notification() {
                               setState={setWeb2}
                               value={web2}
                             />
+                            <fieldset>
+                              <legend>messaging platform</legend>
+                              <input
+                                type="radio"
+                                id="email2"
+                                name="mailer2"
+                                value="email2"
+                                onChange={(e) => setMailer2(e.target.value)}
+                                checked={mailer2 === "email2"}
+                              />
+                              <label htmlFor="email2">email</label>
+                              <br />
+                              <input
+                                type="radio"
+                                id="telegram2"
+                                name="mailer2"
+                                value="telegram2"
+                                onChange={(e) => setMailer2(e.target.value)}
+                                checked={mailer2 === "telegram2"}
+                              />
+                              <label htmlFor="telegram2">telegram</label>
+                            </fieldset>
                             <Grid item xs={12}>
                               <div
                                 className="submit-button"
@@ -718,7 +804,7 @@ export default function Notification() {
                             </Grid>
                           </div>
                         )}
-                        {check == 3 && (
+                        {check == 3 && days > "0" && (
                           <div>
                             <Inputfield
                               type="text"
@@ -736,6 +822,28 @@ export default function Notification() {
                               setState={setWeb3}
                               value={web3}
                             />
+                            <fieldset>
+                              <legend>messaging platform</legend>
+                              <input
+                                type="radio"
+                                id="email3"
+                                name="mailer3"
+                                value="email3"
+                                onChange={(e) => setMailer3(e.target.value)}
+                                checked={mailer3 === "email3"}
+                              />
+                              <label htmlFor="email3">email</label>
+                              <br />
+                              <input
+                                type="radio"
+                                id="telegram3"
+                                name="mailer3"
+                                value="telegram3"
+                                onChange={(e) => setMailer3(e.target.value)}
+                                checked={mailer3 === "telegram3"}
+                              />
+                              <label htmlFor="telegram3">telegram</label>
+                            </fieldset>
                             <Grid item xs={12}>
                               <div
                                 className="submit-button"
@@ -751,7 +859,7 @@ export default function Notification() {
                             </Grid>
                           </div>
                         )}
-                        {check == 4 && (
+                        {check == 4 && days > "0" && (
                           <div>
                             <Inputfield
                               type="text"
@@ -769,6 +877,28 @@ export default function Notification() {
                               setState={setWeb4}
                               value={web4}
                             />
+                            <fieldset>
+                              <legend>messaging platform</legend>
+                              <input
+                                type="radio"
+                                id="email4"
+                                name="mailer4"
+                                value="email4"
+                                onChange={(e) => setMailer4(e.target.value)}
+                                checked={mailer4 === "email"}
+                              />
+                              <label htmlFor="email">email</label>
+                              <br />
+                              <input
+                                type="radio"
+                                id="telegram4"
+                                name="mailer4"
+                                value="telegram4"
+                                onChange={(e) => setMailer4(e.target.value)}
+                                checked={mailer4 === "telegram4"}
+                              />
+                              <label htmlFor="telegram4">telegram</label>
+                            </fieldset>
                             <Grid item xs={12}>
                               <div
                                 className="submit-button"
@@ -784,7 +914,7 @@ export default function Notification() {
                             </Grid>
                           </div>
                         )}
-                        {check == 5 && (
+                        {check == 5 && days > "0" && (
                           <div>
                             <Inputfield
                               type="text"
@@ -802,6 +932,29 @@ export default function Notification() {
                               setState={setWeb5}
                               value={web5}
                             />
+
+                            <fieldset>
+                              <legend>messaging platform</legend>
+                              <input
+                                type="radio"
+                                id="email5"
+                                name="mailer5"
+                                value="email5"
+                                onChange={(e) => setMailer5(e.target.value)}
+                                checked={mailer5 === "email5"}
+                              />
+                              <label htmlFor="email5">email</label>
+                              <br />
+                              <input
+                                type="radio"
+                                id="telegram5"
+                                name="mailer5"
+                                value="telegram5"
+                                onChange={(e) => setMailer5(e.target.value)}
+                                checked={mailer5 === "telegram"}
+                              />
+                              <label htmlFor="telegram">telegram</label>
+                            </fieldset>
                             <Grid item xs={12}>
                               <div
                                 className="submit-button"
@@ -818,12 +971,29 @@ export default function Notification() {
                           </div>
                         )}
 
-                        {check == 6 && (
+                        {check == 6 && days > "0" && (
                           <div className="keyword-limit">
                             <p>
-                              You have used up you five input limit. But you can
-                              delete an input you no longer need from the
+                              You have used up your five input limit. But you
+                              can delete an input you no longer need from the
                               notification status panel. Thanks &#128151;
+                            </p>
+                          </div>
+                        )}
+                        {check > 1 && days == "0" && (
+                          <div className="keyword-limit">
+                            <p>
+                              You have used up your input limit.
+                              <span
+                                style={{
+                                  color: "skyblue",
+                                  textDecoration: "underline",
+                                }}
+                              >
+                                {" "}
+                                Upgrade
+                              </span>{" "}
+                              to enjoy more. Thanks &#128151;
                             </p>
                           </div>
                         )}
@@ -974,7 +1144,7 @@ export default function Notification() {
                           </div>
                         </div>
                       )}
-                      {k2 != null && (
+                      {k2 != null && days > "0" && (
                         <div
                           className={
                             status2 == "No"
@@ -1093,7 +1263,7 @@ export default function Notification() {
                           </div>
                         </div>
                       )}
-                      {k3 != null && (
+                      {k3 != null && days > "0" && (
                         <div
                           className={
                             status3 == "No"
@@ -1212,7 +1382,7 @@ export default function Notification() {
                           </div>
                         </div>
                       )}
-                      {k4 != null && (
+                      {k4 != null && days > "0" && (
                         <div
                           className={
                             status4 == "No"
@@ -1331,7 +1501,7 @@ export default function Notification() {
                           </div>
                         </div>
                       )}
-                      {k5 != null && (
+                      {k5 != null && days > "0" && (
                         <div
                           className={
                             status5 == "No"
@@ -1611,7 +1781,7 @@ export default function Notification() {
                             </div>
                           </div>
                         )}
-                        {k2 != null && (
+                        {k2 != null && days > "0" && (
                           <div
                             className={
                               status2 == "No"
@@ -1730,7 +1900,7 @@ export default function Notification() {
                             </div>
                           </div>
                         )}
-                        {k3 != null && (
+                        {k3 != null && days > "0" && (
                           <div
                             className={
                               status3 == "No"
@@ -1849,7 +2019,7 @@ export default function Notification() {
                             </div>
                           </div>
                         )}
-                        {k4 != null && (
+                        {k4 != null && days > "0" && (
                           <div
                             className={
                               status4 == "No"
@@ -1968,7 +2138,7 @@ export default function Notification() {
                             </div>
                           </div>
                         )}
-                        {k5 != null && (
+                        {k5 != null && days > "0" && (
                           <div
                             className={
                               status5 == "No"

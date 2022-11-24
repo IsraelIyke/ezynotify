@@ -131,7 +131,7 @@ export default function Nav() {
         <ul>
           <Link href="/">
             <img
-              src="./logo2.png"
+              src="./logo3.png"
               alt=" "
               width={110}
               className="nav-mobile-image"

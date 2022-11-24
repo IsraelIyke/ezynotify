@@ -59,7 +59,7 @@ export default function SideBar(props) {
               <div className="sidebar-list-item ">profile</div>
             </li>
           </Link>
-          <Link href="/dashboard/referral">
+          <Link href="/dashboard/support">
             <li>
               <BiSupport className="icon" />
               <div className="sidebar-list-item">support</div>
@@ -110,7 +110,7 @@ export default function SideBar(props) {
                   <div className="sidebar-list-item">profile</div>
                 </li>
               </Link>
-              <Link href="/dashboard/referral">
+              <Link href="/dashboard/support">
                 <li>
                   <BiSupport className="icon" />
                   <div className="sidebar-list-item">support</div>
@@ -165,7 +165,7 @@ export default function SideBar(props) {
                 <HiUserCircle className="icon" />
               </li>
             </Link>
-            <Link href="/dashboard/referral">
+            <Link href="/dashboard/support">
               <li>
                 <BiSupport className="icon" />
               </li>

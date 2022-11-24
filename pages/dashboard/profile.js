@@ -1,3 +1,4 @@
+import { CopyToClipboard } from "react-copy-to-clipboard";
 const { motion } = require("framer-motion");
 import { useState, useEffect } from "react";
 import { supabase } from "../../client";
@@ -17,6 +18,8 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 export default function Update() {
+  const [copyText, setCopyText] = useState("@ezynotify_updates_bot");
+  const [copyTxt, setCopyTxt] = useState("@ezynotify_keywords_bot");
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [tel, setTel] = useState(false);
@@ -65,7 +68,7 @@ export default function Update() {
 
       let { data, error, status } = await supabase
         .from("notification")
-        .select(`email,days`) //
+        .select(`email,days,telegram`) //
         .eq("id", user.id)
         .single();
 
@@ -75,6 +78,7 @@ export default function Update() {
       if (data) {
         setEmail(data.email); //
         setDays(data.days);
+        setTelegram(data.telegram);
       }
     } catch (error) {
       // alert(error.message);
@@ -98,13 +102,30 @@ export default function Update() {
   }
   if (!profile) return null;
 
-  async function updateProfile({ website }) {
+  async function changePassword() {
+    try {
+      const user = supabase.auth.user();
+      const { error } = await supabase.auth.update({
+        email: user.email,
+        password: password,
+      });
+      if (error) {
+        throw error;
+      }
+      handleClick();
+    } catch (error) {
+      setErrorMessage(error.message);
+      handle();
+    }
+  }
+  async function updateProfile({ website, telegram }) {
     try {
       setLoading(true);
       const user = supabase.auth.user();
       const updates = {
         id: user.id, //
         website,
+        telegram,
       };
 
       let { error } = await supabase.from("notification").upsert(updates, {
@@ -165,59 +186,66 @@ export default function Update() {
             }}
           >
             <Grid container spacing={1}>
-              <Grid item xs={12} md={12} className="dash-options-container">
+              <Grid
+                item
+                xs={12}
+                md={12}
+                className="dash-options-container options"
+              >
                 <Grid container>
                   <Grid item xs={12}>
                     <h1>Profile</h1>
                   </Grid>
-                  <div className="inputfield-container">
-                    <h4 style={{ marginBottom: "1rem" }}>Update email</h4>
-                    <Grid item xs={12} md={6}>
-                      <Inputfield
-                        type="text"
-                        placeholder="email"
-                        id="email"
-                        label="email"
-                        setState={setEmail}
-                        value={email}
-                      />
-                      <div
-                        onClick={() => {
-                          updateProfile({
-                            email,
-                          });
-                        }}
-                        className="submit-button"
-                        style={{ width: "18rem" }}
-                      >
-                        {(loading && "Loading") || "update email"}
+                  <div className="inputfield-cont">
+                    <div className="ult-container">
+                      <h4 style={{ marginBottom: "1rem" }}>Update email</h4>
+                      <div>
+                        <Inputfield
+                          type="text"
+                          placeholder="email"
+                          id="email"
+                          label="email"
+                          setState={setEmail}
+                          value={email}
+                        />
+                        <div
+                          onClick={() => {
+                            updateProfile({
+                              email,
+                            });
+                          }}
+                          className="submit-button"
+                          style={{ width: "18rem" }}
+                        >
+                          {(loading && "Loading") || "update email"}
+                        </div>
                       </div>
-                    </Grid>
-                    <h4 style={{ marginBottom: "1rem" }}>Update Password</h4>
-                    <Grid item xs={12} md={6}>
-                      <Inputfield
-                        type="text"
-                        placeholder="password"
-                        id="password"
-                        label="change password"
-                        setState={setPassword}
-                        value={password}
-                      />
-                      <div
-                        onClick={() => {
-                          updateProfile({
-                            password,
-                          });
-                        }}
-                        className="submit-button"
-                        style={{ width: "18rem" }}
-                      >
-                        {(loading && "Loading") || "change password"}
+                    </div>
+                    <div className="ult-container">
+                      <h4 style={{ marginBottom: "1rem" }}>Update Password</h4>
+                      <div>
+                        <Inputfield
+                          type="text"
+                          placeholder="password"
+                          id="password"
+                          label="change password"
+                          setState={setPassword}
+                          value={password}
+                        />
+                        <div
+                          onClick={() => {
+                            changePassword();
+                          }}
+                          className="submit-button"
+                          style={{ width: "18rem" }}
+                        >
+                          {(loading && "Loading") || "change password"}
+                        </div>
                       </div>
-                    </Grid>
-                    <Grid item xs={12}>
+                    </div>
+                    <div className="ult-container">
                       {tel == false && (
-                        <h4 style={{ marginTop: "1rem" }}>
+                        <h4>
                           Update Telegram Setup
                           <span
                             style={{
@@ -238,11 +266,11 @@ export default function Update() {
 
                       {tel && days > 0 && (
                         <div>
-                          <h4
-                            style={{ marginTop: "1rem", marginBottom: "1rem" }}
-                          >
+                          <h4 style={{ marginBottom: "1rem" }}>
                             Update Telegram Setup
                           </h4>
+                          <h5>step one</h5>
+                          <p>enter your telegram chat id</p>
                           <Grid item xs={12} md={6}>
                             <Inputfield
                               type="text"
@@ -253,7 +281,7 @@ export default function Update() {
                               value={telegram}
                             />
                             <p style={{ fontSize: "0.8rem", width: "19rem" }}>
-                              don&apos;t know how to get telegram chat id?{" "}
+                              don&apos;t know how to get telegram chat id?
                               <span style={{ color: "skyblue" }}>
                                 click here
                               </span>
@@ -270,6 +298,29 @@ export default function Update() {
                               {(loading && "Loading") || "update telegram"}
                             </div>
                           </Grid>
+                          <h5>step two</h5>
+                          <p>
+                            search the following telegram bots and start them
+                          </p>
+                          <ul>
+                            <li>
+                              {copyText}
+                              <CopyToClipboard text={copyText}>
+                                <button onClick={() => handleClick()}>
+                                  copy
+                                </button>
+                              </CopyToClipboard>
+                            </li>
+
+                            <li>
+                              {copyTxt}
+                              <CopyToClipboard text={copyTxt}>
+                                <button onClick={() => handleClick()}>
+                                  copy
+                                </button>
+                              </CopyToClipboard>
+                            </li>
+                          </ul>
                         </div>
                       )}
 
@@ -286,7 +337,7 @@ export default function Update() {
                           </Grid>
                         </div>
                       )}
-                    </Grid>
+                    </div>
                   </div>
                 </Grid>
               </Grid>

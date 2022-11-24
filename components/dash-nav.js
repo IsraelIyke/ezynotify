@@ -24,7 +24,7 @@ export default function DashNav(props) {
           }}
         >
           <Link href="/">
-            <img src="/logo2.png" alt=" " width={110} />
+            <img src="/logo3.png" alt=" " width={110} />
           </Link>
         </motion.h3>
 
