@@ -11,7 +11,7 @@ import Inputfield from "../../components/inputfield";
 import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-import { AiOutlineDown, AiOutlineUp, AiOutlineWarning } from "react-icons/ai";
+import { AiOutlineWarning } from "react-icons/ai";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -32,6 +32,8 @@ export default function Update() {
   const [errorMessage, setErrorMessage] = useState("");
   const [days, setDays] = useState(null);
   const [updateCount, setUpdateCount] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [telegram, setTelegram] = useState(null);
 
   let times = "";
   useEffect(() => {
@@ -99,7 +101,7 @@ export default function Update() {
 
       let { data, error, status } = await supabase
         .from("notification")
-        .select(`website, times,days,updateCount,mailer`) //
+        .select(`website, times,days,updateCount,mailer,email,telegram`) //
         .eq("id", user.id)
         .single();
 
@@ -112,6 +114,8 @@ export default function Update() {
         setDays(data.days);
         setUpdateCount(data.updateCount);
         setMailer(data.mailer);
+        setEmail(data.email);
+        setTelegram(data.telegram);
 
         if (data.times.length > 4) {
           setChecker1(true);
@@ -227,24 +231,25 @@ export default function Update() {
                     <Grid item xs={12}>
                       <h1>Create Update Notification</h1>
                     </Grid>
-                    {email == null || telegram == null && (
-                      <div
-                        style={{
-                          fontSize: "0.9rem",
-                          width: "70vw",
-                          color: "red",
-                        }}
-                      >
-                        <AiOutlineWarning /> You have not completed your profile
-                        setup for email{" "}
-                        {days > 0 && telegram == null && <>or telegram </>}
-                        <span style={{ color: "skyblue" }}>
-                          <Link href="/dashboard/profile">
-                            click here to start
-                          </Link>
-                        </span>
-                      </div>
-                    )}
+                    {email == null ||
+                      (telegram == null && (
+                        <div
+                          style={{
+                            fontSize: "0.9rem",
+                            width: "70vw",
+                            color: "red",
+                          }}
+                        >
+                          <AiOutlineWarning /> You have not completed your
+                          profile setup for email{" "}
+                          {days > 0 && telegram == null && <>or telegram </>}
+                          <span style={{ color: "skyblue" }}>
+                            <Link href="/dashboard/profile">
+                              click here to start
+                            </Link>
+                          </span>
+                        </div>
+                      ))}
                     <Grid item xs={12} md={12}>
                       {info ? (
                         <div>

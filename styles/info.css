@@ -64,7 +64,7 @@
 }
 @media screen and (max-width: 991px) {
   .instruction-list {
-    height: 80vh;
+    height: 75vh;
     width: 86vw;
   }
   .info-container {
