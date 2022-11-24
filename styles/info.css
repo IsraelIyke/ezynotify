@@ -208,4 +208,5 @@ fieldset {
 
 input[type="radio"] {
   margin-right: 0.75rem;
+accent-color: "black",
 }
