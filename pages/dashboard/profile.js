@@ -300,11 +300,11 @@ export default function Profile() {
                           </Grid>
                           <h5>step two</h5>
                           <p>
-                            search the following telegram bots and start them
+                           // search the following telegram bots and start them
                           </p>
                           <ul>
                             <li>
-                              {copyText}
+                              //{copyText}
                               <CopyToClipboard text={copyText}>
                                 <button onClick={() => handleClick()}>
                                   copy
@@ -313,7 +313,7 @@ export default function Profile() {
                             </li>
 
                             <li>
-                              {copyTxt}
+                             // {copyTxt}
                               <CopyToClipboard text={copyTxt}>
                                 <button onClick={() => handleClick()}>
                                   copy
