@@ -299,7 +299,7 @@ export default function Profile() {
                             </div>
                           </Grid>
                           <h5>step two</h5>
-                          <p>
+                          <p>search the following telegram bots and start them      
                             </p>
                           <ul>
                             <li>
