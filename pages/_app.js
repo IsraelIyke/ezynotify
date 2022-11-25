@@ -12,6 +12,7 @@ import "../styles/info.css";
 import "../styles/pricing.css";
 import "../styles/about.css";
 import "../styles/faq.css";
+import "../styles/p404.css";
 
 const { motion, AnimatePresence } = require("framer-motion");
 // import "../styles/globals.css";

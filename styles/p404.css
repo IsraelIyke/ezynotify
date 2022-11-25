@@ -1,0 +1,15 @@
+.p404 {
+  margin-top: 6rem;
+  width: 30rem;
+}
+.p404-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (width < 991px) {
+  .p404 {
+    margin-top: 6rem;
+    width: 20rem;
+  }
+}
