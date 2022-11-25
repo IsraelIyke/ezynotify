@@ -28,7 +28,7 @@ export default function Home() {
           <About />
         </Grid>
         <Grid item xs={12} md={12}>
-          <div className="features">
+          <div className="features" id="features">
             <h2>Features</h2>
             <span></span>
           </div>
