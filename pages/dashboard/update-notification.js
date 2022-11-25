@@ -231,8 +231,7 @@ export default function Update() {
                     <Grid item xs={12}>
                       <h1>Create Update Notification</h1>
                     </Grid>
-                    {email == null ||
-                      (telegram == null && (
+                    {(email == "" || telegram == "") && (
                         <div
                           style={{
                             fontSize: "0.9rem",
@@ -242,7 +241,7 @@ export default function Update() {
                         >
                           <AiOutlineWarning /> You have not completed your
                           profile setup for email{" "}
-                          {days > 0 && telegram == null && <>or telegram </>}
+                          {days > 0 && telegram == "" && <>or telegram </>}
                           <span style={{ color: "skyblue" }}>
                             <Link href="/dashboard/profile">
                               click here to start
