@@ -231,24 +231,27 @@ export default function Update() {
                     <Grid item xs={12}>
                       <h1>Create Update Notification</h1>
                     </Grid>
-                    {(email == "" || telegram == "" || email == null || telegram == null) && (
-                        <div
-                          style={{
-                            fontSize: "0.9rem",
-                            width: "70vw",
-                            color: "red",
-                          }}
-                        >
-                          <AiOutlineWarning /> You have not completed your
-                          profile setup for email{" "}
-                          {days > 0 && telegram == "" && <>or telegram </>}
-                          <span style={{ color: "skyblue" }}>
-                            <Link href="/dashboard/profile">
-                              click here to start
-                            </Link>
-                          </span>
-                        </div>
-                      )}
+                    {(email == "" ||
+                      telegram == "" ||
+                      email == null ||
+                      telegram == null) && (
+                      <div
+                        style={{
+                          fontSize: "0.9rem",
+                          width: "70vw",
+                          color: "red",
+                        }}
+                      >
+                        <AiOutlineWarning /> You have not completed your profile
+                        setup for email{" "}
+                        {days > 0 && telegram == "" && <>or telegram </>}
+                        <span style={{ color: "skyblue" }}>
+                          <Link href="/dashboard/profile">
+                            <a>click here to start</a>
+                          </Link>
+                        </span>
+                      </div>
+                    )}
                     <Grid item xs={12} md={12}>
                       {info ? (
                         <div>

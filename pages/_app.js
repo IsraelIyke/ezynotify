@@ -10,6 +10,7 @@ import "../styles/key.css";
 import "../styles/referral.css";
 import "../styles/info.css";
 import "../styles/pricing.css";
+import "../styles/about.css";
 
 const { motion, AnimatePresence } = require("framer-motion");
 // import "../styles/globals.css";

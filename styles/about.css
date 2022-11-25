@@ -1,0 +1,143 @@
+.main-container {
+  background-color: white;
+  position: relative;
+  margin-top: 5rem;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-container .left {
+  height: 20rem;
+  width: 10rem;
+  border-radius: 0 20rem 20rem 0;
+  background-color: skyblue;
+}
+.main-container .right {
+  height: 20rem;
+  width: 10rem;
+  border-radius: 20rem 0 0 0;
+  background-color: wheat;
+}
+.inner-container {
+  width: 69vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inner-container h1 {
+  font-size: 3.5rem;
+  text-align: center;
+}
+.inner-container p {
+  font-weight: 100;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  width: 50vw;
+  text-align: center;
+}
+.update-image {
+  -ms-transform: rotate(10deg); /* IE 9 */
+  transform: rotate(10deg);
+}
+.update-image-container {
+  background-color: hsl(197, 79%, 45%);
+  height: 20rem;
+  margin-bottom: 18rem;
+  border-radius: 0 5rem 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.update-container {
+  background-color: hsl(197, 79%, 95%);
+  height: 20rem;
+  margin-bottom: 18rem;
+  border-radius: 5rem 0 0 5rem;
+  padding: 6rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.keyword-image-container {
+  background-color: hsl(39, 77%, 63%);
+  height: 20rem;
+  margin-bottom: 18rem;
+  border-radius: 0 5rem 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keyword-container {
+  background-color: wheat;
+  height: 20rem;
+  margin-bottom: 18rem;
+  border-radius: 5rem 0 0 5rem;
+  padding: 6rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.features span {
+  width: 6.2rem;
+  height: 0.3rem;
+  background: linear-gradient(to right, white, hsl(197, 79%, 45%));
+}
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10rem;
+}
+
+.update-container p,
+.keyword-container p {
+  letter-spacing: 1;
+  white-space: 1rem;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+@media screen and (width < 991px) {
+  .inner-container h1 {
+    font-size: 2.1rem;
+    width: 70vw;
+  }
+  .main-container .left {
+    height: 15rem;
+    width: 2rem;
+    border-radius: 0 20rem 20rem 0;
+    background-color: skyblue;
+  }
+  .main-container .right {
+    height: 15rem;
+    width: 2rem;
+    border-radius: 20rem 0 0 0;
+    background-color: wheat;
+  }
+  .inner-container p {
+    width: 78vw;
+  }
+  .update-container {
+    height: 29rem;
+    margin-bottom: 10rem;
+  }
+  .keyword-container {
+    height: 29rem;
+    margin-bottom: 10rem;
+  }
+  .features {
+    margin-bottom: 2rem;
+  }
+  .update-image-container {
+    margin-bottom: 10rem;
+  }
+  .keyword-image-container {
+    margin-bottom: 10rem;
+  }
+}

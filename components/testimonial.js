@@ -24,7 +24,7 @@ const NextBtn = (props) => {
 const Testimonial = () => {
   return (
     <>
-      <div className="testimonial">
+      <div className="testimonial" id="testimonial">
         <div className="testimonial-container">
           <h4 style={{ marginBottom: 20 }}>TESTIMONIALS</h4>
           <h1 style={{ marginBottom: 20 }}>

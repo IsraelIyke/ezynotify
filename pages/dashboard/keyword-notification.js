@@ -635,6 +635,7 @@ export default function Notification() {
                           fontSize: "0.9rem",
                           width: "70vw",
                           color: "red",
+                          marginLeft: "1rem",
                         }}
                       >
                         <AiOutlineWarning /> You have not completed your profile
@@ -642,7 +643,7 @@ export default function Notification() {
                         {days > 0 && telegram == "" && <>or telegram </>}
                         <span style={{ color: "skyblue" }}>
                           <Link href="/dashboard/profile">
-                            click here to start
+                            <a>click here to start</a>
                           </Link>
                         </span>
                       </div>
