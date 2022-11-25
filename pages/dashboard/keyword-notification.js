@@ -629,7 +629,7 @@ export default function Notification() {
                     <Grid item xs={12}>
                       <h1>Create Keyword Notification</h1>
                     </Grid>
-                    {check < 6 && (email == null || telegram == null) && (
+                    {check < 6 && (email == "" || telegram == "") && (
                       <div
                         style={{
                           fontSize: "0.9rem",
@@ -639,7 +639,7 @@ export default function Notification() {
                       >
                         <AiOutlineWarning /> You have not completed your profile
                         setup for email{" "}
-                        {days > 0 && telegram == null && <>or telegram </>}
+                        {days > 0 && telegram == "" && <>or telegram </>}
                         <span style={{ color: "skyblue" }}>
                           <Link href="/dashboard/profile">
                             click here to start
