@@ -231,7 +231,7 @@ export default function Update() {
                     <Grid item xs={12}>
                       <h1>Create Update Notification</h1>
                     </Grid>
-                    {(email == "" || telegram == "") && (
+                    {(email == "" || telegram == "" || email == null || telegram == null) && (
                         <div
                           style={{
                             fontSize: "0.9rem",
@@ -248,7 +248,7 @@ export default function Update() {
                             </Link>
                           </span>
                         </div>
-                      ))}
+                      )}
                     <Grid item xs={12} md={12}>
                       {info ? (
                         <div>
