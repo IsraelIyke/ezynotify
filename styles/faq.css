@@ -1,0 +1,73 @@
+.faq-contain {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+  border-bottom: 1px solid gray;
+}
+.faq-container-question,
+.faq-container-answer {
+  width: 90vw;
+  text-align: center;
+}
+.faq-container-answer {
+  color: hsl(39, 77%, 33%);
+}
+.faq-container-question {
+  color: hsl(197, 71%, 33%);
+}
+
+.Frequently span {
+  width: 20rem;
+  height: 0.3rem;
+  background: linear-gradient(to right, white, hsl(197, 79%, 45%));
+}
+.Frequently {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Frequently h2 {
+  margin-top: 6rem;
+}
+.faq-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 6rem;
+}
+.faq-image img {
+  width: 40rem;
+}
+.faq-title h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.faq-title {
+  padding: 5rem;
+}
+.faq-title p {
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: gray;
+}
+@media screen and (width < 991px) {
+  .faq-title-container {
+    flex-direction: column;
+    margin-top: 6rem;
+    text-align: center;
+  }
+  .faq-title {
+    padding: 2rem;
+  }
+  .faq-title h1 {
+    font-size: 2.5rem;
+  }
+  .faq-image img {
+    width: 20rem;
+  }
+}

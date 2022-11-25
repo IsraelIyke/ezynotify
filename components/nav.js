@@ -45,7 +45,7 @@ export default function Nav() {
               <li>Home</li>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/faq">
             <a>
               <li>FAQ</li>
             </a>
@@ -109,7 +109,7 @@ export default function Nav() {
               </li>
               <hr />
               <li>
-                <Link href="/">
+                <Link href="/faq">
                   <a className="faq-btn">FAQ</a>
                 </Link>
               </li>

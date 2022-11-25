@@ -31,9 +31,14 @@ const Testimonial = () => {
             &quot; What Our Customers Are Saying
           </h1>
           <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>
-            <Card />
-            <Card />
-            <Card />
+            <Card
+              testimonial="It's simple but nice. It has really helped me save money"
+              name="Adelola O."
+            />
+            <Card
+              testimonial="Great service here for time management and more..."
+              name="Jeremiah R."
+            />
           </Slider>
         </div>
         <br />
@@ -55,7 +60,7 @@ const Testimonial = () => {
   );
 };
 
-const Card = () => {
+const Card = (props) => {
   return (
     <div
       style={{
@@ -66,15 +71,9 @@ const Card = () => {
         color: "gray",
       }}
     >
-      <p>
-        Phasellus vitae suscipit justo Mauris pharetra feugiat ante id lacinia
-        Etiam faucibus mauris id tempor egestas Duis luctus turpis at accumsan
-        tincidunt Phasellus risus risus, volutpat vel tellus ac, tincidunt
-        fringilla massa Etiam hendrerit dolor eget rutrum
-      </p>
+      <p>{props.testimonial}</p>
       <p style={{ fontStyle: "italic", marginTop: 25 }}>
-        <span style={{ fontWeight: 500, color: "skyblue" }}>PAULA WILSON</span>{" "}
-        , Media Analyst
+        <span style={{ fontWeight: 500, color: "skyblue" }}>{props.name}</span>
       </p>
     </div>
   );

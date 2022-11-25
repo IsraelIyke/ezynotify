@@ -31,10 +31,25 @@ export default function Footer() {
           <div>
             <ul>
               <li className="footer-content-title">Company</li>
-              <li>About</li>
-              <li>Features</li>
+              <Link href="/about">
+                <a>
+                  <li>About</li>
+                </a>
+              </Link>
+              <Link href="/about#features">
+                <a>
+                  <li>Features</li>
+                </a>
+              </Link>
               <Link href="/sign-in">
-                <li>login</li>
+                <a>
+                  <li>Login</li>
+                </a>
+              </Link>
+              <Link href="/">
+                <a>
+                  <li>T&Cs</li>
+                </a>
               </Link>
             </ul>
           </div>
@@ -54,8 +69,17 @@ export default function Footer() {
           <div className="footer-shift">
             <ul>
               <li className="footer-content-title">Support</li>
-              <li>Contact Us</li>
-              <li>FAQs</li>
+
+              <Link href="/contact">
+                <a>
+                  <li>Contact Us</li>
+                </a>
+              </Link>
+              <Link href="/faq">
+                <a>
+                  <li>FAQs</li>
+                </a>
+              </Link>
             </ul>
           </div>
           <div>
@@ -68,6 +92,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <p style={{ color: "white", fontSize: "0.8rem" }}>
+        Copyright &copy; 2022 ezynotify, All rights reserved.
+      </p>
     </div>
   );
 }
