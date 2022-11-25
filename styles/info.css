@@ -66,6 +66,7 @@
   .instruction-list {
     height: 70vh;
     width: 86vw;
+margin-top: -3rem;
   }
   .info-container {
     margin-left: -2rem;
