@@ -17,7 +17,7 @@ import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
-export default function Update() {
+export default function Profile() {
   const [copyText, setCopyText] = useState("@ezynotify_updates_bot");
   const [copyTxt, setCopyTxt] = useState("@ezynotify_keywords_bot");
   const [email, setEmail] = useState(null);
@@ -124,7 +124,7 @@ export default function Update() {
       const user = supabase.auth.user();
       const updates = {
         id: user.id, //
-        website,
+        email,
         telegram,
       };
 
