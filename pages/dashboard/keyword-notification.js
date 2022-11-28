@@ -64,8 +64,8 @@ export default function Notification() {
   const [info, setInfo] = useState(false);
   const [days, setDays] = useState(null);
 
-  const [email, setEmail] = useState(null);
-  const [telegram, setTelegram] = useState(null);
+  const [email, setEmail] = useState(" ");
+  const [telegram, setTelegram] = useState(" ");
 
   function handleInfo() {
     setInfo(true);

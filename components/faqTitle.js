@@ -5,7 +5,7 @@ export default function FaqTitle(props) {
         <h1>ezynotify FAQ</h1>
         <p>
           If you&apos;re new to ezynotify, this will help you learn more about
-          the platform and its features.
+          the platform and it&apos;s features.
         </p>
       </div>
       <div className="faq-image">

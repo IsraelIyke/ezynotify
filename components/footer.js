@@ -36,7 +36,7 @@ export default function Footer() {
                   <li>About</li>
                 </a>
               </Link>
-              <Link href="/about#features">
+              <Link href="/about/#features">
                 <a>
                   <li>Features</li>
                 </a>
@@ -60,6 +60,11 @@ export default function Footer() {
               <Link href="/pricing">
                 <a>
                   <li>Plans</li>
+                </a>
+              </Link>
+              <Link href="/payment">
+                <a>
+                  <li>Payment</li>
                 </a>
               </Link>
             </ul>

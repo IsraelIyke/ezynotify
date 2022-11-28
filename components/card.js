@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Card(props) {
   return (
     <div className="card-container">
@@ -8,8 +10,9 @@ export default function Card(props) {
         <li>{props.description2}</li>
         <li>{props.description3}</li>
       </ul>
-
-      <button className={props.classname}>{props.cta}</button>
+      <Link href={props.link}>
+        <button className={props.classname}>{props.cta}</button>
+      </Link>
     </div>
   );
 }

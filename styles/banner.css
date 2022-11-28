@@ -174,3 +174,8 @@
     margin-bottom: 2rem;
   }
 }
+@media screen and (width < 321px) {
+  .hero_btn {
+    display: none;
+  }
+}

@@ -32,6 +32,7 @@ export default function Pricing() {
               description3="limited to email notification messages"
               cta="sign up"
               className="free"
+              link="/sign-up"
               classname="free-sign"
             />
             <Card
@@ -41,6 +42,7 @@ export default function Pricing() {
               description2="unlimited update notification usage"
               description3="email and telegram notification messages"
               cta="upgrade"
+              link="/payment"
               className="premium"
               classname="premium-sign"
             />

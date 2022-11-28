@@ -32,8 +32,8 @@ export default function Update() {
   const [errorMessage, setErrorMessage] = useState("");
   const [days, setDays] = useState(null);
   const [updateCount, setUpdateCount] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [telegram, setTelegram] = useState(null);
+  const [email, setEmail] = useState(" ");
+  const [telegram, setTelegram] = useState(" ");
 
   let times = "";
   useEffect(() => {

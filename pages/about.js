@@ -36,7 +36,7 @@ export default function Home() {
         <Grid item xs={12} md={6}>
           <Feature
             featureTitle="Updates Notification"
-            featureContent="This feature simply searches the website you want at intervals checking for any change in that website. Whenever it finds a change in the website, it will send a message to you. We included an option for running the check once or continuously and also another options for you select which messaging platform to receive messages from. We are working toward refining the feature for better user experience."
+            featureContent="This feature simply searches the website you want at intervals checking for any change in that website. Whenever it finds a change in the website, it will send a message to you. We included an option for running the check once or continuously and also another option for you select which messaging platform to receive messages from. We are working toward refining the feature for better user experience."
             id="feature"
             className="update-container"
           />
@@ -51,7 +51,7 @@ export default function Home() {
         <Grid item xs={12} md={6}>
           <Feature
             featureTitle="Keyword Notification"
-            featureContent="This feature is similar to the update notification but the difference is that it checks a website at intervals to see if the word, phrase or sentence entered is found in website. It keeps checking until it finds a perfect or partial match. When it does, it sends a notification message to the user. It also have option for you select which messaging platform to receive messages from"
+            featureContent="This feature is similar to the update notification but the difference is that it checks a website at intervals to see if the word, phrase or sentence entered is found in the website. It keeps checking until it finds a perfect or partial match. When it does, it sends a notification message to the user. It also have option for selecting which messaging platform to receive messages from."
             className="keyword-container"
           />
         </Grid>

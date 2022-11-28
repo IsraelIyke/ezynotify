@@ -12,6 +12,7 @@ export default function FAQS() {
     return (
       <FAQ
         key={element.id}
+        id={element.id}
         question={element.question}
         answer={element.answer}
       />

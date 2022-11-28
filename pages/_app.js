@@ -13,6 +13,8 @@ import "../styles/pricing.css";
 import "../styles/about.css";
 import "../styles/faq.css";
 import "../styles/p404.css";
+import "../styles/payment.css";
+import "../styles/payfield.css";
 
 const { motion, AnimatePresence } = require("framer-motion");
 // import "../styles/globals.css";

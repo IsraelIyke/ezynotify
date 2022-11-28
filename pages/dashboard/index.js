@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Profile() {
   const [profile, setProfile] = useState(null);
-  const [days, setDays] = useState(null);
+  const [days, setDays] = useState("");
 
   const router = useRouter();
   useEffect(() => {
@@ -132,7 +132,7 @@ export default function Profile() {
                             <p className="dash-option-content">
                               Change password
                               <br />
-                              Update setup for telegram
+                              Update setup for email and telegram
                             </p>
                           </div>
                         </Link>

@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.7",
+    "@paystack/inline-js": "^2.12.6",
     "@supabase/supabase-js": "^1.18.1",
     "framer-motion": "^7.5.3",
     "next": "12.3.1",
