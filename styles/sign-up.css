@@ -146,3 +146,14 @@
     margin-bottom: 0rem;
   }
 }
+
+@media screen and (width < 321px) {
+  .content {
+    width: 99vw;
+    margin-top: 4rem;
+  }
+  .reg-btn {
+    padding: 1rem 7.7rem;
+    font-size: 1rem;
+  }
+}

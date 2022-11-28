@@ -9,10 +9,34 @@ import Link from "next/link";
 
 export default function Profile() {
   const [profile, setProfile] = useState(null);
+  const [days, setDays] = useState(null);
+
   const router = useRouter();
   useEffect(() => {
     fetchProfile();
+    getDetail();
   }, []);
+
+  async function getDetail() {
+    try {
+      const user = supabase.auth.user();
+
+      let { data, error, status } = await supabase
+        .from("notification")
+        .select(`days`) //
+        .eq("id", user.id)
+        .single();
+
+      if (error && status !== 406) {
+        throw error;
+      }
+      if (data) {
+        setDays(data.days);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   async function fetchProfile() {
     const profileData = await supabase.auth.user();
@@ -141,7 +165,7 @@ export default function Profile() {
                               color: "hsl(216, 100%, 25%)",
                             }}
                           >
-                            Free
+                            {days == 0 ? "Free" : days + "days"}
                           </span>
                         </h2>
                       </div>

@@ -214,8 +214,8 @@ export default function Profile() {
                               email,
                             });
                           }}
-                          className="submit-button"
-                          style={{ width: "18rem" }}
+                          className="submit-btn"
+                          // style={{ width: "18rem" }}
                         >
                           {(loading && "Loading") || "update email"}
                         </div>
@@ -236,8 +236,8 @@ export default function Profile() {
                           onClick={() => {
                             changePassword();
                           }}
-                          className="submit-button"
-                          style={{ width: "18rem" }}
+                          className="submit-btn"
+                          // style={{ width: "18rem" }}
                         >
                           {(loading && "Loading") || "change password"}
                         </div>
@@ -249,7 +249,6 @@ export default function Profile() {
                           Update Telegram Setup
                           <span
                             style={{
-                              marginLeft: "3.9rem",
                               backgroundColor: "skyblue",
                               padding: "0.3rem",
                               borderRadius: "0.8rem",
@@ -258,6 +257,7 @@ export default function Profile() {
                               cursor: "pointer",
                             }}
                             onClick={handleTel}
+                            className="begin"
                           >
                             begin
                           </span>
@@ -292,15 +292,15 @@ export default function Profile() {
                                   telegram,
                                 });
                               }}
-                              className="submit-button"
-                              style={{ width: "18rem" }}
+                              className="submit-btn"
                             >
                               {(loading && "Loading") || "update telegram"}
                             </div>
                           </Grid>
                           <h5>step two</h5>
-                          <p>search the following telegram bots and start them      
-                            </p>
+                          <p>
+                            search the following telegram bots and start them
+                          </p>
                           <ul>
                             <li>
                               {copyText}
@@ -312,7 +312,7 @@ export default function Profile() {
                             </li>
 
                             <li>
-                             {copyTxt}
+                              {copyTxt}
                               <CopyToClipboard text={copyTxt}>
                                 <button onClick={() => handleClick()}>
                                   copy

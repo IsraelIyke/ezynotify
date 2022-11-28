@@ -47,3 +47,9 @@
 .form-input input:focus {
   outline: 1.2px solid hsl(39, 77%, 73%);
 }
+
+@media screen and (width < 321px) {
+  .form-input input {
+    width: 19rem;
+  }
+}

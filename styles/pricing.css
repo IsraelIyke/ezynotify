@@ -51,7 +51,7 @@
   color: white;
 }
 
-@media screen and (width < 991px) {
+@media screen and (width < 767px) {
   .pricing-container {
     flex-direction: column;
     height: 85vh;
@@ -59,8 +59,15 @@
   }
   .pricing-title {
     height: 35vh;
+    margin-bottom: -20rem;
   }
   .card-container {
     margin: 1rem 2rem 2rem 2rem;
+  }
+}
+@media screen and (767px < width < 991px) {
+  .pricing-title {
+    height: 35vh;
+    margin-bottom: -12rem;
   }
 }

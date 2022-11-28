@@ -232,6 +232,28 @@
 .submit-button:hover {
   border: 2px solid black;
 }
+.submit-btn {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  height: 2.5rem;
+  width: 18rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  position: relative;
+  background-color: hsl(39, 77%, 43%);
+  border: 1px solid black;
+  color: black;
+  font-size: 0.9rem;
+  font-family: var(--title-font);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.submit-btn:hover {
+  border: 2px solid black;
+}
 
 @media screen and (max-width: 991px) {
   .icon-sidebar {
@@ -300,4 +322,30 @@
   margin-bottom: 0.5rem;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (width < 321px) {
+  .icon-sidebar {
+    width: 2.5rem;
+    margin-top: -2rem;
+  }
+  .sidebar-list li {
+    padding: 0.4rem 0rem 0.45rem 0.65rem;
+  }
+  .dash-options-container h1 {
+    margin-bottom: -1.6rem;
+    margin-top: 0rem;
+    margin-left: 0rem;
+  }
+  .inputfield-container {
+    margin-left: 0rem;
+  }
+  .dash-tile-subscription {
+    margin-top: -2rem;
+    width: 87vw;
+    margin-left: -1rem;
+  }
+  .submit-btn {
+    width: 16rem;
+  }
 }

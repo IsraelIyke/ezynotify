@@ -141,3 +141,27 @@
     margin-bottom: 10rem;
   }
 }
+
+@media screen and (width < 321px) {
+  .inner-container {
+    margin-top: 15rem;
+    /* margin-bottom: 15rem; */
+  }
+  .main-container {
+    margin-bottom: 15rem;
+  }
+  .update-container {
+    height: 32rem;
+    margin-bottom: 10rem;
+  }
+  .keyword-container {
+    height: 32rem;
+    margin-bottom: 10rem;
+  }
+  .update-image {
+    width: 14rem;
+  }
+  .keyword-image {
+    width: 14rem;
+  }
+}

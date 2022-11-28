@@ -159,3 +159,17 @@
     margin-left: 2rem;
   }
 }
+
+@media screen and (width < 321px) {
+  .nav-content-mobile .register-btn {
+    width: 10rem;
+    padding: 0.9rem 20vw;
+  }
+  .nav-container-mobile ul li {
+    margin: 0.7rem;
+  }
+  .nav-mobile-image {
+    margin-left: -0.1rem;
+    margin-right: -0.5rem;
+  }
+}
