@@ -127,7 +127,6 @@ export default function Notification() {
       }
 
       getDetail();
-      console.log(key1);
       handleClick();
     } catch (error) {
       setErrorMessage(error.message);
@@ -629,7 +628,7 @@ export default function Notification() {
                     <Grid item xs={12}>
                       <h1>Create Keyword Notification</h1>
                     </Grid>
-                    {check < 6 && (email == "" || telegram == "") && (
+                    {check < 6 && (email == null || email == "") && (
                       <div
                         style={{
                           fontSize: "0.9rem",
@@ -638,9 +637,8 @@ export default function Notification() {
                           marginLeft: "1rem",
                         }}
                       >
-                        <AiOutlineWarning /> You have not completed your profile
-                        setup for email{" "}
-                        {days > 0 && telegram == "" && <>or telegram </>}
+                        <AiOutlineWarning /> You have not completed your email
+                        setup{" "}
                         <span style={{ color: "skyblue" }}>
                           <Link href="/dashboard/profile">
                             <a>click here to start</a>
@@ -648,6 +646,26 @@ export default function Notification() {
                         </span>
                       </div>
                     )}
+                    {check < 6 &&
+                      (telegram == null || telegram == "") &&
+                      days > 0 && (
+                        <div
+                          style={{
+                            fontSize: "0.9rem",
+                            width: "70vw",
+                            color: "red",
+                            marginLeft: "1rem",
+                          }}
+                        >
+                          <AiOutlineWarning /> You have not completed your
+                          telegram setup{" "}
+                          <span style={{ color: "skyblue" }}>
+                            <Link href="/dashboard/profile">
+                              <a>click here to start</a>
+                            </Link>
+                          </span>
+                        </div>
+                      )}
                     <Grid item xs={12} md={12}>
                       {info ? (
                         <div>

@@ -74,7 +74,24 @@ export default function SignIn() {
     if (!profileData) {
       router.push("/sign-in");
     } else {
-      router.push("/dashboard");
+      let { data } = await supabase
+        .from("notification")
+        .select(`email`) //
+        .eq("id", profileData.id)
+        .single();
+      console.log("data" + data);
+      if (data == null) {
+        const updates = {
+          id: profileData.id, //
+          email: profileData.email,
+        };
+        let { error } = await supabase.from("notification").upsert(updates, {
+          returning: "minimal", //don't return the value after inserting
+        });
+        router.push("/dashboard");
+      } else {
+        router.push("/dashboard");
+      }
     }
   }
 

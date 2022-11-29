@@ -40,7 +40,6 @@ export default function Profile() {
 
   async function fetchProfile() {
     const profileData = await supabase.auth.user();
-    console.log("profileData: ", profileData);
     if (!profileData) {
       router.push("/sign-in");
     } else {

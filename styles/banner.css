@@ -178,4 +178,7 @@
   .hero_btn {
     display: none;
   }
+  .card__back {
+    display: none;
+  }
 }

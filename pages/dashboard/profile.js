@@ -118,7 +118,7 @@ export default function Profile() {
       handle();
     }
   }
-  async function updateProfile({ website, telegram }) {
+  async function updateProfile({ email, telegram }) {
     try {
       setLoading(true);
       const user = supabase.auth.user();
