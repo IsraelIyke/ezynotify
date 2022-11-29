@@ -149,7 +149,7 @@ export default function SignIn() {
               />
               <h5>
                 Forgot your password?
-                <Link href="/password-recovery">
+                <Link href="https://change-password.pages.dev/">
                   <span className="link-span"> click here</span>
                 </Link>
               </h5>
