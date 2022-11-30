@@ -46,7 +46,7 @@ export default function Footer() {
                   <li>Login</li>
                 </a>
               </Link>
-              <Link href="/">
+              <Link href="/terms-and-conditions">
                 <a>
                   <li>T&Cs</li>
                 </a>
@@ -90,9 +90,11 @@ export default function Footer() {
           <div>
             <ul>
               <li className="footer-content-title">Social</li>
-              <li>Instagram</li>
-              <li>Youtube</li>
-              <li>Facebook</li>
+              {/* <li>Instagram</li>
+              <li>Youtube</li> */}
+              <a href="https://www.facebook.com/profile.php?id=100077116290326&mibextid=ZbWKwL">
+                <li>Facebook</li>
+              </a>
             </ul>
           </div>
         </div>
