@@ -62,7 +62,7 @@ export default function Profile() {
                   <div className="ult-contains">
                     <div className="options-container">
                       <form
-                        action="https://formsubmit.co/d1c224164ed9e3d83cc9ee7cdff8bf01"
+                        action="https://formsubmit.co/ezynotify@gmail.com"
                         method="POST"
                         className="feedback-form"
                       >
