@@ -33,7 +33,7 @@ export default function Contact() {
                   <div className="ult-contains">
                     <div className="options-container">
                       <form
-                        action="https://formsubmit.co/ezynotify@gmail.com"
+                        action="https://formsubmit.co/66e6c33524b6ae0b24acef894af8cbd0"
                         method="POST"
                         className="feedback-form"
                       >
