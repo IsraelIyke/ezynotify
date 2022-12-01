@@ -1670,6 +1670,7 @@ export default function Notification() {
                           <AiOutlineUp
                             style={{
                               marginLeft: "6rem",
+                              marginTop: "1.5rem",
                               color: "hsl(216, 100%, 25%)",
                             }}
                           />
