@@ -59,7 +59,7 @@
   }
   .pricing-title {
     height: 35vh;
-    margin-bottom: -20rem;
+    /* margin-bottom: -1rem; */
   }
   .card-container {
     margin: 1rem 2rem 2rem 2rem;

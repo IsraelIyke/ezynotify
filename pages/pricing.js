@@ -35,17 +35,19 @@ export default function Pricing() {
               link="/sign-up"
               classname="free-sign"
             />
-            <Card
-              title="Premium"
-              price="N500/mo(approx. $1/mo)"
-              description1="Five keyword notification"
-              description2="unlimited update notification usage"
-              description3="email and telegram notification messages"
-              cta="upgrade"
-              link="/payment"
-              className="premium"
-              classname="premium-sign"
-            />
+            <div id="upgrade">
+              <Card
+                title="Premium"
+                price="N500/mo(approx. $1/mo)"
+                description1="Five keyword notification"
+                description2="unlimited update notification usage"
+                description3="email and telegram notification messages"
+                cta="upgrade"
+                link="/payment"
+                className="premium"
+                classname="premium-sign"
+              />
+            </div>
           </div>
         </Grid>
       </Grid>

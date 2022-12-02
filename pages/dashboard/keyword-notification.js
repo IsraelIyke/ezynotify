@@ -718,7 +718,7 @@ export default function Notification() {
                                   <h5 className="infos-free">
                                     You can only create one keyword notification
                                     in <b>free</b> plan.{" "}
-                                    <Link href="/pricing">
+                                    <Link href="/pricing/#upgrade">
                                       <span
                                         style={{
                                           color: "skyblue",
@@ -1088,7 +1088,7 @@ export default function Notification() {
                                 <div className="keyword-limit">
                                   <p>
                                     You have used up your input limit.
-                                    <Link href="/pricing">
+                                    <Link href="/pricing/#upgrade">
                                       <a>
                                         <span
                                           style={{
