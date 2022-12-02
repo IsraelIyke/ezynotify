@@ -67,7 +67,6 @@ export default function Notification() {
   const [email, setEmail] = useState(" ");
   const [telegram, setTelegram] = useState(" ");
   const [notelegram, setNoTelegram] = useState(false);
-  const http = "http";
 
   function handleInfo() {
     setInfo(true);
@@ -81,11 +80,6 @@ export default function Notification() {
     getDetail();
   }, []);
 
-  // if (mailer1 == "notelegram") {
-  //   setNoTelegram(true);
-  // } else {
-  //   setNoTelegram(false);
-  // }
   async function updateProfile({
     key1,
     web1,
@@ -854,6 +848,21 @@ export default function Notification() {
                                     setState={setWeb2}
                                     value={web2}
                                   />
+                                  {web2 != null &&
+                                    !web2.startsWith("http://") &&
+                                    !web2.startsWith("https://") && (
+                                      <p
+                                        style={{
+                                          fontSize: "0.7rem",
+                                          width: "16rem",
+                                          marginTop: "-0.7rem",
+                                          marginBottom: "0.7rem",
+                                        }}
+                                      >
+                                        Website should start with http:// or
+                                        https://
+                                      </p>
+                                    )}
                                   <fieldset>
                                     <legend>messaging platform</legend>
                                     <input
@@ -868,17 +877,40 @@ export default function Notification() {
                                     />
                                     <label htmlFor="email2">email</label>
                                     <br />
-                                    <input
-                                      type="radio"
-                                      id="telegram2"
-                                      name="mailer2"
-                                      value="telegram2"
-                                      onChange={(e) =>
-                                        setMailer2(e.target.value)
-                                      }
-                                      checked={mailer2 === "telegram2"}
-                                    />
+                                    {/*  */}
+
+                                    {days > 0 ? (
+                                      <input
+                                        type="radio"
+                                        id="telegram2"
+                                        name="mailer2"
+                                        value="telegram2"
+                                        onChange={(e) => {
+                                          setMailer2(e.target.value);
+                                        }}
+                                        checked={mailer2 === "telegram2"}
+                                      />
+                                    ) : (
+                                      <input
+                                        type="radio"
+                                        id="telegram2"
+                                        name="mailer2"
+                                        value="notelegram"
+                                        onChange={(e) => {
+                                          setNoTelegram(true);
+                                        }}
+                                        onBlur={() => setNoTelegram(false)}
+                                        checked={mailer2 === "notelegram"}
+                                      />
+                                    )}
                                     <label htmlFor="telegram2">telegram</label>
+                                    {notelegram && (
+                                      <p style={{ fontSize: "0.7rem" }}>
+                                        telegram is limited to premium plan.
+                                      </p>
+                                    )}
+
+                                    {/*  */}
                                   </fieldset>
                                   <Grid item xs={12}>
                                     <div
@@ -913,6 +945,21 @@ export default function Notification() {
                                     setState={setWeb3}
                                     value={web3}
                                   />
+                                  {web3 != null &&
+                                    !web3.startsWith("http://") &&
+                                    !web3.startsWith("https://") && (
+                                      <p
+                                        style={{
+                                          fontSize: "0.7rem",
+                                          width: "16rem",
+                                          marginTop: "-0.7rem",
+                                          marginBottom: "0.7rem",
+                                        }}
+                                      >
+                                        Website should start with http:// or
+                                        https://
+                                      </p>
+                                    )}
                                   <fieldset>
                                     <legend>messaging platform</legend>
                                     <input
@@ -927,17 +974,39 @@ export default function Notification() {
                                     />
                                     <label htmlFor="email3">email</label>
                                     <br />
-                                    <input
-                                      type="radio"
-                                      id="telegram3"
-                                      name="mailer3"
-                                      value="telegram3"
-                                      onChange={(e) =>
-                                        setMailer3(e.target.value)
-                                      }
-                                      checked={mailer3 === "telegram3"}
-                                    />
+                                    {/*  */}
+                                    {days > 0 ? (
+                                      <input
+                                        type="radio"
+                                        id="telegram3"
+                                        name="mailer3"
+                                        value="telegram3"
+                                        onChange={(e) => {
+                                          setMailer3(e.target.value);
+                                        }}
+                                        checked={mailer3 === "telegram3"}
+                                      />
+                                    ) : (
+                                      <input
+                                        type="radio"
+                                        id="telegram3"
+                                        name="mailer3"
+                                        value="notelegram"
+                                        onChange={(e) => {
+                                          setNoTelegram(true);
+                                        }}
+                                        onBlur={() => setNoTelegram(false)}
+                                        checked={mailer3 === "notelegram"}
+                                      />
+                                    )}
                                     <label htmlFor="telegram3">telegram</label>
+                                    {notelegram && (
+                                      <p style={{ fontSize: "0.7rem" }}>
+                                        telegram is limited to premium plan.
+                                      </p>
+                                    )}
+
+                                    {/*  */}
                                   </fieldset>
                                   <Grid item xs={12}>
                                     <div
@@ -972,6 +1041,21 @@ export default function Notification() {
                                     setState={setWeb4}
                                     value={web4}
                                   />
+                                  {web4 != null &&
+                                    !web4.startsWith("http://") &&
+                                    !web4.startsWith("https://") && (
+                                      <p
+                                        style={{
+                                          fontSize: "0.7rem",
+                                          width: "16rem",
+                                          marginTop: "-0.7rem",
+                                          marginBottom: "0.7rem",
+                                        }}
+                                      >
+                                        Website should start with http:// or
+                                        https://
+                                      </p>
+                                    )}
                                   <fieldset>
                                     <legend>messaging platform</legend>
                                     <input
@@ -986,17 +1070,39 @@ export default function Notification() {
                                     />
                                     <label htmlFor="email">email</label>
                                     <br />
-                                    <input
-                                      type="radio"
-                                      id="telegram4"
-                                      name="mailer4"
-                                      value="telegram4"
-                                      onChange={(e) =>
-                                        setMailer4(e.target.value)
-                                      }
-                                      checked={mailer4 === "telegram4"}
-                                    />
+                                    {/*  */}
+                                    {days > 0 ? (
+                                      <input
+                                        type="radio"
+                                        id="telegram4"
+                                        name="mailer4"
+                                        value="telegram4"
+                                        onChange={(e) => {
+                                          setMailer4(e.target.value);
+                                        }}
+                                        checked={mailer4 === "telegram4"}
+                                      />
+                                    ) : (
+                                      <input
+                                        type="radio"
+                                        id="telegram4"
+                                        name="mailer4"
+                                        value="notelegram"
+                                        onChange={(e) => {
+                                          setNoTelegram(true);
+                                        }}
+                                        onBlur={() => setNoTelegram(false)}
+                                        checked={mailer4 === "notelegram"}
+                                      />
+                                    )}
                                     <label htmlFor="telegram4">telegram</label>
+                                    {notelegram && (
+                                      <p style={{ fontSize: "0.7rem" }}>
+                                        telegram is limited to premium plan.
+                                      </p>
+                                    )}
+
+                                    {/*  */}
                                   </fieldset>
                                   <Grid item xs={12}>
                                     <div
@@ -1031,7 +1137,21 @@ export default function Notification() {
                                     setState={setWeb5}
                                     value={web5}
                                   />
-
+                                  {web5 != null &&
+                                    !web5.startsWith("http://") &&
+                                    !web5.startsWith("https://") && (
+                                      <p
+                                        style={{
+                                          fontSize: "0.7rem",
+                                          width: "16rem",
+                                          marginTop: "-0.7rem",
+                                          marginBottom: "0.7rem",
+                                        }}
+                                      >
+                                        Website should start with http:// or
+                                        https://
+                                      </p>
+                                    )}
                                   <fieldset>
                                     <legend>messaging platform</legend>
                                     <input
@@ -1046,17 +1166,39 @@ export default function Notification() {
                                     />
                                     <label htmlFor="email5">email</label>
                                     <br />
-                                    <input
-                                      type="radio"
-                                      id="telegram5"
-                                      name="mailer5"
-                                      value="telegram5"
-                                      onChange={(e) =>
-                                        setMailer5(e.target.value)
-                                      }
-                                      checked={mailer5 === "telegram"}
-                                    />
-                                    <label htmlFor="telegram">telegram</label>
+                                    {/*  */}
+                                    {days > 0 ? (
+                                      <input
+                                        type="radio"
+                                        id="telegram5"
+                                        name="mailer5"
+                                        value="telegram5"
+                                        onChange={(e) => {
+                                          setMailer5(e.target.value);
+                                        }}
+                                        checked={mailer5 === "telegram5"}
+                                      />
+                                    ) : (
+                                      <input
+                                        type="radio"
+                                        id="telegram5"
+                                        name="mailer5"
+                                        value="notelegram"
+                                        onChange={(e) => {
+                                          setNoTelegram(true);
+                                        }}
+                                        onBlur={() => setNoTelegram(false)}
+                                        checked={mailer5 === "notelegram"}
+                                      />
+                                    )}
+                                    <label htmlFor="telegram5">telegram</label>
+                                    {notelegram && (
+                                      <p style={{ fontSize: "0.7rem" }}>
+                                        telegram is limited to premium plan.
+                                      </p>
+                                    )}
+
+                                    {/*  */}
                                   </fieldset>
                                   <Grid item xs={12}>
                                     <div

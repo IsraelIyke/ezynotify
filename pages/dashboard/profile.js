@@ -333,14 +333,19 @@ export default function Profile() {
                           </h4>
                           <Grid item xs={12} md={12}>
                             telegram is limited to premium plan.{" "}
-                            <span
-                              style={{
-                                color: "skyblue",
-                                textDecoration: "underline",
-                              }}
-                            >
-                              Upgrade
-                            </span>{" "}
+                            <Link href="/pricing">
+                              <a>
+                                <span
+                                  style={{
+                                    color: "skyblue",
+                                    textDecoration: "underline",
+                                    cursor: "pointer",
+                                  }}
+                                >
+                                  Upgrade
+                                </span>
+                              </a>
+                            </Link>{" "}
                             to enjoy more
                           </Grid>
                         </div>

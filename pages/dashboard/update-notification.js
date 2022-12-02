@@ -34,6 +34,7 @@ export default function Update() {
   const [updateCount, setUpdateCount] = useState(null);
   const [email, setEmail] = useState(" ");
   const [telegram, setTelegram] = useState(" ");
+  const [notelegram, setNoTelegram] = useState(false);
 
   let times = "";
   useEffect(() => {
@@ -232,14 +233,7 @@ export default function Update() {
                       <h1>Create Update Notification</h1>
                     </Grid>
                     {(email == null || email == "") && (
-                      <div
-                        style={{
-                          fontSize: "0.9rem",
-                          width: "70vw",
-                          color: "red",
-                          marginLeft: "0.5rem",
-                        }}
-                      >
+                      <div className="acc-setup">
                         <AiOutlineWarning /> You have not completed your email
                         setup{" "}
                         <span style={{ color: "skyblue" }}>
@@ -250,13 +244,7 @@ export default function Update() {
                       </div>
                     )}
                     {(telegram == null || telegram == "") && days > 0 && (
-                      <div
-                        style={{
-                          fontSize: "0.9rem",
-                          width: "70vw",
-                          color: "red",
-                        }}
-                      >
+                      <div className="acc-setup">
                         <AiOutlineWarning /> You have not completed your
                         telegram setup{" "}
                         <span style={{ color: "skyblue" }}>
@@ -315,15 +303,18 @@ export default function Update() {
                             <h5 className="info-free">
                               You can only use update notifications feature five
                               times per month in <b>free</b> plan.{" "}
-                              <Link href="/pricing">
-                                <span
-                                  style={{
-                                    color: "skyblue",
-                                    textDecoration: "underline",
-                                  }}
-                                >
-                                  Upgrade
-                                </span>
+                              <Link href="/pricing/#upgrade">
+                                <a>
+                                  <span
+                                    style={{
+                                      color: "skyblue",
+                                      textDecoration: "underline",
+                                      cursor: "pointer",
+                                    }}
+                                  >
+                                    Upgrade
+                                  </span>
+                                </a>
                               </Link>{" "}
                               to enjoy more
                             </h5>
@@ -348,6 +339,20 @@ export default function Update() {
                             setState={setWebsite}
                             value={website}
                           />
+                          {website != null &&
+                            !website.startsWith("http://") &&
+                            !website.startsWith("https://") && (
+                              <p
+                                style={{
+                                  fontSize: "0.7rem",
+                                  width: "16rem",
+                                  marginTop: "-0.7rem",
+                                  marginBottom: "0.7rem",
+                                }}
+                              >
+                                Website should start with http:// or https://
+                              </p>
+                            )}
                         </Grid>
                         <h5>
                           Do you wish to run continuously until you delete
@@ -376,15 +381,36 @@ export default function Update() {
                           />
                           <label htmlFor="email">email</label>
                           <br />
-                          <input
-                            type="radio"
-                            id="telegram"
-                            name="mailer"
-                            value="telegram"
-                            onChange={(e) => setMailer(e.target.value)}
-                            checked={mailer === "telegram"}
-                          />
+                          {days > 0 ? (
+                            <input
+                              type="radio"
+                              id="telegram"
+                              name="mailer"
+                              value="telegram"
+                              onChange={(e) => {
+                                setMailer(e.target.value);
+                              }}
+                              checked={mailer === "telegram"}
+                            />
+                          ) : (
+                            <input
+                              type="radio"
+                              id="telegram"
+                              name="mailer"
+                              value="notelegram"
+                              onChange={(e) => {
+                                setNoTelegram(true);
+                              }}
+                              onBlur={() => setNoTelegram(false)}
+                              checked={mailer === "notelegram"}
+                            />
+                          )}
                           <label htmlFor="telegram">telegram</label>
+                          {notelegram && (
+                            <p style={{ fontSize: "0.7rem" }}>
+                              telegram is limited to premium plan.
+                            </p>
+                          )}
                         </fieldset>
                         <Grid item xs={12}>
                           {w1 == null ? (
@@ -612,15 +638,20 @@ export default function Update() {
                       <div className="keyword-limit limit-margin">
                         <p>
                           You have used up your input limit.
-                          <span
-                            style={{
-                              color: "skyblue",
-                              textDecoration: "underline",
-                            }}
-                          >
-                            {" "}
-                            Upgrade
-                          </span>{" "}
+                          <Link href="/pricing/#upgrade">
+                            <a>
+                              <span
+                                style={{
+                                  color: "skyblue",
+                                  textDecoration: "underline",
+                                  cursor: "pointer",
+                                }}
+                              >
+                                {" "}
+                                Upgrade
+                              </span>
+                            </a>
+                          </Link>{" "}
                           to enjoy more. Thanks &#128151;
                         </p>
                       </div>
