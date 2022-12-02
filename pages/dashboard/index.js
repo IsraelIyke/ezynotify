@@ -164,7 +164,7 @@ export default function Profile() {
                               color: "hsl(216, 100%, 25%)",
                             }}
                           >
-                            {days == 0 ? "Free" : days + "days"}
+                            {days == 0 ? "Free" : days + "day(s)"}
                           </span>
                         </h2>
                       </div>

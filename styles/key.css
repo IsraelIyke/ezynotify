@@ -27,28 +27,6 @@
 .notify-card input::placeholder {
   text-align: center;
 }
-.notify-card-status {
-  display: flex;
-  margin-top: 0.3rem;
-  align-items: center;
-}
-.notify-card-status button {
-  width: 3.4rem;
-  height: 1.5rem;
-  margin-left: 0.5rem;
-  border-radius: 1rem;
-  border: 1px solid black;
-  font-size: 0.72rem;
-}
-.notify-card-status .delete {
-  background-color: red;
-}
-.notify-card-status .mount {
-  background-color: orange;
-}
-.notify-card-status .update {
-  background-color: skyblue;
-}
 
 @media (width <= 991px) {
   .notify-card input {

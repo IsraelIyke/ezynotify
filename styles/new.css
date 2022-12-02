@@ -1,0 +1,112 @@
+.acc-setup {
+  font-size: 0.9rem;
+  width: 70vw;
+  color: red;
+  margin-left: 4rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+.infos-free {
+  margin-left: 4rem;
+}
+.key-title {
+  padding-left: 2.9rem;
+  padding-bottom: 1rem;
+}
+/* .key-container {
+  width: 2vw;
+} */
+.ultimate-container h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  background-color: hsl(216, 100%, 95%);
+  display: flex;
+  align-items: center;
+}
+.sup {
+  width: 55vw;
+}
+.sub {
+  width: 20vw;
+}
+.ultimate-container {
+  margin: 0 1rem 0 0;
+}
+.notify-card-status {
+  display: flex;
+  margin-top: 0.3rem;
+  align-items: center;
+}
+.notify-card-status button {
+  width: 3.4rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  font-size: 0.72rem;
+}
+.notify-card-status .delete {
+  background-color: red;
+}
+.notify-card-status .mount {
+  background-color: orange;
+}
+.notify-card-status .update {
+  background-color: skyblue;
+}
+
+@media screen and (width < 991px) {
+  .inputfield-cont {
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+  .ultimate-container {
+    margin-top: 0.5rem;
+    margin: 0 0 0 1rem;
+  }
+  .sub {
+    margin-left: 0.81rem;
+    width: 74vw;
+  }
+  .sup {
+    margin-left: 0.2rem;
+  }
+  .infos-free {
+    margin-left: 0.5rem;
+    padding-right: 0.4rem;
+    width: 80vw;
+  }
+  .key-title {
+    padding-left: 0rem;
+    padding-bottom: 1rem;
+  }
+  .acc-setup {
+    margin-left: 0.5rem;
+    width: 80vw;
+  }
+}
+
+.ultimate-container li {
+  font-size: 0.9rem;
+  list-style: circle;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+.ultimate-container button {
+  margin-left: 1rem;
+}
+
+.ultimate-container h5 {
+  font-size: 0.8rem;
+}
+
+@media screen and (width < 321px) {
+  .ultimate-container {
+    margin: 0 0rem;
+  }
+  .ultimate-container .begin {
+    margin-left: 1rem;
+  }
+}

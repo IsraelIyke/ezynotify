@@ -237,6 +237,7 @@ export default function Update() {
                           fontSize: "0.9rem",
                           width: "70vw",
                           color: "red",
+                          marginLeft: "0.5rem",
                         }}
                       >
                         <AiOutlineWarning /> You have not completed your email
@@ -314,14 +315,16 @@ export default function Update() {
                             <h5 className="info-free">
                               You can only use update notifications feature five
                               times per month in <b>free</b> plan.{" "}
-                              <span
-                                style={{
-                                  color: "skyblue",
-                                  textDecoration: "underline",
-                                }}
-                              >
-                                Upgrade
-                              </span>{" "}
+                              <Link href="/pricing">
+                                <span
+                                  style={{
+                                    color: "skyblue",
+                                    textDecoration: "underline",
+                                  }}
+                                >
+                                  Upgrade
+                                </span>
+                              </Link>{" "}
                               to enjoy more
                             </h5>
                           )}
