@@ -146,6 +146,7 @@ export default function SignIn() {
                 label="Password"
                 setState={setPassword}
                 value={password}
+                password={true}
               />
               <h5>
                 Forgot your password?

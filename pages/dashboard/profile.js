@@ -231,6 +231,7 @@ export default function Profile() {
                           label="change password"
                           setState={setPassword}
                           value={password}
+                          password={true}
                         />
                         <div
                           onClick={() => {

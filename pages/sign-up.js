@@ -130,6 +130,7 @@ export default function SignUp() {
                 label="Password"
                 setState={setPassword}
                 value={password}
+                password={true}
               />
               <Textfield
                 type="password"
@@ -138,6 +139,7 @@ export default function SignUp() {
                 label="Confirm Password"
                 setState={setConfirmPassword}
                 value={confirmPassword}
+                password={true}
               />
               <br />
               <button

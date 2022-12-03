@@ -1,10 +1,12 @@
-// import "./textfield.css";
+import { useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function Inputfield(props) {
+  const [textType, setTextType] = useState(props.type);
   return (
     <div className="forms-input">
       <input
-        type={props.type}
+        type={textType}
         placeholder={props.placeholder}
         id={props.id}
         onChange={(e) => props.setState(e.target.value)}
@@ -13,6 +15,18 @@ export default function Inputfield(props) {
         className={props.classname}
       />
       <label htmlFor={props.id}>{props.label}</label>
+      {props.password &&
+        (textType == "password" ? (
+          <AiFillEye
+            className="pass-icon"
+            onClick={() => setTextType("text")}
+          />
+        ) : (
+          <AiFillEyeInvisible
+            className="pass-icon"
+            onClick={() => setTextType("password")}
+          />
+        ))}
     </div>
   );
 }

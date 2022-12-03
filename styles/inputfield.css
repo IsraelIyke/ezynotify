@@ -48,7 +48,12 @@
 .forms-input input:focus {
   outline: 1.2px solid hsl(39, 77%, 73%);
 }
-
+.forms-input .pass-icon {
+  position: absolute;
+  font-size: 1.1rem;
+  top: 30%;
+  left: 90%;
+}
 @media screen and (width < 321px) {
   .forms-input input {
     width: 16rem;
