@@ -21,6 +21,16 @@ export default function Home() {
           name="viewport"
           content="width=device-width, initial-scale=1.0"
         ></meta>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+          name="Ezynotify"
+          content="This a simple web tool for sends you a notification message for whenever there is an update in your favorite website"
+        />
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <title>Ezynotify</title>
       </Head>
       <Grid container spacing={0}>
         <Grid item xs={12} md={12}>
