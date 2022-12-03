@@ -286,7 +286,7 @@ export default function Profile() {
                             <p style={{ fontSize: "0.8rem", width: "19rem" }}>
                               don&apos;t know how to get telegram chat id?
                               <Link href="https://t.me/useridinfobot">
-                                <a>
+                                <a target="_blank">
                                   <span style={{ color: "skyblue" }}>
                                     click here
                                   </span>
@@ -317,7 +317,7 @@ export default function Profile() {
                                 </button>
                               </CopyToClipboard>
                               <Link href="https://t.me/ezynotify_updates_bot">
-                                <a>
+                                <a target="_blank">
                                   <button>open</button>
                                 </a>
                               </Link>
@@ -331,7 +331,7 @@ export default function Profile() {
                                 </button>
                               </CopyToClipboard>
                               <Link href="https://t.me/ezynotify_keywords_bot">
-                                <a>
+                                <a target="_blank">
                                   <button>open</button>
                                 </a>
                               </Link>
