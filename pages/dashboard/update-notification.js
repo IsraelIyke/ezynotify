@@ -270,7 +270,7 @@ export default function Update() {
                                 X
                               </p>
                               <li>
-                                enter the particular the website you want to get
+                                enter the particular website you want to get
                                 update from. The website should start with{" "}
                                 <b>http://</b> or
                                 <b> https://</b>

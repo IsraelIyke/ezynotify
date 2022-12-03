@@ -270,7 +270,10 @@ export default function Profile() {
                             Update Telegram Setup
                           </h4>
                           <h5>step one</h5>
-                          <p>enter your telegram chat id</p>
+                          <p>
+                            enter your telegram chat id. It&apos;s a 10 digits
+                            number
+                          </p>
                           <Grid item xs={12} md={6}>
                             <Inputfield
                               type="text"
@@ -282,9 +285,13 @@ export default function Profile() {
                             />
                             <p style={{ fontSize: "0.8rem", width: "19rem" }}>
                               don&apos;t know how to get telegram chat id?
-                              <span style={{ color: "skyblue" }}>
-                                click here
-                              </span>
+                              <Link href="https://t.me/useridinfobot">
+                                <a>
+                                  <span style={{ color: "skyblue" }}>
+                                    click here
+                                  </span>
+                                </a>
+                              </Link>
                             </p>
                             <div
                               onClick={() => {
@@ -309,6 +316,11 @@ export default function Profile() {
                                   copy
                                 </button>
                               </CopyToClipboard>
+                              <Link href="https://t.me/ezynotify_updates_bot">
+                                <a>
+                                  <button>open</button>
+                                </a>
+                              </Link>
                             </li>
 
                             <li>
@@ -318,6 +330,11 @@ export default function Profile() {
                                   copy
                                 </button>
                               </CopyToClipboard>
+                              <Link href="https://t.me/ezynotify_keywords_bot">
+                                <a>
+                                  <button>open</button>
+                                </a>
+                              </Link>
                             </li>
                           </ul>
                         </div>
