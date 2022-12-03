@@ -38,8 +38,8 @@ export default function Pricing() {
             <div id="upgrade">
               <Card
                 title="Premium"
-                price="N500/mo(approx. $1/mo)"
-                description1="Five keyword notification"
+                price="N500/month(approx. $1/month)"
+                description1="5 keyword notification"
                 description2="unlimited update notification usage"
                 description3="email and telegram notification messages"
                 cta="upgrade"
