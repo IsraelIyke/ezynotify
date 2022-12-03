@@ -52,7 +52,7 @@
   position: absolute;
   font-size: 1.1rem;
   top: 30%;
-  left: 80%;
+  left: 85%;
 }
 @media screen and (width < 321px) {
   .forms-input input {
