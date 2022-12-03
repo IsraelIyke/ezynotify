@@ -1066,7 +1066,7 @@ export default function Notification() {
                                       onChange={(e) =>
                                         setMailer4(e.target.value)
                                       }
-                                      checked={mailer4 === "email"}
+                                      checked={mailer4 === "email4"}
                                     />
                                     <label htmlFor="email">email</label>
                                     <br />
