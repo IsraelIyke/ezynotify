@@ -225,7 +225,7 @@ export default function Profile() {
                       <h4 style={{ marginBottom: "1rem" }}>Update Password</h4>
                       <div>
                         <Inputfield
-                          type="text"
+                          type="password"
                           placeholder="password"
                           id="password"
                           label="change password"
