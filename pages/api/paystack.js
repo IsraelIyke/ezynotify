@@ -12,7 +12,7 @@ export default function Payment(props) {
     let handler = PaystackPop.setup({
       key: "pk_live_645e23b0fa9f74beede330079a2f23bd9ad7d0e1",
       email: email,
-      amount: 5000,
+      amount: 50000,
       onClose: function () {
         alert("Transaction canceled.");
       },
