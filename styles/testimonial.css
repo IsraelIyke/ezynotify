@@ -1,10 +1,11 @@
 .testimonial {
-  height: 25rem;
+  height: 16rem;
   /* width: 100vw; */
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  margin-top: -3rem;
   background: linear-gradient(to right, white, white, hsl(39, 77%, 99%));
 }
 .testimonial-container {

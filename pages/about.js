@@ -24,11 +24,11 @@ export default function Home() {
           <Nav />
         </Grid>
 
-        <Grid item xs={12} md={12}>
+        <Grid item xs={12} md={12} style={{ marginTop: "3rem" }}>
           <About />
         </Grid>
         <Grid item xs={12} md={12}>
-          <div className="features" id="features">
+          <div className="features" id="features" style={{ marginTop: "3rem" }}>
             <h2>Features</h2>
             <span></span>
           </div>

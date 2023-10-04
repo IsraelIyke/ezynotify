@@ -12,8 +12,9 @@ import Testimonial from "../components/testimonial";
 import Footer from "../components/footer";
 import Head from "next/head";
 const { motion } = require("framer-motion");
+import Home from "./about";
 
-export default function Home() {
+export default function Index() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Head>
@@ -33,15 +34,15 @@ export default function Home() {
         <title>Ezynotify</title>
       </Head>
       <Grid container spacing={0}>
-        <Grid item xs={12} md={12}>
+        {/* <Grid item xs={12} md={12}>
           <Nav />
         </Grid>
 
         <Grid item xs={12} md={12}>
           <Banner />
-        </Grid>
-
-        <Grid item xs={12} md={6}>
+        </Grid> */}
+        <Home />
+        {/* <Grid item xs={12} md={6}>
           <Image />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -53,7 +54,7 @@ export default function Home() {
 
         <Grid item xs={12} md={6}>
           <Image2 />
-        </Grid>
+        </Grid> */}
         <Grid item xs={12} md={12}>
           <Testimonial />
         </Grid>
