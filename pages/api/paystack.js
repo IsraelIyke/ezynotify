@@ -32,8 +32,8 @@ export default function Payment(props) {
       <form id="paymentForm" className={props.className}>
         <h2>Payment via paystack</h2>
         <be>
-          After payment, your transaction will be confirmed manually and your
-          ezynotify account will be updated. Please exercise patience. Thanks
+          After payment, your transaction will be confirmed automatically and your
+          ezynotify account will be updated. Thanks
           for your support &#128151;
         </be>
         <div class="form-group">
